@@ -5,9 +5,12 @@ using UnityEngine.AI;
 
 public class UnitMovement : MonoBehaviour {
 	public List<NavigationNode> Nodes;
-	
+	public SpriteRenderer StatusSprite;
+	public bool ReverseOnCompletion;
+
 	private NavMeshAgent agent;
-	private int patrolDest;
+	private int dest;
+	private int direction = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +20,30 @@ public class UnitMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(agent.remainingDistance < 0.05f){
-			agent.SetDestination(Nodes[patrolDest].transform.position);
-			patrolDest = (patrolDest + 1) % Nodes.Count;
+		if(agent.remainingDistance < 0.05f && Nodes.Count != 0){
+			GotoNextNode();
+		}
+	}
+
+	void GotoNextNode(){
+		int oldDest = dest;
+
+		if(ReverseOnCompletion){
+			if(dest == Nodes.Count - 1){
+				direction = -1;
+			}else if(dest == 0){
+				direction = 1;
+			}
+			dest += direction;
+		}else{
+			dest = (dest + 1) % Nodes.Count;
+		}
+
+		if(Nodes[oldDest].Neighbours.Contains(Nodes[dest])){
+			agent.SetDestination(Nodes[dest].transform.position);
+		}else{
+			agent.isStopped = true;
+			StatusSprite.gameObject.SetActive(true);
 		}
 	}
 
