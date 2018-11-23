@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class UnitMovement : MonoBehaviour {
-	public NavigationNode[] Nodes;
+	public List<NavigationNode> Nodes;
 	
 	private NavMeshAgent agent;
 	private int patrolDest;
@@ -19,7 +19,11 @@ public class UnitMovement : MonoBehaviour {
 	void Update () {
 		if(agent.remainingDistance < 0.05f){
 			agent.SetDestination(Nodes[patrolDest].transform.position);
-			patrolDest = (patrolDest + 1) % Nodes.Length;
+			patrolDest = (patrolDest + 1) % Nodes.Count;
 		}
+	}
+
+	public void Goto(Vector3 point){
+		agent.SetDestination(point);	
 	}
 }
