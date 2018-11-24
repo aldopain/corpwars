@@ -4,6 +4,6 @@
 
 public class FacingCamera : MonoBehaviour {
 	void Update () {
-        transform.rotation = Camera.main.transform.rotation;
+        	transform.rotation = Camera.main.transform.rotation;
 	}
 }

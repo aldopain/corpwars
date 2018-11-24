@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d6dd95d7060ea41bc37ef68fe0fb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 3
   Attack: 0
   Defence: 0
   CargoCapacity: 0
@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d6dd95d7060ea41bc37ef68fe0fb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 3
   Attack: 0
   Defence: 0
   CargoCapacity: 0

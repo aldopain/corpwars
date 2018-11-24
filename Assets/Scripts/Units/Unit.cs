@@ -12,8 +12,12 @@ public class Unit : MonoBehaviour {
 	private UnitMovement _movement;
 	private UnitManager _manager;
 
-	void Start(){
+	void Awake(){
 		_movement = GetComponent<UnitMovement>();
+	}
+
+	void Start(){
+		_movement.SetSpeed(Speed);
 	}
 
 	void OnMouseOver(){

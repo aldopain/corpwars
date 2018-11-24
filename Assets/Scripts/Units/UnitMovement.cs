@@ -12,9 +12,12 @@ public class UnitMovement : MonoBehaviour {
 	private int dest;
 	private int direction = 1;
 
+	void Awake(){
+		agent = GetComponent<NavMeshAgent>();
+	}
+
 	// Use this for initialization
 	void Start () {
-		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(Nodes[0].transform.position);	
 	}
 	
@@ -49,5 +52,9 @@ public class UnitMovement : MonoBehaviour {
 
 	public void Goto(Vector3 point){
 		agent.SetDestination(point);	
+	}
+
+	public void SetSpeed(float s){
+		agent.speed = s;
 	}
 }
