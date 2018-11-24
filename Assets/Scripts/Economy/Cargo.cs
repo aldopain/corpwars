@@ -22,6 +22,12 @@ public class Cargo{
 		Amount = amount;
 	}
 
+	public Cargo(Cargo c){
+		CurrentType = c.CurrentType;
+		MaxAmount = c.MaxAmount;
+		Amount = c.Amount;
+	}
+
 	public void Add(float a){
 		if(Amount + a > MaxAmount){
 			Amount = MaxAmount;

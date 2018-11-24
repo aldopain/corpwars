@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LocalEconomy : MonoBehaviour {
-	public Commodity[] commodities;
+	public List<Commodity> commodities;
 
 	// Use this for initialization
 	void Start () {
@@ -28,5 +28,22 @@ public class LocalEconomy : MonoBehaviour {
 			c.sold += c.cargo.GetDifference(c.sold);
 			c.cargo.Add(-c.sold);
 		}
+	}
+
+	Commodity FindCommodity(Cargo.CargoType t){
+		foreach(Commodity com in commodities){
+			if(com.cargo.CurrentType == t){
+				return com;
+			}
+		}
+		return null;
+	}
+
+	public void Add(Cargo c){
+		FindCommodity(c.CurrentType).cargo.Add(c.GetAmount());
+	}
+
+	public void Remove(Cargo c){
+		FindCommodity(c.CurrentType).cargo.Add(-c.GetAmount());
 	}
 }

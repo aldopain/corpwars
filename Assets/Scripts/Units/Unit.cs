@@ -23,7 +23,7 @@ public class Unit : MonoBehaviour {
 	void OnMouseOver(){
 		if(Input.GetMouseButtonDown(0)){
 			if(_manager == null){
-				_manager = GameObject.Find("UnitManager").GetComponent<UnitManager>();
+				_manager = GameObject.Find("GameController").GetComponent<UnitManager>();
 			}
 
 			_manager.SetSelectedUnit(this);
@@ -32,7 +32,7 @@ public class Unit : MonoBehaviour {
 
 	public void Goto(Vector3 point, bool clearNodes = false){
 		if(clearNodes){
-			_movement.Nodes.Clear();
+			_movement.Stops.Clear();
 		}
 
 		_movement.Goto(point);
