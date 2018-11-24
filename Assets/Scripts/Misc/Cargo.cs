@@ -37,7 +37,7 @@ public class Cargo{
 			if less than zero after addition: negative number representing amount of cargo needed to detract a from pile
 			if can add to the pile: 0
 	 */
-	public float GetDifference(int a){
+	public float GetDifference(float a){
 		if(Amount + a > MaxAmount){
 			return Amount + a - MaxAmount;
 		}else if(Amount + a < 0){

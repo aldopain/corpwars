@@ -224,49 +224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &462741523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 462741525}
-  - component: {fileID: 462741524}
-  m_Layer: 0
-  m_Name: UnitManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &462741524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462741523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e55364cab7c5894c89f92235a69cc9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MouseOverMask:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!4 &462741525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462741523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.07611, y: -19.759333, z: 72.45354}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +420,8 @@ GameObject:
   - component: {fileID: 561263018}
   - component: {fileID: 561263017}
   - component: {fileID: 561263016}
+  - component: {fileID: 561263021}
+  - component: {fileID: 561263022}
   m_Layer: 9
   m_Name: Town (Black)
   m_TagString: TradePost
@@ -549,6 +508,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561263021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561263015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commodities:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+--- !u!114 &561263022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561263015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &862707565
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ Transform:
   m_Children:
   - {fileID: 544626836}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907581157
 GameObject:
@@ -750,6 +750,8 @@ GameObject:
   - component: {fileID: 907581160}
   - component: {fileID: 907581159}
   - component: {fileID: 907581158}
+  - component: {fileID: 907581163}
+  - component: {fileID: 907581164}
   m_Layer: 9
   m_Name: Town (Blue)
   m_TagString: TradePost
@@ -836,6 +838,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907581163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907581157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commodities:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+--- !u!114 &907581164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907581157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231534836
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +981,8 @@ GameObject:
   - component: {fileID: 1559632075}
   - component: {fileID: 1559632074}
   - component: {fileID: 1559632073}
+  - component: {fileID: 1559632078}
+  - component: {fileID: 1559632079}
   m_Layer: 9
   m_Name: Town (Green)
   m_TagString: TradePost
@@ -1024,6 +1069,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559632078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559632072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commodities:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+--- !u!114 &1559632079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559632072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569890549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602679415
 GameObject:
@@ -1143,6 +1229,8 @@ GameObject:
   - component: {fileID: 1608669564}
   - component: {fileID: 1608669563}
   - component: {fileID: 1608669562}
+  - component: {fileID: 1608669567}
+  - component: {fileID: 1608669568}
   m_Layer: 9
   m_Name: Town (Purple)
   m_TagString: TradePost
@@ -1229,6 +1317,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608669567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1608669561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commodities:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+--- !u!114 &1608669568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1608669561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1776293154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1442,8 @@ GameObject:
   - component: {fileID: 1926906725}
   - component: {fileID: 1926906724}
   - component: {fileID: 1926906723}
+  - component: {fileID: 1926906728}
+  - component: {fileID: 1926906729}
   m_Layer: 9
   m_Name: Town (Yellow)
   m_TagString: TradePost
@@ -1399,6 +1530,155 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926906728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926906722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commodities:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: 1000
+    price: 0
+    produced: 0
+    sold: 0
+--- !u!114 &1926906729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926906722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2008603185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008603188}
+  - component: {fileID: 2008603187}
+  - component: {fileID: 2008603189}
+  - component: {fileID: 2008603186}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2008603186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179ca7b63f2470247a1deb3640fa7d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayLength: 2
+  OnDay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMonth:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnYear:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2008603187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55364cab7c5894c89f92235a69cc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseOverMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!4 &2008603188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 80.80542, y: 15.205356, z: 34.209774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008603189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334cb1bb0260c70448aa171b97b2a513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalInfo:
+  - cargo:
+      CurrentType: 0
+      MaxAmount: Infinity
+    price: 100
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 1
+      MaxAmount: Infinity
+    price: 200
+    produced: 0
+    sold: 0
+  - cargo:
+      CurrentType: 2
+      MaxAmount: Infinity
+    price: 300
+    produced: 0
+    sold: 0
+  TradePosts:
+  - {fileID: 907581163}
+  - {fileID: 1926906728}
+  - {fileID: 1559632078}
+  - {fileID: 561263021}
+  - {fileID: 1608669567}
 --- !u!1 &2016923935
 GameObject:
   m_ObjectHideFlags: 0
