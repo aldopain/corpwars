@@ -9,4 +9,7 @@ public class Commodity{
 	public float produced;
 	public float bought;
 	public float sold;
+	public string name;
+	public string description;
+	public Sprite icon;
 }
