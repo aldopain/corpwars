@@ -42,9 +42,9 @@ public class UnitMovement : MonoBehaviour {
 		ns.Load = new List<Cargo>();
 		ns.Unload = new List<Cargo>();
 		if(NewCargoAmount.value > 0){
-			ns.Load.Add(new Cargo((Cargo.CargoType)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
+			ns.Load.Add(new Cargo((TradeResource.Types)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
 		}else{
-			ns.Unload.Add(new Cargo((Cargo.CargoType)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
+			ns.Unload.Add(new Cargo((TradeResource.Types)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
 		}
 
 		Stops.Add(ns);

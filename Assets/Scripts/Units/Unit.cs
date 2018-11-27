@@ -20,16 +20,6 @@ public class Unit : MonoBehaviour {
 		_movement.SetSpeed(Speed);
 	}
 
-	void OnMouseOver(){
-		if(Input.GetMouseButtonDown(0)){
-			if(_manager == null){
-				_manager = GameObject.Find("GameController").GetComponent<UnitManager>();
-			}
-
-			_manager.SetSelectedUnit(this);
-		}
-	}
-
 	public void Goto(Vector3 point, bool clearNodes = false){
 		if(clearNodes){
 			_movement.Stops.Clear();

@@ -17,13 +17,11 @@ public class EconomyReporter : MonoBehaviour {
 	}
 	
 	void Report(){
-		from.Debug_Produce();
-		from.Debug_Sell();
-
-		//DEBUG
-		for(int i = 0; i < 3; i++){
-			to.globalInfo[i].produced += from.commodities[i].produced;
-			to.globalInfo[i].sold += from.commodities[i].sold;
+		for(int i = 0; i < System.Enum.GetNames(typeof(TradeResource.Types)).Length; i++){
+			to.globalInfo[i].produced += from.resources[i].produced;
+			to.globalInfo[i].sold += from.resources[i].sold;
+			to.globalInfo[i].bought += from.resources[i].bought;
+			to.globalInfo[i].stock += from.resources[i].stock;
 		}	
 	}
 }

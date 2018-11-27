@@ -8,7 +8,7 @@ public class UnitInventory : MonoBehaviour {
 	public int MaxNumber;
 	public float MaxAmount;
 
-	public bool AddCargo(Cargo.CargoType type, float Amount){
+	public bool AddCargo(TradeResource.Types type, float Amount){
 		if(Inventory.Count < MaxNumber){
 			if(Amount > MaxAmount){
 				return false;

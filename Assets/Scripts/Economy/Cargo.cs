@@ -4,15 +4,12 @@ using UnityEngine;
 
 [System.Serializable]
 public class Cargo{
-	public enum CargoType{
-		Type1, Type2, Type3
-	}
-
-	public CargoType CurrentType;
+	public TradeResource.Types CurrentType;
 	public float MaxAmount;
+	[SerializeField]
 	private float Amount;
 
-	public Cargo(CargoType type, float max = Mathf.Infinity, float amount = 0){
+	public Cargo(TradeResource.Types type, float max = Mathf.Infinity, float amount = 0){
 		CurrentType = type;
 		MaxAmount = max;
 

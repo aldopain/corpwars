@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalEconomy : MonoBehaviour {
-	public Commodity[] globalInfo;
+	public List<TradeResource> globalInfo;
 	public LocalEconomy[] TradePosts;
 
 	float[] producedPrevDay = new float[3];
 	float[] soldPrevDay = new float[3];
 	// Use this for initialization
 	void Start () {
+		SetResorcesList();
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.AddListener(UpdatePricing);
 	}
 	
+	void SetResorcesList(){
+		foreach(TradeResource.Types t in System.Enum.GetValues(typeof(TradeResource.Types))){
+			globalInfo.Add(new TradeResource(t));
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -27,7 +34,7 @@ public class GlobalEconomy : MonoBehaviour {
 
 		foreach(LocalEconomy p in TradePosts){
 			int i = 0;
-			foreach(Commodity c in p.commodities){
+			foreach(TradeResource c in p.resources){
 				c.price = globalInfo[i].price;
 				i++;
 			}
