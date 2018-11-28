@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class UnitMovement : MonoBehaviour {
 	[System.Serializable]
@@ -21,61 +20,36 @@ public class UnitMovement : MonoBehaviour {
 	private int direction = 1;
 
 	bool isTrading;
-
-	public Dropdown Destination;
-	public Dropdown NewCargoType;
-	public Slider NewCargoAmount;
 	
-	public void FillDests(){
-		Destination.ClearOptions();
-		List<string> destNames = new List<string>();
-		foreach(LocalEconomy le in GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalEconomy>().TradePosts){
-			destNames.Add(le.name);
-		}
-
-		Destination.AddOptions(destNames);
-	}
-
-	public void AddStop(){
-		Stop ns = new Stop();
-		ns.node = GameObject.Find(Destination.options[Destination.value].text).GetComponent<NavigationNode>();
-		ns.Load = new List<Cargo>();
-		ns.Unload = new List<Cargo>();
-		if(NewCargoAmount.value > 0){
-			ns.Load.Add(new Cargo((TradeResource.Types)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
-		}else{
-			ns.Unload.Add(new Cargo((TradeResource.Types)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
-		}
-
-		Stops.Add(ns);
-
-		if(Stops.Count == 1){
-			agent.SetDestination(Stops[0].node.transform.position);	
-		}
-	}
-
 	void Awake(){
 		agent = GetComponent<NavMeshAgent>();
 	}
 
 	// Use this for initialization
 	void Start () {
-		FillDests();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(agent.remainingDistance < 0.05f && Stops.Count != 0 && !isTrading){
-			if(Stops[dest].Load.Count == 0 && Stops[dest].Unload.Count == 0){
-				GotoNextNode();
-			}else{
-				StartCoroutine(Trade());
+		if(agent.enabled){
+			if(agent.remainingDistance < 0.05f && !isTrading){
+				if(Stops.Count != 0){
+					if(Stops[dest].Load.Count == 0 && Stops[dest].Unload.Count == 0){
+						GotoNextNode();
+					}else{
+						StartCoroutine(Trade());
+					}
+				}else{
+					WaitInTown();
+				}
 			}
 		}
 	}
 
 	IEnumerator Trade(){
 		isTrading = true;
+		agent.enabled = false;
 		yield return new WaitForSeconds(GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().DayLength * (Stops[dest].Load.Count + Stops[dest].Unload.Count));
 		for(int i = 0; i < Stops[dest].Unload.Count; i++){
 			Stops[dest].node.GetComponent<LocalEconomy>().Add(Stops[dest].Unload[i]);
@@ -87,6 +61,7 @@ public class UnitMovement : MonoBehaviour {
 			GetComponent<UnitInventory>().AddCargo(new Cargo(Stops[dest].Load[i]));
 		}
 
+		agent.enabled = true;
 		GotoNextNode();
 		isTrading = false;		
 	}
@@ -120,5 +95,9 @@ public class UnitMovement : MonoBehaviour {
 
 	public void SetSpeed(float s){
 		agent.speed = s;
+	}
+
+	public void WaitInTown(){
+		Destroy(gameObject);
 	}
 }
