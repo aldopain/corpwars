@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class CaravanSpawner : MonoBehaviour {
 	public List<UnitMovement.Stop> Stops;
+	public List<Ship> Ships;
 
+	//Unit
+	public Dropdown UnitType;
+	public Dropdown ShipType;
+	public Text ShipList;
+
+	//Route
 	public Text RouteDescription;
 	public Dropdown Destination;
 	public Dropdown NewCargoType;
@@ -13,15 +20,20 @@ public class CaravanSpawner : MonoBehaviour {
 
 	public GameObject UnitPrefab;
 	void Start () {
-		Destination.ClearOptions();
+		Stops = new List<UnitMovement.Stop>();
+		Ships = new List<Ship>();
+
 		FillDests();
+		FillUnitTypes();
+		FillShipTypes();
 	}
 	
 	void Update () {
-		
+
 	}
 
 	public void FillDests(){
+		Destination.ClearOptions();
 		List<string> destNames = new List<string>();
 		foreach(LocalEconomy le in GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalEconomy>().TradePosts){
 			destNames.Add(le.name);
@@ -30,11 +42,28 @@ public class CaravanSpawner : MonoBehaviour {
 		Destination.AddOptions(destNames);
 	}
 
+	public void FillUnitTypes(){
+		UnitType.ClearOptions();
+		List<string> tmp = new List<string>();
+		tmp.AddRange(System.Enum.GetNames(typeof(Unit.UnitType)));
+		UnitType.AddOptions(tmp);
+	}
+
+	public void FillShipTypes(){
+		ShipType.ClearOptions();
+		List<string> tmp = new List<string>();
+		tmp.AddRange(System.Enum.GetNames(typeof(Ship.ShipType)));
+		ShipType.AddOptions(tmp);
+	}
+
 	public void AddStop(){
+		//Initializing empty object
 		UnitMovement.Stop ns = new UnitMovement.Stop();
 		ns.node = GameObject.Find(Destination.options[Destination.value].text).GetComponent<NavigationNode>();
 		ns.Load = new List<Cargo>();
 		ns.Unload = new List<Cargo>();
+
+		//Getting values
 		string descrtiption = Destination.options[Destination.value].text + "; ";
 		if(NewCargoAmount.value > 0){
 			ns.Load.Add(new Cargo((TradeResource.Types)NewCargoType.value, Mathf.Infinity, NewCargoAmount.value));
@@ -44,13 +73,39 @@ public class CaravanSpawner : MonoBehaviour {
 			descrtiption += "Unload " + Mathf.Abs(NewCargoAmount.value) + " of " + ((TradeResource.Types)NewCargoType.value).ToString();
 		}
 
+		//Setting values
 		Stops.Add(ns);
 		descrtiption += "\n";
 		RouteDescription.text += descrtiption;
 	}
 
+	public void AddShip(){
+		switch((Unit.UnitType)UnitType.value){
+			case Unit.UnitType.Trade:
+				if(ShipType.value != 2){
+					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
+					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+				}
+				break;
+			case Unit.UnitType.Military:
+				if(ShipType.value != 0){
+					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
+					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+				}
+				break;
+			case Unit.UnitType.Privateer:
+				if(ShipType.value == 2){
+					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
+					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+				}
+				break;
+		}
+	}
+
 	public void Spawn(){
 		GameObject tmp = Instantiate(UnitPrefab, transform.position, new Quaternion(0,0,0,0));
+
+		//Setting up stops
 		if(Stops[0].node == Stops[Stops.Count - 1].node){
 			tmp.GetComponent<UnitMovement>().ReverseOnCompletion = false;
 			Stops.RemoveAt(Stops.Count - 1);
@@ -59,6 +114,11 @@ public class CaravanSpawner : MonoBehaviour {
 		}
 		tmp.GetComponent<UnitMovement>().Stops.AddRange(Stops);
 
+		//Setting up ships
+		tmp.GetComponent<Unit>().Ships = new List<Ship>();
+		tmp.GetComponent<Unit>().Ships.AddRange(Ships);
+
+		//Clearing the UI
 		Stops.Clear();
 		RouteDescription.text = "";
 	}

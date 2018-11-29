@@ -4,6 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(UnitMovement))]
 public class Unit : MonoBehaviour {
+	public enum UnitType{
+		Trade, Military, Privateer
+	}
+
+	public List<Ship> Ships;
+
 	public float Speed;
 	public int Attack;
 	public int Defence;
