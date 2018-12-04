@@ -2,30 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class NavigationLine : MonoBehaviour {
 	public NavigationNode[] AdjacentNodes;
-	public LineRenderer LinePrefab;
+	private LineRenderer lineRenderer;
 
-	void Start () {
-		if(AdjacentNodes.Length > 2){
-			System.Array.Resize<NavigationNode>(ref AdjacentNodes, 2);
-		}
-
-		SetNeighbours();
-		DrawLine();
-	}
-	
-	void SetNeighbours(){
-		AdjacentNodes[0].Neighbours.Add(AdjacentNodes[1]);
-		AdjacentNodes[1].Neighbours.Add(AdjacentNodes[0]);
+	void Start(){
+		if(lineRenderer == null) lineRenderer = GetComponent<LineRenderer>();
 	}
 
-	void DrawLine(){
-		LineRenderer line = Instantiate(LinePrefab.gameObject, Vector3.zero, new Quaternion(0,0,0,0)).GetComponent<LineRenderer>();
+	void Update(){
+		UpdateLine();
+	}
 
-		line.SetPosition(0, AdjacentNodes[0].transform.position);
-		line.SetPosition(1, AdjacentNodes[1].transform.position);
+	void UpdateLine(){
+		lineRenderer.SetPosition(0, AdjacentNodes[0].transform.position);
+		lineRenderer.SetPosition(1, AdjacentNodes[1].transform.position);	
+	}
 
-		line.name = "PathLine(" + AdjacentNodes[0].name + " - " + AdjacentNodes[1].name + ")";
+	public void Init(NavigationNode origin, NavigationNode destination){
+		AdjacentNodes = new NavigationNode[2];
+		AdjacentNodes[0] = origin;
+		AdjacentNodes[1] = destination;
+
+		lineRenderer = gameObject.AddComponent<LineRenderer>();
+		lineRenderer.sharedMaterial = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+
+		lineRenderer.startWidth = .1f;
+		lineRenderer.endWidth = .1f;
+		lineRenderer.startColor = origin.GetComponent<MeshRenderer>().sharedMaterial.color;
+		lineRenderer.endColor = destination.GetComponent<MeshRenderer>().sharedMaterial.color;
+
+		name = "PathLine(" + AdjacentNodes[0].name + " - " + AdjacentNodes[1].name + ")";
+
+		UpdateLine();
+	}
+
+	void OnDestroy(){
+		AdjacentNodes[0].Neighbours.Remove(AdjacentNodes[1]);
+		AdjacentNodes[1].Neighbours.Remove(AdjacentNodes[0]);
 	}
 }
