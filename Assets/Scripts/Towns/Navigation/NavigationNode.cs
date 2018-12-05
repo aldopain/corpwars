@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class NavigationNode : MonoBehaviour {
 	public List<NavigationNode> Neighbours;
-	List<NavigationWay> ways;
+	public List<NavigationWay> ways;
 	public Collider[] nearby;
 	private int neighbourLength;
 
