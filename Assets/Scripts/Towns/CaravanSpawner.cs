@@ -18,6 +18,12 @@ public class CaravanSpawner : MonoBehaviour {
 	public Dropdown NewCargoType;
 	public Slider NewCargoAmount;
 
+	//Economy
+	public int TradeShipCost;
+	public int MilitaryShipCost;
+	public int PrivateerShipCost;
+	public int CaravanCost;
+
 	public GameObject UnitPrefab;
 	void Start () {
 		Stops = new List<UnitMovement.Stop>();
@@ -28,10 +34,6 @@ public class CaravanSpawner : MonoBehaviour {
 		FillShipTypes();
 	}
 	
-	void Update () {
-
-	}
-
 	public void FillDests(){
 		Destination.ClearOptions();
 		List<string> destNames = new List<string>();
@@ -85,25 +87,28 @@ public class CaravanSpawner : MonoBehaviour {
 				if(ShipType.value != 2){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+					CaravanCost += TradeShipCost;
 				}
 				break;
 			case Unit.UnitType.Military:
 				if(ShipType.value != 0){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+					CaravanCost += MilitaryShipCost;
 				}
 				break;
 			case Unit.UnitType.Privateer:
 				if(ShipType.value == 2){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+					CaravanCost += PrivateerShipCost;
 				}
 				break;
 		}
 	}
 
 	public void Spawn(){
-		GameObject tmp = Instantiate(UnitPrefab, transform.position, new Quaternion(0,0,0,0));
+		GameObject tmp = Instantiate(UnitPrefab, Stops[0].node.transform.position, new Quaternion(0,0,0,0));
 
 		//Setting up stops
 		if(Stops[0].node == Stops[Stops.Count - 1].node){
@@ -118,8 +123,13 @@ public class CaravanSpawner : MonoBehaviour {
 		tmp.GetComponent<Unit>().Ships = new List<Ship>();
 		tmp.GetComponent<Unit>().Ships.AddRange(Ships);
 
-		//Clearing the UI
+		//Clearing the UI and lists
 		Stops.Clear();
 		RouteDescription.text = "";
+
+		Ships.Clear();
+		ShipList.text = "";
+
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionController>().FindFaction("Player Faction").Money -= CaravanCost;
 	}
 }

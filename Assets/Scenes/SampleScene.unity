@@ -650,7 +650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.135, y: 0}
   m_AnchorMax: {x: 0.85148704, y: 0.0893857}
-  m_AnchoredPosition: {x: 2.1785965, y: -0.109999895}
+  m_AnchoredPosition: {x: 2.1785965, y: -0.10998535}
   m_SizeDelta: {x: 3, y: -0.21999979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146310027
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907581165}
+      - m_Target: {fileID: 2008603191}
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -1568,7 +1568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07745406, y: 0.064260826}
   m_AnchorMax: {x: 0.91668695, y: 0.2322175}
-  m_AnchoredPosition: {x: 1.0315742, y: -0.41296387}
+  m_AnchoredPosition: {x: 1.0315704, y: -0.41296387}
   m_SizeDelta: {x: 2, y: 0.30999756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &493274130
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907581165}
+      - m_Target: {fileID: 2008603191}
         m_MethodName: AddStop
         m_Mode: 1
         m_Arguments:
@@ -1892,6 +1892,7 @@ MonoBehaviour:
   Neighbours:
   - {fileID: 907581158}
   - {fileID: 1608669562}
+  ways: []
   nearby:
   - {fileID: 561263017}
   - {fileID: 1776293155}
@@ -2666,7 +2667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03561536, y: 0.869}
   m_AnchorMax: {x: 0.95900005, y: 1}
-  m_AnchoredPosition: {x: 1.4514539, y: -0.03895569}
+  m_AnchoredPosition: {x: 1.4514465, y: -0.03894043}
   m_SizeDelta: {x: 1.3499756, y: 0.05001068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792461639
@@ -3027,7 +3028,6 @@ GameObject:
   - component: {fileID: 907581158}
   - component: {fileID: 907581163}
   - component: {fileID: 907581164}
-  - component: {fileID: 907581165}
   m_Layer: 9
   m_Name: Town (Blue)
   m_TagString: TradePost
@@ -3051,6 +3051,7 @@ MonoBehaviour:
   - {fileID: 1559632073}
   - {fileID: 561263016}
   - {fileID: 1608669562}
+  ways: []
   nearby:
   - {fileID: 907581159}
   - {fileID: 1608669563}
@@ -3147,27 +3148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9687f37526b7aa848b5c9e89a6a50683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &907581165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907581157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7011b00b162e8647bf22955a8f24e33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stops: []
-  Ships: []
-  UnitType: {fileID: 1212455175}
-  ShipType: {fileID: 580334649}
-  ShipList: {fileID: 1866587128}
-  RouteDescription: {fileID: 1329997159}
-  Destination: {fileID: 1771438869}
-  NewCargoType: {fileID: 1660376353}
-  NewCargoAmount: {fileID: 2040126022}
-  UnitPrefab: {fileID: 1170030066781404, guid: 955ec5e0a4ed7064fb2cba22c5f9e9b7, type: 2}
 --- !u!1 &977078506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,7 +3466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.135, y: 0.11100001}
   m_AnchorMax: {x: 0.86335886, y: 0.24200001}
-  m_AnchoredPosition: {x: 0.6786001, y: 0.6000004}
+  m_AnchoredPosition: {x: 0.6785965, y: 0.6000061}
   m_SizeDelta: {x: 0, y: 1.1499996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212455175
@@ -4228,6 +4208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbours:
   - {fileID: 907581158}
+  ways: []
   nearby:
   - {fileID: 1559632074}
   - {fileID: 1776293155}
@@ -4495,6 +4476,7 @@ MonoBehaviour:
   Neighbours:
   - {fileID: 907581158}
   - {fileID: 561263016}
+  ways: []
   nearby:
   - {fileID: 907581159}
   - {fileID: 1608669563}
@@ -4769,7 +4751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03561536, y: 0.40052167}
   m_AnchorMax: {x: 0.95900005, y: 0.5717826}
-  m_AnchoredPosition: {x: 0.9769745, y: 0.5980263}
+  m_AnchoredPosition: {x: 0.9769745, y: 0.59802246}
   m_SizeDelta: {x: 1.3400879, y: -0.3579979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660376353
@@ -5053,7 +5035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25300002}
   m_AnchorMax: {x: 0.19800001, y: 0.3526114}
-  m_AnchoredPosition: {x: -0.15002441, y: 1.699997}
+  m_AnchoredPosition: {x: -0.15002441, y: 1.6999512}
   m_SizeDelta: {x: -0.30004883, y: 0.5999756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707465346
@@ -5530,7 +5512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03561536, y: 0.70126086}
   m_AnchorMax: {x: 0.95900005, y: 0.869}
-  m_AnchoredPosition: {x: 0.59526825, y: 0.7290745}
+  m_AnchoredPosition: {x: 0.5952759, y: 0.72906494}
   m_SizeDelta: {x: 1.3499756, y: 0.22393036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771438869
@@ -6039,7 +6021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06643587, y: 0.27922857}
   m_AnchorMax: {x: 0.93369234, y: 0.53126836}
-  m_AnchoredPosition: {x: 0, y: -0.6988001}
+  m_AnchoredPosition: {x: 0, y: -0.6987915}
   m_SizeDelta: {x: 0, y: -1.9220009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1866587127
@@ -6548,6 +6530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbours:
   - {fileID: 907581158}
+  ways: []
   nearby:
   - {fileID: 907581159}
   - {fileID: 1559632074}
@@ -6927,7 +6910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.19800001, y: 0.24189109}
-  m_AnchoredPosition: {x: -0.6500244, y: 0.1000061}
+  m_AnchoredPosition: {x: -0.6500244, y: 0.100097656}
   m_SizeDelta: {x: -1.3000488, y: 0.099975586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958831356
@@ -7086,7 +7069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06643587, y: 0.27922857}
   m_AnchorMax: {x: 0.93369234, y: 0.53126836}
-  m_AnchoredPosition: {x: 0.45498657, y: -0.51000214}
+  m_AnchoredPosition: {x: 0.45498657, y: -0.51000977}
   m_SizeDelta: {x: 0.9100001, y: -1.5599995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997139962
@@ -7134,6 +7117,8 @@ GameObject:
   - component: {fileID: 2008603187}
   - component: {fileID: 2008603189}
   - component: {fileID: 2008603186}
+  - component: {fileID: 2008603190}
+  - component: {fileID: 2008603191}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -7213,6 +7198,48 @@ MonoBehaviour:
   - {fileID: 1559632078}
   - {fileID: 561263021}
   - {fileID: 1608669567}
+--- !u!114 &2008603190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdbf66c9d6ad5249a5dc978f1a054a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factions:
+  - Name: Player Faction
+    FactionColour: {r: 1, g: 1, b: 1, a: 1}
+    Money: 0
+    TownsOwned:
+    - {fileID: 907581163}
+--- !u!114 &2008603191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008603185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7011b00b162e8647bf22955a8f24e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stops: []
+  Ships: []
+  UnitType: {fileID: 1212455175}
+  ShipType: {fileID: 580334649}
+  ShipList: {fileID: 1866587128}
+  RouteDescription: {fileID: 1329997159}
+  Destination: {fileID: 1771438869}
+  NewCargoType: {fileID: 1660376353}
+  NewCargoAmount: {fileID: 2040126022}
+  TradeShipCost: 100
+  MilitaryShipCost: 150
+  PrivateerShipCost: 300
+  CaravanCost: 0
+  UnitPrefab: {fileID: 1170030066781404, guid: 955ec5e0a4ed7064fb2cba22c5f9e9b7, type: 2}
 --- !u!1 &2011704834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7619,7 +7646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03561536, y: 0.2322175}
   m_AnchorMax: {x: 0.95900005, y: 0.34521756}
-  m_AnchoredPosition: {x: 0.5000379, y: -0.31201553}
+  m_AnchoredPosition: {x: 0.5000305, y: -0.31201172}
   m_SizeDelta: {x: 1.2999268, y: 0.25200653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040126022
@@ -7951,7 +7978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907581165}
+      - m_Target: {fileID: 2008603191}
         m_MethodName: AddShip
         m_Mode: 1
         m_Arguments:
