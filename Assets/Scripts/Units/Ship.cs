@@ -9,6 +9,8 @@ public class Ship{
 	}
 
 	public ShipType CurrentType;
+	public int Cost;
+	public int Maintenance;
 
 	public Ship(ShipType t){
 		CurrentType = t;

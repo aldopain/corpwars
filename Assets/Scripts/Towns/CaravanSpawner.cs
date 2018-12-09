@@ -23,6 +23,7 @@ public class CaravanSpawner : MonoBehaviour {
 	public int MilitaryShipCost;
 	public int PrivateerShipCost;
 	public int CaravanCost;
+	public int CaravanMaintenance;
 
 	public GameObject UnitPrefab;
 	void Start () {
@@ -87,21 +88,30 @@ public class CaravanSpawner : MonoBehaviour {
 				if(ShipType.value != 2){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+					
+					//TO BE REPLACED WHEN UNIT STATS ARE MADE
 					CaravanCost += TradeShipCost;
+					CaravanMaintenance += TradeShipCost/10;
 				}
 				break;
 			case Unit.UnitType.Military:
 				if(ShipType.value != 0){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+
+					//TO BE REPLACED WHEN UNIT STATS ARE MADE
 					CaravanCost += MilitaryShipCost;
+					CaravanMaintenance += MilitaryShipCost/10;
 				}
 				break;
 			case Unit.UnitType.Privateer:
 				if(ShipType.value == 2){
 					Ships.Add(new Ship((Ship.ShipType)ShipType.value));
 					ShipList.text += ((Ship.ShipType)ShipType.value).ToString() + "\n";
+
+					//TO BE REPLACED WHEN UNIT STATS ARE MADE
 					CaravanCost += PrivateerShipCost;
+					CaravanMaintenance += PrivateerShipCost/10;
 				}
 				break;
 		}
@@ -123,6 +133,9 @@ public class CaravanSpawner : MonoBehaviour {
 		tmp.GetComponent<Unit>().Ships = new List<Ship>();
 		tmp.GetComponent<Unit>().Ships.AddRange(Ships);
 
+		//Setting up unit logic
+		tmp.GetComponent<Unit>().MaintenanceCost = CaravanMaintenance;
+		tmp.GetComponent<Unit>().OwnerName = "Player Faction";
 		//Clearing the UI and lists
 		Stops.Clear();
 		RouteDescription.text = "";
@@ -131,5 +144,6 @@ public class CaravanSpawner : MonoBehaviour {
 		ShipList.text = "";
 
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionController>().FindFaction("Player Faction").Money -= CaravanCost;
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.AddListener(tmp.GetComponent<Unit>().Maintenance);
 	}
 }

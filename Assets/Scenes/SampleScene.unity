@@ -7215,6 +7215,11 @@ MonoBehaviour:
     Money: 0
     TownsOwned:
     - {fileID: 907581163}
+  - Name: Enemy Faction
+    FactionColour: {r: 1, g: 1, b: 1, a: 1}
+    Money: 0
+    TownsOwned:
+    - {fileID: 907581163}
 --- !u!114 &2008603191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,6 +7244,7 @@ MonoBehaviour:
   MilitaryShipCost: 150
   PrivateerShipCost: 300
   CaravanCost: 0
+  CaravanMaintenance: 0
   UnitPrefab: {fileID: 1170030066781404, guid: 955ec5e0a4ed7064fb2cba22c5f9e9b7, type: 2}
 --- !u!1 &2011704834
 GameObject:

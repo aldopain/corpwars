@@ -10,10 +10,12 @@ public class Unit : MonoBehaviour {
 
 	public List<Ship> Ships;
 
+	public string OwnerName;
 	public float Speed;
 	public int Attack;
 	public int Defence;
 	public int CargoCapacity;
+	public int MaintenanceCost;
 
 	private UnitMovement _movement;
 	private UnitManager _manager;
@@ -32,5 +34,13 @@ public class Unit : MonoBehaviour {
 		}
 
 		_movement.Goto(point);
+	}
+
+	public void Maintenance(){
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionController>().FindFaction(OwnerName).Money -= MaintenanceCost;
+	}
+
+	void OnDestroy(){
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.RemoveListener(Maintenance);
 	}
 }
