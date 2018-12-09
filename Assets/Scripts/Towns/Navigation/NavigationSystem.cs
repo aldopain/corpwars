@@ -30,53 +30,52 @@ public class NavigationSystem : MonoBehaviour {
 		}
 		dist[current] = 0;
 
-		for (int i = 0; i < allPoints.Count; i++)                               //Цикл по всем вершинам 
-		{
-			current = MinDist(dist, passed);
+        for (int i = 0; i < allPoints.Count; i++)                               //Цикл по всем вершинам 
+        {
+            current = MinDist(dist, passed);
 
-			for (int j = 0; j < allPoints[current].Neighbours.Count; j++)       //Для всех соседей текущей вершины
-			{
-				List<int> points = new List<int>();
+            List<int> points = new List<int>();
 
-				for (int k = 0; k < allPoints[current].Neighbours.Count; k++)   //Составляем список соседей, которых надо пройти
-				{
-					int neighboor = allPoints.IndexOf(allPoints[current].Neighbours[k]);    //Индекс соседа в глобали
-					if (allPoints[current].Distance(allPoints[k]) > 0 && !passed[neighboor])       //Если расстояние до k-того соседа есть и этот сосед не пройден
-					{
-						points.Add(neighboor);                                      //Добавляем его
-					}
-				}
+            for (int k = 0; k < allPoints[current].Neighbours.Count; k++)   //Составляем список соседей, которых надо пройти
+            {
+                int neighboor = allPoints.IndexOf(allPoints[current].Neighbours[k]);    //Индекс соседа в глобали
+                if (allPoints[current].Distance(allPoints[neighboor]) > 0 && !passed[neighboor])       //Если расстояние до k-того соседа есть и этот сосед не пройден
+                {
+                    points.Add(neighboor);                                      //Добавляем его
+                }
+            }
 
-				points = Sort(current, points, allPoints);
 
-				for (int k = 0; k < points.Count; k++)
-				{
-					double d = allPoints[current].Distance(allPoints[points[k]]);                         //Расстояние из текущей вершины до новой из списка 
-					if (dist[points[k]] < 0 || d + dist[current] < dist[points[k]])   //Если расстояние до вершины была бесконечна, или расстояние между вершинами + вес текущей вершины меньше веса куда смотрим
-					{
-						dist[points[k]] = d + dist[current];    //Значит новый путь короче (поверь, оно работает...)
-					}
-				}
-			}
+            points = Sort(current, points, allPoints);
 
-			passed[current] = true; //Помечаем текущую вершину как пройденную
+            for (int k = 0; k < points.Count; k++)
+            {
+                double d = allPoints[current].Distance(allPoints[points[k]]);                         //Расстояние из текущей вершины до новой из списка 
+                if (dist[points[k]] < 0 || d + dist[current] < dist[points[k]])   //Если расстояние до вершины была бесконечна, или расстояние между вершинами + вес текущей вершины меньше веса куда смотрим
+                {
+                    dist[points[k]] = d + dist[current];    //Значит новый путь короче (поверь, оно работает...)
+                }
+            }
+
+            passed[current] = true; //Помечаем текущую вершину как пройденную
 		}
 
-		//На данный момент мы в dist имеем из точки start все кратчайшие пути
-		//Теперь по алгоритму обратного будем искать путь как некий массив
+        //На данный момент мы в dist имеем из точки start все кратчайшие пути
+        //Теперь по алгоритму обратного будем искать путь как некий массив
+
 
 		List<List<int>> result = new List<List<int>>();
 		for (int i = 0; i < allPoints.Count; i++)
-		{
-			double weight;
+        {
+            double weight;
 
 			result.Add(new List<int>());
 			result[i].Add(i);
 			weight = dist[i];
 
 			while (weight>0)
-			{
-				result[i].Add(FindNext(result[i], dist, allPoints));
+            {
+                result[i].Add(FindNext(result[i], dist, allPoints));
 
 				weight -= allPoints[result[i].Last()].Distance(allPoints[result[i][result[i].Count - 2]]);
 			}
@@ -99,7 +98,7 @@ public class NavigationSystem : MonoBehaviour {
 		foreach (var w in tmp) {
 			res.Add(new NavigationWay(w));
 		}
-		return res;
+        return res;
 	}
 
 	static int MinDist(double[] dist, bool[] passed)    //Минимальная дистанция вершины из начала
