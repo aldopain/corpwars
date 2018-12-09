@@ -5,6 +5,12 @@ using UnityEngine;
 public class FactionController : MonoBehaviour {
 	public List<Faction> factions;
 
+	void Start(){
+		foreach(Faction f in factions){
+			f.Init();
+		}
+	}
+
 	public void AddFaction(Faction f){
 		factions.Add(f);
 	}

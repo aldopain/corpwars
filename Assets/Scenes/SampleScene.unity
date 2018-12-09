@@ -1976,6 +1976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  OwnerName: 
 --- !u!114 &561263022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3137,6 +3138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  OwnerName: 
 --- !u!114 &907581164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4293,6 +4295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  OwnerName: 
 --- !u!114 &1559632079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4561,6 +4564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  OwnerName: 
 --- !u!114 &1608669568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6616,6 +6620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  OwnerName: 
 --- !u!114 &1926906729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7211,15 +7216,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factions:
   - Name: Player Faction
-    FactionColour: {r: 1, g: 1, b: 1, a: 1}
+    FactionColour: {r: 0, g: 0.11251116, b: 1, a: 1}
     Money: 0
     TownsOwned:
     - {fileID: 907581163}
+    - {fileID: 1926906728}
   - Name: Enemy Faction
-    FactionColour: {r: 1, g: 1, b: 1, a: 1}
+    FactionColour: {r: 1, g: 0.04995039, b: 0, a: 1}
     Money: 0
     TownsOwned:
-    - {fileID: 907581163}
+    - {fileID: 1608669567}
+    - {fileID: 561263021}
 --- !u!114 &2008603191
 MonoBehaviour:
   m_ObjectHideFlags: 0

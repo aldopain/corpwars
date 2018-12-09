@@ -5,6 +5,7 @@ using UnityEngine;
 public class LocalEconomy : MonoBehaviour {
 	public List<TradeResource> resources;
 	public List<ConversionRecipe> recipes;
+	public string OwnerName;
 
 	// Use this for initialization
 	void Start () {
@@ -48,5 +49,10 @@ public class LocalEconomy : MonoBehaviour {
 
 			FindResource(recipes[i].output).stock += recipes[i].outputAmount;
 		}
+	}
+
+	public void ChangeOwner(string newOwner){
+		OwnerName = newOwner;
+		GetComponent<MeshRenderer>().sharedMaterial.color = GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionController>().FindFaction(OwnerName).FactionColour;
 	}
 }

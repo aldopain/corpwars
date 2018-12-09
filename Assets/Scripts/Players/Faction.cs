@@ -18,5 +18,15 @@ public class Faction{
 		TownsOwned = new List<LocalEconomy>();
 		TownsOwned.Add(startingTown);
 		Money = _money;
+	}
+
+	public void Init(){
+		InitTowns();
 	}	
+
+	void InitTowns(){
+		foreach(LocalEconomy le in TownsOwned){
+			le.ChangeOwner(Name);
+		}
+	}
 }
