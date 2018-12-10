@@ -10,7 +10,7 @@ public class LocalEconomy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SetResorcesList();
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.AddListener(ConvertResources);
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(ConvertResources);
 	}
 	
 	// Update is called once per frame

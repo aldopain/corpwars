@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Time : MonoBehaviour {
+public class TimeManager : MonoBehaviour {
 	public float DayLength;
 	public UnityEvent OnDay;
 	public UnityEvent OnMonth;

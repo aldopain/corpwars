@@ -50,7 +50,7 @@ public class UnitMovement : MonoBehaviour {
 	IEnumerator Trade(){
 		isTrading = true;
 		agent.enabled = false;
-		yield return new WaitForSeconds(GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().DayLength * (Stops[dest].Load.Count + Stops[dest].Unload.Count));
+		yield return new WaitForSeconds(GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().DayLength * (Stops[dest].Load.Count + Stops[dest].Unload.Count));
 		for(int i = 0; i < Stops[dest].Unload.Count; i++){
 			Stops[dest].node.GetComponent<LocalEconomy>().Add(Stops[dest].Unload[i]);
 			GetComponent<UnitInventory>().RemoveCargo(Stops[dest].Unload[i]);

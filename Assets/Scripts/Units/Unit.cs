@@ -41,6 +41,6 @@ public class Unit : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.RemoveListener(Maintenance);
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.RemoveListener(Maintenance);
 	}
 }

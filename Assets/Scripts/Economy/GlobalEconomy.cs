@@ -11,7 +11,7 @@ public class GlobalEconomy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SetResorcesList();
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.AddListener(UpdatePricing);
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(UpdatePricing);
 	}
 	
 	void SetResorcesList(){

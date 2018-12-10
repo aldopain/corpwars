@@ -144,6 +144,6 @@ public class CaravanSpawner : MonoBehaviour {
 		ShipList.text = "";
 
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionController>().FindFaction("Player Faction").Money -= CaravanCost;
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Time>().OnDay.AddListener(tmp.GetComponent<Unit>().Maintenance);
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(tmp.GetComponent<Unit>().Maintenance);
 	}
 }
