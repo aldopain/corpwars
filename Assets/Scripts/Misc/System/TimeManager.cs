@@ -39,6 +39,13 @@ public class TimeManager : MonoBehaviour {
 	public void TickDay(){
 		_days++;
 		OnDay.Invoke();
+
+		if(Day == 0) {
+			OnMonth.Invoke();
+		}
+		if(Month == 0 && Day == 0 && Year != 0){
+			OnYear.Invoke();
+		}
 	}
 
 	IEnumerator Clock(){
