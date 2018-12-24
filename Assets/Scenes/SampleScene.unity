@@ -1976,6 +1976,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  population:
+    Poor:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Middle:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Rich:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
   OwnerName: 
 --- !u!114 &561263022
 MonoBehaviour:
@@ -3137,7 +3153,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: []
-  recipes: []
+  recipes:
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 0
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 0
+  population:
+    Poor:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Middle:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Rich:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
   OwnerName: 
 --- !u!114 &907581164
 MonoBehaviour:
@@ -4295,6 +4335,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  population:
+    Poor:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Middle:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Rich:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
   OwnerName: 
 --- !u!114 &1559632079
 MonoBehaviour:
@@ -4564,6 +4620,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  population:
+    Poor:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Middle:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Rich:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
   OwnerName: 
 --- !u!114 &1608669568
 MonoBehaviour:
@@ -6620,6 +6692,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   recipes: []
+  population:
+    Poor:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Middle:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
+    Rich:
+      Amount: 0
+      BaseProductivity: 1
+      Productivity: 0
+      Happiness: 0
   OwnerName: 
 --- !u!114 &1926906729
 MonoBehaviour:
@@ -7142,7 +7230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179ca7b63f2470247a1deb3640fa7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayLength: 0.1
+  DayLength: 1
   OnDay:
     m_PersistentCalls:
       m_Calls: []

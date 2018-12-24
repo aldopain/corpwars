@@ -5,9 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class TradeResource{
 	public enum Types{
-		Type1,
-		Type2,
-		Type3
+		Wood,
+		Iron,
+		Aluminum,
+		Titan,
+		Uranium,
+		PreciousMetals,
+		Himium,
+		Manum,
+		Fuel
 	}
 
 	//Logic 

@@ -5,18 +5,21 @@ using UnityEngine;
 public class LocalEconomy : MonoBehaviour {
 	public List<TradeResource> resources;
 	public List<ConversionRecipe> recipes;
+	public PopulationController population;
 	public string OwnerName;
-
+	
 	// Use this for initialization
 	void Start () {
 		SetResorcesList();
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(ConvertResources);
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(UpdatePopulation);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void UpdatePopulation(){
+		population.Poor.Update();
+		population.Middle.Update();
+		population.Rich.Update();
+	} 
 
 	void SetResorcesList(){
 		foreach(TradeResource.Types t in System.Enum.GetValues(typeof(TradeResource.Types))){

@@ -6,8 +6,8 @@ public class GlobalEconomy : MonoBehaviour {
 	public List<TradeResource> globalInfo;
 	public LocalEconomy[] TradePosts;
 
-	float[] producedPrevDay = new float[3];
-	float[] soldPrevDay = new float[3];
+	float[] producedPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
+	float[] soldPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
 	// Use this for initialization
 	void Start () {
 		SetResorcesList();
@@ -26,7 +26,7 @@ public class GlobalEconomy : MonoBehaviour {
 	}
 
 	void UpdatePricing(){
-		for(int i = 0; i < 3; i++){
+		for(int i = 0; i < System.Enum.GetValues(typeof(TradeResource.Types)).Length; i++){
 			globalInfo[i].price -= globalInfo[i].price * ((globalInfo[i].produced - producedPrevDay[i]) - (globalInfo[i].sold - soldPrevDay[i]))/100;
 			producedPrevDay[i] = globalInfo[i].produced;
 			soldPrevDay[i] = globalInfo[i].sold;
