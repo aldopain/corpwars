@@ -8,6 +8,10 @@ public class LocalEconomy : MonoBehaviour {
 	public PopulationController population;
 	public string OwnerName;
 	
+	void Awake(){
+		population.AttachedEconomy = this;
+	}
+
 	// Use this for initialization
 	void Start () {
 		SetResorcesList();
@@ -27,7 +31,7 @@ public class LocalEconomy : MonoBehaviour {
 		}
 	}
 
-	TradeResource FindResource(TradeResource.Types t){
+	public TradeResource FindResource(TradeResource.Types t){
 		foreach(TradeResource tr in resources){
 			if(tr.CurrentType == t){
 				return tr;
