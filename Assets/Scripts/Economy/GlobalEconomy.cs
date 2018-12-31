@@ -6,30 +6,34 @@ public class GlobalEconomy : MonoBehaviour {
 	public List<TradeResource> globalInfo;
 	public LocalEconomy[] TradePosts;
 
-	float[] producedPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
-	float[] soldPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
+	//float[] producedPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
+	//float[] soldPrevDay = new float[System.Enum.GetValues(typeof(TradeResource.Types)).Length];
+
+	bool updatedPricing;
+
 	// Use this for initialization
 	void Start () {
-		SetResorcesList();
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(UpdatePricing);
 	}
 	
-	void SetResorcesList(){
+	void SetResourcesList(){
 		foreach(TradeResource.Types t in System.Enum.GetValues(typeof(TradeResource.Types))){
 			globalInfo.Add(new TradeResource(t));
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	void UpdatePricing(){
 		for(int i = 0; i < System.Enum.GetValues(typeof(TradeResource.Types)).Length; i++){
-			globalInfo[i].price -= globalInfo[i].price * ((globalInfo[i].produced - producedPrevDay[i]) - (globalInfo[i].sold - soldPrevDay[i]))/100;
-			producedPrevDay[i] = globalInfo[i].produced;
-			soldPrevDay[i] = globalInfo[i].sold;
+			globalInfo[i].price -= globalInfo[i].price * ((globalInfo[i].produced) - (globalInfo[i].sold))/100;
+			print("Price: " + globalInfo[i].price + "; Produced: " + globalInfo[i].produced + "; Sold: " + globalInfo[i].price);
+			Debug.Break();
+
+			globalInfo[i].produced = 0;
+			globalInfo[i].bought = 0;
+			globalInfo[i].sold = 0;
+			globalInfo[i].stock = 0;
 		}
 
 		foreach(LocalEconomy p in TradePosts){

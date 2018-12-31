@@ -13,7 +13,8 @@ public class EconomyReporter : MonoBehaviour {
 	}
 
 	void Start () {
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(Report);	
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(Report);
+		Report();	
 	}
 	
 	void Report(){

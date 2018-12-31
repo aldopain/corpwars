@@ -14,7 +14,6 @@ public class LocalEconomy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetResorcesList();
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(ConvertResources);
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>().OnDay.AddListener(UpdatePopulation);
 	}
@@ -25,7 +24,7 @@ public class LocalEconomy : MonoBehaviour {
 		population.Rich.Update();
 	} 
 
-	void SetResorcesList(){
+	public void SetResourcesList(){
 		foreach(TradeResource.Types t in System.Enum.GetValues(typeof(TradeResource.Types))){
 			resources.Add(new TradeResource(t));
 		}
@@ -56,6 +55,10 @@ public class LocalEconomy : MonoBehaviour {
 
 			FindResource(recipes[i].output).stock += recipes[i].outputAmount;
 		}
+	}
+
+	public void ProduceResources(){
+
 	}
 
 	public void ChangeOwner(string newOwner){
