@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class TimeManager : MonoBehaviour {
+	public static TimeManager TimeInstance = null;
 	public float DayLength;
 	public UnityEvent OnDay;
 	public UnityEvent OnMonth;
@@ -12,7 +13,7 @@ public class TimeManager : MonoBehaviour {
 	int _days;
 	int YEAR_LENGTH = 12; //in months
 	int MONTH_LENGTH = 30; //in days
-
+	
 	public int Day{
 		get{
 			//return _days;
@@ -30,6 +31,15 @@ public class TimeManager : MonoBehaviour {
 		get{
 			return _days/(YEAR_LENGTH * MONTH_LENGTH);
 		}
+	}
+
+	void Awake(){
+		if(TimeInstance == null){
+			TimeInstance = this;
+		}else if (TimeInstance != this){
+			Destroy(gameObject);
+		}
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start(){
