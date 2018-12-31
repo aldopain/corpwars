@@ -650,7 +650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.135, y: 0}
   m_AnchorMax: {x: 0.85148704, y: 0.0893857}
-  m_AnchoredPosition: {x: 2.1785965, y: -0.10998535}
+  m_AnchoredPosition: {x: 2.1785889, y: -0.109954834}
   m_SizeDelta: {x: 3, y: -0.21999979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146310027
@@ -1974,24 +1974,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
-  recipes: []
+  resources:
+  - CurrentType: 0
+    price: 411
+    stock: 7
+    produced: 22.21033
+    bought: 56.355236
+    sold: 71.56557
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 391
+    stock: 41
+    produced: 44.425755
+    bought: 71.240906
+    sold: 74.66666
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 299
+    stock: 33
+    produced: 50.92963
+    bought: 67.37343
+    sold: 85.303055
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 477
+    stock: 20
+    produced: 79.04283
+    bought: 42.875256
+    sold: 101.91809
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 264
+    stock: 20
+    produced: 72.35356
+    bought: 30.312996
+    sold: 82.66656
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 384
+    stock: 0
+    produced: 42.936676
+    bought: 84.990036
+    sold: 127.92671
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 416
+    stock: 17
+    produced: 19.72583
+    bought: 42.00509
+    sold: 44.73092
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 358
+    stock: 34
+    produced: 63.95395
+    bought: 35.733135
+    sold: 65.68709
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 381
+    stock: 11
+    produced: 52.78373
+    bought: 63.419815
+    sold: 105.203545
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  recipes:
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 50
+  - input: 
+    inputAmount: []
+    output: 1
+    outputAmount: 5
+  - input: 
+    inputAmount: []
+    output: 2
+    outputAmount: 4
+  - input: 
+    inputAmount: []
+    output: 3
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 4
+    outputAmount: 30
+  - input: 
+    inputAmount: []
+    output: 5
+    outputAmount: 25
+  - input: 
+    inputAmount: []
+    output: 6
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 7
+    outputAmount: 15
+  - input: 
+    inputAmount: []
+    output: 8
+    outputAmount: 10
   population:
     Poor:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Middle:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Rich:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
+    AttachedEconomy: {fileID: 0}
   OwnerName: 
 --- !u!114 &561263022
 MonoBehaviour:
@@ -3152,32 +3273,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
+  resources:
+  - CurrentType: 0
+    price: 350
+    stock: 21
+    produced: 77.95331
+    bought: 62.439793
+    sold: 119.3931
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 318
+    stock: 34
+    produced: 34.600582
+    bought: 77.40407
+    sold: 78.004654
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 143
+    stock: 15
+    produced: 16.517588
+    bought: 68.05023
+    sold: 69.56782
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 121
+    stock: 3
+    produced: 18.900175
+    bought: 9.948851
+    sold: 25.849026
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 237
+    stock: 30
+    produced: 74.231895
+    bought: 54.30468
+    sold: 98.536575
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 391
+    stock: 0
+    produced: 62.801506
+    bought: 41.224976
+    sold: 104.02648
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 370
+    stock: 40
+    produced: 43.809032
+    bought: 62.829235
+    sold: 66.63827
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 170
+    stock: 22
+    produced: 87.678764
+    bought: 72.98837
+    sold: 138.66714
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 176
+    stock: 10
+    produced: 40.374702
+    bought: 81.03012
+    sold: 111.40482
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
   recipes:
   - input: 
     inputAmount: []
     output: 0
-    outputAmount: 0
+    outputAmount: 50
   - input: 
     inputAmount: []
-    output: 0
-    outputAmount: 0
+    output: 1
+    outputAmount: 5
+  - input: 
+    inputAmount: []
+    output: 2
+    outputAmount: 4
+  - input: 
+    inputAmount: []
+    output: 3
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 4
+    outputAmount: 30
+  - input: 
+    inputAmount: []
+    output: 5
+    outputAmount: 25
+  - input: 
+    inputAmount: []
+    output: 6
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 7
+    outputAmount: 15
+  - input: 
+    inputAmount: []
+    output: 8
+    outputAmount: 10
   population:
     Poor:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Middle:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Rich:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
+    AttachedEconomy: {fileID: 0}
   OwnerName: 
 --- !u!114 &907581164
 MonoBehaviour:
@@ -3508,7 +3742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.135, y: 0.11100001}
   m_AnchorMax: {x: 0.86335886, y: 0.24200001}
-  m_AnchoredPosition: {x: 0.6785965, y: 0.6000061}
+  m_AnchoredPosition: {x: 0.67858887, y: 0.6000061}
   m_SizeDelta: {x: 0, y: 1.1499996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212455175
@@ -4333,24 +4567,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
-  recipes: []
+  resources:
+  - CurrentType: 0
+    price: 197
+    stock: 19
+    produced: 19.283567
+    bought: 59.54978
+    sold: 59.83335
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 396
+    stock: 38
+    produced: 74.75846
+    bought: 39.24985
+    sold: 76.008316
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 163
+    stock: 24
+    produced: 90.06192
+    bought: 83.06982
+    sold: 149.13174
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 212
+    stock: 44
+    produced: 46.35921
+    bought: 84.183754
+    sold: 86.54297
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 405
+    stock: 14
+    produced: 20.0198
+    bought: 69.74287
+    sold: 75.762665
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 431
+    stock: 5
+    produced: 92.40274
+    bought: 14.490127
+    sold: 101.89287
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 214
+    stock: 17
+    produced: 98.45592
+    bought: 81.60655
+    sold: 163.06247
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 314
+    stock: 49
+    produced: 69.34272
+    bought: 56.80229
+    sold: 77.14501
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 325
+    stock: 18
+    produced: 72.63123
+    bought: 39.216095
+    sold: 93.84733
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  recipes:
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 50
+  - input: 
+    inputAmount: []
+    output: 1
+    outputAmount: 5
+  - input: 
+    inputAmount: []
+    output: 2
+    outputAmount: 4
+  - input: 
+    inputAmount: []
+    output: 3
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 4
+    outputAmount: 30
+  - input: 
+    inputAmount: []
+    output: 5
+    outputAmount: 25
+  - input: 
+    inputAmount: []
+    output: 6
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 7
+    outputAmount: 15
+  - input: 
+    inputAmount: []
+    output: 8
+    outputAmount: 10
   population:
     Poor:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Middle:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Rich:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
+    AttachedEconomy: {fileID: 0}
   OwnerName: 
 --- !u!114 &1559632079
 MonoBehaviour:
@@ -4618,24 +4973,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
-  recipes: []
+  resources:
+  - CurrentType: 0
+    price: 167
+    stock: 36
+    produced: 77.74345
+    bought: 65.986565
+    sold: 107.73001
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 344
+    stock: 38
+    produced: 61.895447
+    bought: 66.64919
+    sold: 90.54464
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 321
+    stock: 24
+    produced: 49.124718
+    bought: 67.11421
+    sold: 92.23893
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 155
+    stock: 3
+    produced: 4.811218
+    bought: 82.25054
+    sold: 84.06176
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 339
+    stock: 23
+    produced: 28.324034
+    bought: 79.78279
+    sold: 85.10683
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 256
+    stock: 49
+    produced: 63.41872
+    bought: 74.538475
+    sold: 88.9572
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 284
+    stock: 39
+    produced: 47.777817
+    bought: 71.031494
+    sold: 79.80931
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 351
+    stock: 36
+    produced: 92.714096
+    bought: 43.348892
+    sold: 100.06299
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 419
+    stock: 21
+    produced: 46.66707
+    bought: 94.58844
+    sold: 120.25551
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  recipes:
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 50
+  - input: 
+    inputAmount: []
+    output: 1
+    outputAmount: 5
+  - input: 
+    inputAmount: []
+    output: 2
+    outputAmount: 4
+  - input: 
+    inputAmount: []
+    output: 3
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 4
+    outputAmount: 30
+  - input: 
+    inputAmount: []
+    output: 5
+    outputAmount: 25
+  - input: 
+    inputAmount: []
+    output: 6
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 7
+    outputAmount: 15
+  - input: 
+    inputAmount: []
+    output: 8
+    outputAmount: 10
   population:
     Poor:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Middle:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Rich:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
+    AttachedEconomy: {fileID: 0}
   OwnerName: 
 --- !u!114 &1608669568
 MonoBehaviour:
@@ -6690,24 +7166,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ab726842a5dca4186336ba4578e67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
-  recipes: []
+  resources:
+  - CurrentType: 0
+    price: 221
+    stock: 47
+    produced: 64.751785
+    bought: 58.26748
+    sold: 76.019264
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 170
+    stock: 8
+    produced: 35.640636
+    bought: 47.032608
+    sold: 74.67325
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 320
+    stock: 42
+    produced: 44.66897
+    bought: 87.44894
+    sold: 90.117905
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 254
+    stock: 17
+    produced: 69.978165
+    bought: 92.71206
+    sold: 145.69022
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 149
+    stock: 36
+    produced: 44.9319
+    bought: 64.73715
+    sold: 73.66905
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 217
+    stock: 21
+    produced: 67.51914
+    bought: 37.178154
+    sold: 83.697296
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 251
+    stock: 6
+    produced: 66.01785
+    bought: 71.42043
+    sold: 131.4383
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 456
+    stock: 47
+    produced: 73.458145
+    bought: 99.7107
+    sold: 126.168846
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 219
+    stock: 26
+    produced: 57.506386
+    bought: 63.423294
+    sold: 94.92968
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  recipes:
+  - input: 
+    inputAmount: []
+    output: 0
+    outputAmount: 50
+  - input: 
+    inputAmount: []
+    output: 1
+    outputAmount: 5
+  - input: 
+    inputAmount: []
+    output: 2
+    outputAmount: 4
+  - input: 
+    inputAmount: []
+    output: 3
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 4
+    outputAmount: 30
+  - input: 
+    inputAmount: []
+    output: 5
+    outputAmount: 25
+  - input: 
+    inputAmount: []
+    output: 6
+    outputAmount: 7
+  - input: 
+    inputAmount: []
+    output: 7
+    outputAmount: 15
+  - input: 
+    inputAmount: []
+    output: 8
+    outputAmount: 10
   population:
     Poor:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Middle:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
     Rich:
       Amount: 0
       BaseProductivity: 1
       Productivity: 0
       Happiness: 0
+      Demands: []
+    AttachedEconomy: {fileID: 0}
   OwnerName: 
 --- !u!114 &1926906729
 MonoBehaviour:
@@ -7230,7 +7827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179ca7b63f2470247a1deb3640fa7d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayLength: 1
+  DayLength: 2
   OnDay:
     m_PersistentCalls:
       m_Calls: []
@@ -7284,7 +7881,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334cb1bb0260c70448aa171b97b2a513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalInfo: []
+  globalInfo:
+  - CurrentType: 0
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 1
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 2
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 3
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 4
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 5
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 6
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 7
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+  - CurrentType: 8
+    price: 1
+    stock: 0
+    produced: 0
+    bought: 0
+    sold: 0
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
   TradePosts:
   - {fileID: 907581163}
   - {fileID: 1926906728}
