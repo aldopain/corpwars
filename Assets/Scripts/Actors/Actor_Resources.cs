@@ -6,21 +6,38 @@ public class Actor_Resources : MonoBehaviour {
 	[SerializeField]
 	int[] Amount;
 
+	///<summary>
+	///Add or remove resource
+	///</summary>
+	///<param name="index">ID of resource</param>
+	///<param name="amount">Amount of resources to add/remove</param>	
 	public void AddResource(int index, int amount){
 		Amount[index] += amount;
 	}
 
+	///<summary>
+	///Add resource to this inventory
+	///</summary>
+	///<param name="input">Resource to add</param>
 	public void AddResource(Resource_Input input){
 		Amount[input.inputID] += input.amount;
 	}
 
+	///<summary>
+	///Remove resource from this inventroy
+	///</summary>
+	///<param name="index">Resource to remove</param>
 	public void RemoveResource(Resource_Input input){
 		Amount[input.inputID] -= input.amount;
 	}
 
+	///<summary>
+	///Checks for resource availability
+	///</summary>
+	///<param name="index">ID of resource</param>
+	///<param name="amount">Needed amount</param>
+	///<returns>true if enough resources are available</returns>
 	public bool CheckResource(int index, int amount){
-		print("Checking resources of " + name + "; index: " + index + "; amount: " + amount);
-
 		if(Amount[index] >= amount) return true;
 		return false;
 	}

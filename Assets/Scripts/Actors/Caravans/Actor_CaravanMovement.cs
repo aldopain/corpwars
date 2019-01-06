@@ -24,6 +24,9 @@ public class Actor_CaravanMovement : MonoBehaviour {
 		}
 	}
 
+	///<summary>
+	///Move attached NavMeshAgent to the next town
+	///</summary>
 	void GotoNextPoint(){
 		if(agent.enabled){
 			currentRoutePoint = (currentRoutePoint + 1) % Route.Length;
