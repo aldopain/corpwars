@@ -15,7 +15,6 @@ public class Economy_Reporter : MonoBehaviour {
 	}
 
 	public void Report(){
-		print(name + " reporting");
 		for(int i = 0; i < global.producedDay.Length; i++){
 			global.producedDay[i] += local.produced[i];
 			global.producedMonth[i] += local.produced[i];

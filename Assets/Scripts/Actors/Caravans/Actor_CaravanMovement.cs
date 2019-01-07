@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Actor_CaravanMovement : MonoBehaviour {
 	public Transform[] Route;
+	public UnityEvent OnArrival;
 
 	int currentRoutePoint;
 	[HideInInspector]
@@ -18,8 +20,7 @@ public class Actor_CaravanMovement : MonoBehaviour {
 	void Update(){
 		if(agent.enabled){
 			if(agent.remainingDistance < 0.5f){
-				GetComponent<Actor_TradeController>().Trade(currentRoutePoint);
-				GotoNextPoint();
+				_OnArrival();
 			}	
 		}
 	}
@@ -32,5 +33,11 @@ public class Actor_CaravanMovement : MonoBehaviour {
 			currentRoutePoint = (currentRoutePoint + 1) % Route.Length;
 			agent.SetDestination(Route[currentRoutePoint].position);
 		}
-	}	
+	}
+
+	void _OnArrival(){
+		GetComponent<Actor_TradeController>().Trade(currentRoutePoint);
+		GotoNextPoint();
+		OnArrival.Invoke();
+	}
 }

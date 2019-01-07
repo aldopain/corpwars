@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Economy_Global : MonoBehaviour {
-	public int[] producedDay;				
-	public int[] boughtDay;				
-	public int[] soldDay;
+	public double[] producedDay;				
+	public double[] boughtDay;				
+	public double[] soldDay;
 
-	public int[] producedMonth;				
-	public int[] boughtMonth;				
-	public int[] soldMonth;
+	public double[] producedMonth;				
+	public double[] boughtMonth;				
+	public double[] soldMonth;
 
-	public int[] producedLifetime;				
-	public int[] boughtLifetime;				
-	public int[] soldLifetime;
+	public double[] producedLifetime;				
+	public double[] boughtLifetime;				
+	public double[] soldLifetime;
 
 	public int[] pricing;
 
@@ -22,17 +22,22 @@ public class Economy_Global : MonoBehaviour {
 		gl.GetComponent<System_Time>().OnDay.AddListener(UpdateDay);
 		gl.GetComponent<System_Time>().OnMonth.AddListener(Clear_Month);
 
-		producedDay = new int[gl.ResourcesList.Length];
-		boughtDay = new int[gl.ResourcesList.Length];
-		soldDay = new int[gl.ResourcesList.Length];
+		producedDay = new double[gl.ResourcesList.Length];
+		boughtDay = new double[gl.ResourcesList.Length];
+		soldDay = new double[gl.ResourcesList.Length];
 
-		producedMonth = new int[gl.ResourcesList.Length];
-		boughtMonth = new int[gl.ResourcesList.Length];
-		soldMonth = new int[gl.ResourcesList.Length];
+		producedMonth = new double[gl.ResourcesList.Length];
+		boughtMonth = new double[gl.ResourcesList.Length];
+		soldMonth = new double[gl.ResourcesList.Length];
 
-		producedMonth = new int[gl.ResourcesList.Length];
-		boughtMonth = new int[gl.ResourcesList.Length];
-		soldMonth = new int[gl.ResourcesList.Length];
+		producedMonth = new double[gl.ResourcesList.Length];
+		boughtMonth = new double[gl.ResourcesList.Length];
+		soldMonth = new double[gl.ResourcesList.Length];
+
+		pricing = new int[gl.ResourcesList.Length];
+		for(int i = 0; i < pricing.Length;i++){
+			pricing[i] = Random.Range(0, 100);
+		}
 	}
 
 	void Start(){

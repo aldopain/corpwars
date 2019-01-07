@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Actor_Resources : MonoBehaviour {
 	[SerializeField]
-	int[] Amount;
-
+	double[] Amount;
+	public string Owner;
 	///<summary>
 	///Add or remove resource
 	///</summary>
 	///<param name="index">ID of resource</param>
 	///<param name="amount">Amount of resources to add/remove</param>	
-	public void AddResource(int index, int amount){
+	public void AddResource(int index, double amount){
 		Amount[index] += amount;
 	}
 
@@ -37,8 +37,12 @@ public class Actor_Resources : MonoBehaviour {
 	///<param name="index">ID of resource</param>
 	///<param name="amount">Needed amount</param>
 	///<returns>true if enough resources are available</returns>
-	public bool CheckResource(int index, int amount){
+	public bool CheckResource(int index, double amount){
 		if(Amount[index] >= amount) return true;
 		return false;
+	}
+
+	public double GetResource(int index){
+		return Amount[index];
 	}
 }

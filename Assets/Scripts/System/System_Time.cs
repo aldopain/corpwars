@@ -15,7 +15,6 @@ public class System_Time : MonoBehaviour {
 	
 	public int Day{
 		get{
-			//return _days;
 			return (_days - ((YEAR_LENGTH * MONTH_LENGTH) * Year)) % MONTH_LENGTH;
 		}
 	}

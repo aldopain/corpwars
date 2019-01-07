@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44098112, g: 0.48218733, b: 0.52917314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,13 +172,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.07415354, y: -0.18109559, z: 0.18491006, w: 0.9630753}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.111001, y: -19.19, z: 19.682001}
 --- !u!1 &195986949
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,15 +296,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef55494a6438fb4f9af7f47e3f50abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  producedDay: 000000000000000000000000000000000000000000000000000000000000000000000000
-  boughtDay: 000000000000000000000000000000000000000000000000000000000000000000000000
-  soldDay: 000000000000000000000000000000000000000000000000000000000000000000000000
-  producedMonth: 000000000000000000000000000000000000000000000000000000000000000000000000
-  boughtMonth: 000000000000000000000000000000000000000000000000000000000000000000000000
-  soldMonth: 000000000000000000000000000000000000000000000000000000000000000000000000
-  producedLifetime: 000000000000000000000000000000000000000000000000000000000000000000000000
-  boughtLifetime: 000000000000000000000000000000000000000000000000000000000000000000000000
-  soldLifetime: 000000000000000000000000000000000000000000000000000000000000000000000000
+  producedDay: []
+  boughtDay: []
+  soldDay: []
+  producedMonth: []
+  boughtMonth: []
+  soldMonth: []
+  producedLifetime: []
+  boughtLifetime: []
+  soldLifetime: []
   pricing: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &280066175
 GameObject:
@@ -314,6 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 280066176}
+  - component: {fileID: 280066177}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -334,6 +335,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &280066177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280066175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0ba6b96fdae9841ae014742b8533ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amount: 100000
 --- !u!1 &356800522
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +429,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -476,12 +490,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 2.8, y: 8.97, z: 12.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85973a6458ee4b84faee358984173c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  EdgeRadius: 0
+  EdgeScrolling: 0
+  KeyScrolling: 1
+  ZoomSpeed_Position: 0
+  ZoomSpeed_Rotation: 0
+  ZoomLimit_Position: {x: 0, y: 0}
+  ZoomLimit_Rotation: {x: 0, y: 0}
+--- !u!1 &585792950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585792952}
+  - component: {fileID: 585792951}
+  m_Layer: 0
+  m_Name: OtherPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &585792951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585792950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0ba6b96fdae9841ae014742b8533ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amount: 10000
+--- !u!4 &585792952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585792950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.76, y: 0.45, z: 26.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170437461
 GameObject:
@@ -494,7 +568,6 @@ GameObject:
   - component: {fileID: 1170437470}
   - component: {fileID: 1170437469}
   - component: {fileID: 1170437468}
-  - component: {fileID: 1170437467}
   - component: {fileID: 1170437466}
   - component: {fileID: 1170437465}
   - component: {fileID: 1170437464}
@@ -520,11 +593,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 0}
-  produced: 
-  bought: 
-  sold: 
-  prices: 
-  baseValues: 
+  population: {fileID: 0}
+  produced: []
+  bought: []
+  sold: []
+  priceModifiers: []
 --- !u!114 &1170437463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abb7ecac4d86c4f8d2b0fcfbeab164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 050000000500000005000000050000000500000005000000050000000500000005000000
+  Amount: []
+  Owner: OtherPlayer
 --- !u!114 &1170437465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,30 +650,19 @@ MonoBehaviour:
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
+    Demands: []
   Middle:
     Amount: 0
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
+    Demands: []
   Rich:
     Amount: 0
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
---- !u!114 &1170437467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1170437461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4518875ad0b858d418fa9e857fc0b941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    Demands: []
 --- !u!65 &1170437468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -689,7 +752,6 @@ GameObject:
   - component: {fileID: 1241582737}
   - component: {fileID: 1241582736}
   - component: {fileID: 1241582735}
-  - component: {fileID: 1241582744}
   - component: {fileID: 1241582743}
   - component: {fileID: 1241582742}
   - component: {fileID: 1241582741}
@@ -782,11 +844,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 0}
-  produced: 
-  bought: 
-  sold: 
-  prices: 
-  baseValues: 
+  population: {fileID: 0}
+  produced: []
+  bought: []
+  sold: []
+  priceModifiers: []
 --- !u!114 &1241582740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,7 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abb7ecac4d86c4f8d2b0fcfbeab164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 050000000500000005000000050000000500000005000000050000000500000005000000
+  Amount: []
+  Owner: OtherPlayer
 --- !u!114 &1241582742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,30 +901,19 @@ MonoBehaviour:
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
+    Demands: []
   Middle:
     Amount: 0
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
+    Demands: []
   Rich:
     Amount: 0
     BaseProductivity: 0
     Productivity: 0
     Happiness: 0
-    Demands: 000000000000000000000000000000000000000000000000000000000000000000000000
---- !u!114 &1241582744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1241582734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4518875ad0b858d418fa9e857fc0b941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    Demands: []
 --- !u!114 &1241582745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1050,11 @@ MonoBehaviour:
   Route:
   - {fileID: 1241582738}
   - {fileID: 1170437471}
+  OnArrival:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   agent: {fileID: 0}
 --- !u!114 &1879740254
 MonoBehaviour:
@@ -1010,7 +1067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abb7ecac4d86c4f8d2b0fcfbeab164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 000000000000000000000000000000000000000000000000000000000000000000000000
+  Amount: []
+  Owner: Player
 --- !u!114 &1879740255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,3 +1092,51 @@ MonoBehaviour:
       amount: -1
     - inputID: 0
       amount: 1
+--- !u!1 &2094410161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094410162}
+  - component: {fileID: 2094410164}
+  - component: {fileID: 2094410163}
+  m_Layer: 0
+  m_Name: Road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094410162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094410161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.886093, y: 3.6292253, z: 17.716055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2094410163
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094410161}
+  m_Mesh: {fileID: 0}
+--- !u!114 &2094410164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094410161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c39e60d26c1214283ca8b2307ea4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
