@@ -74,6 +74,12 @@ public class Economy_Local : MonoBehaviour {
 		return false;
 	}
 
+    /// <summary>
+    /// Calculates price of resources for a specified amount
+    /// </summary>
+    /// <param name="index">Resource</param>
+    /// <param name="amount">Amount in transaction</param>
+    /// <returns>Price</returns>
 	int CalculatePrice(int index, double amount){
 		double K = priceModifiers[index];
 		int B = globalEconomy.pricing[index];
@@ -86,6 +92,12 @@ public class Economy_Local : MonoBehaviour {
 		return S;
 	}
 
+    /// <summary>
+    /// Trading between two Actor_Resources (usually between a town and a caravan) 
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="other"></param>
+    /// <returns>true if trade was successful, otherwise false</returns>
 	public bool Trade(Resource_Input input, Actor_Resources other){
 		return Trade(input.inputID, input.amount, other);
 	}
@@ -100,6 +112,9 @@ public class Economy_Local : MonoBehaviour {
 		if(amount < 0) sold[index] += System.Math.Abs(amount);
 	}
 
+    /// <summary>
+    /// Clears all declared resources
+    /// </summary>
 	public void ClearDeclarations(){
 		for(int i = 0; i < produced.Length; i++){
 			produced[i] = 0;

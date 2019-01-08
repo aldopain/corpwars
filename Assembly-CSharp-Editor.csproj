@@ -53,7 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Editor\Editor_RoadGenerator.cs" />
+     <Compile Include="Assets\Scripts\Editor\Editor_ResourceValidator.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Dev/Games/corpwars/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

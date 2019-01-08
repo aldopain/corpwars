@@ -45,4 +45,9 @@ public class Actor_Resources : MonoBehaviour {
 	public double GetResource(int index){
 		return Amount[index];
 	}
+
+    public int Debug_GetResourceLength()
+    {
+        return Amount.Length;
+    }
 }

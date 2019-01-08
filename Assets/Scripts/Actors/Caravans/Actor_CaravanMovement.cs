@@ -6,7 +6,10 @@ using UnityEngine.Events;
 
 public class Actor_CaravanMovement : MonoBehaviour {
 	public Transform[] Route;
-	public UnityEvent OnArrival;
+    /// <summary>
+    /// Invokes when this actor arrives at the next Route Point
+    /// </summary>
+    public UnityEvent OnArrival;
 
 	int currentRoutePoint;
 	[HideInInspector]
@@ -35,6 +38,9 @@ public class Actor_CaravanMovement : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Gets called when actor arrives at the next Route Point
+    /// </summary>
 	void _OnArrival(){
 		GetComponent<Actor_TradeController>().Trade(currentRoutePoint);
 		GotoNextPoint();

@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 280066177}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 585792951}
   m_Layer: 0
   m_Name: OtherPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 1170437472}
   m_Layer: 0
   m_Name: Town (1)
-  m_TagString: Untagged
+  m_TagString: Town
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,10 +594,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: {fileID: 0}
   population: {fileID: 0}
-  produced: []
-  bought: []
-  sold: []
-  priceModifiers: []
+  produced:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  bought:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  sold:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  priceModifiers:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &1170437463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,7 +656,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abb7ecac4d86c4f8d2b0fcfbeab164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: []
+  Amount:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   Owner: OtherPlayer
 --- !u!114 &1170437465
 MonoBehaviour:
@@ -633,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5f24b89b7e8ef4da74ff575fe94c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceID: 01000000
+  resourceID: 010000000200000003000000ffffffff0a000000
 --- !u!114 &1170437466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,7 +805,7 @@ GameObject:
   - component: {fileID: 1241582745}
   m_Layer: 0
   m_Name: Town
-  m_TagString: Untagged
+  m_TagString: Town
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -845,10 +890,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: {fileID: 0}
   population: {fileID: 0}
-  produced: []
-  bought: []
-  sold: []
-  priceModifiers: []
+  produced:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  bought:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  sold:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  priceModifiers:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &1241582740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,7 +952,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abb7ecac4d86c4f8d2b0fcfbeab164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: []
+  Amount:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   Owner: OtherPlayer
 --- !u!114 &1241582742
 MonoBehaviour:
@@ -942,7 +1032,7 @@ GameObject:
   - component: {fileID: 1879740255}
   m_Layer: 0
   m_Name: Caravan
-  m_TagString: Untagged
+  m_TagString: Caravan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
