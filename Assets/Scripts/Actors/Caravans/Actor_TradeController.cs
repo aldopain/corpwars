@@ -32,4 +32,9 @@ public class Actor_TradeController : MonoBehaviour {
 			town.Trade(input, GetComponent<Actor_Resources>());
 		}
 	}
+
+    public float StopLength(int index)
+    {
+        return _TradeInput[index].trade.Length;
+    }
 }

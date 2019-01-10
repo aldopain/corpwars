@@ -61,6 +61,10 @@
      <Compile Include="Assets\Scripts\Economy\Economy_Local.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Reporter.cs" />
      <Compile Include="Assets\Scripts\Navigation\Navigation_Road.cs" />
+     <Compile Include="Assets\Scripts\Navigation\NavigationLine.cs" />
+     <Compile Include="Assets\Scripts\Navigation\NavigationNode.cs" />
+     <Compile Include="Assets\Scripts\Navigation\NavigationSystem.cs" />
+     <Compile Include="Assets\Scripts\Navigation\NavigationWay.cs" />
      <Compile Include="Assets\Scripts\Resources\Resource.cs" />
      <Compile Include="Assets\Scripts\Resources\Resource_ConvertionRecipe.cs" />
      <Compile Include="Assets\Scripts\Resources\Resource_GlobalList.cs" />

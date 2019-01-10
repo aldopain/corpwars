@@ -30,9 +30,9 @@ public class Economy_Global : MonoBehaviour {
 		boughtMonth = new double[gl.ResourcesList.Length];
 		soldMonth = new double[gl.ResourcesList.Length];
 
-		producedMonth = new double[gl.ResourcesList.Length];
-		boughtMonth = new double[gl.ResourcesList.Length];
-		soldMonth = new double[gl.ResourcesList.Length];
+		producedLifetime = new double[gl.ResourcesList.Length];
+		boughtLifetime = new double[gl.ResourcesList.Length];
+		soldLifetime = new double[gl.ResourcesList.Length];
 
 		pricing = new int[gl.ResourcesList.Length];
 		for(int i = 0; i < pricing.Length;i++){
