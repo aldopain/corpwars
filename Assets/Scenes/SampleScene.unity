@@ -1003,9 +1003,9 @@ MonoBehaviour:
   - {fileID: 1790652294}
   ways: []
   nearby:
-  - {fileID: 1790652293}
   - {fileID: 356800523}
   - {fileID: 1170437468}
+  - {fileID: 1790652293}
   - {fileID: 1879740248}
 --- !u!65 &1170437468
 BoxCollider:
@@ -1583,9 +1583,9 @@ MonoBehaviour:
   - {fileID: 1170437467}
   ways: []
   nearby:
-  - {fileID: 1790652293}
   - {fileID: 356800523}
   - {fileID: 1170437468}
+  - {fileID: 1790652293}
 --- !u!114 &1790652295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1931,12 +1931,13 @@ MonoBehaviour:
   Route:
   - {fileID: 1241582738}
   - {fileID: 1170437471}
+  - {fileID: 1790652303}
   OnArrival:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  ReverseOnCompletion: 0
+  ReverseOnCompletion: 1
   agent: {fileID: 0}
 --- !u!114 &1879740254
 MonoBehaviour:
