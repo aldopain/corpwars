@@ -209,42 +209,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourcesList:
-  - Name: Wood
-    Description: 
-    Recipe:
-      input: []
-  - Name: Iron
-    Description: 
-    Recipe:
-      input: []
-  - Name: Aluminum
-    Description: 
-    Recipe:
-      input: []
-  - Name: Titan
-    Description: 
-    Recipe:
-      input: []
-  - Name: Uranium
-    Description: 
-    Recipe:
-      input: []
-  - Name: PreciousMetals
-    Description: 
-    Recipe:
-      input: []
-  - Name: Himium
-    Description: 
-    Recipe:
-      input: []
-  - Name: Manum
-    Description: 
-    Recipe:
-      input: []
-  - Name: Fuel
-    Description: 
-    Recipe:
-      input: []
+  - {fileID: 11400000, guid: 9a7b7d5e52b429142b26ff8781ee425e, type: 2}
+  - {fileID: 11400000, guid: 1e7f21e916f368540851d687e2149620, type: 2}
+  - {fileID: 11400000, guid: 10b1bce103cfe6d41ae0208ae3860a2c, type: 2}
+  - {fileID: 11400000, guid: 68dca68694368aa49a15a5e5fac832b9, type: 2}
+  - {fileID: 11400000, guid: 4443efa8139270d4d8c9f02ccf02cba1, type: 2}
+  - {fileID: 11400000, guid: 10a01f2c1b6a4a14f98c25d0d05b0aa7, type: 2}
+  - {fileID: 11400000, guid: cebf3930b198aae4ea5eceb76e16efd5, type: 2}
+  - {fileID: 11400000, guid: 213baddd30d7f2f4997d6004e29b8888, type: 2}
+  - {fileID: 11400000, guid: f77c8be985bcbbf44b8487fb4617a43d, type: 2}
 --- !u!4 &195986951
 Transform:
   m_ObjectHideFlags: 0
@@ -1821,6 +1794,7 @@ GameObject:
   - component: {fileID: 1879740253}
   - component: {fileID: 1879740254}
   - component: {fileID: 1879740255}
+  - component: {fileID: 1879740256}
   m_Layer: 0
   m_Name: Caravan
   m_TagString: Caravan
@@ -1931,7 +1905,6 @@ MonoBehaviour:
   Route:
   - {fileID: 1241582738}
   - {fileID: 1170437471}
-  - {fileID: 1790652303}
   OnArrival:
     m_PersistentCalls:
       m_Calls: []
@@ -1984,6 +1957,19 @@ MonoBehaviour:
       amount: -1
     - inputID: 0
       amount: 1
+--- !u!114 &1879740256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879740247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4e2a85316d79b42b1e3cc0b149850d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShipList:
+  - {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49, type: 2}
 --- !u!1 &2094410161
 GameObject:
   m_ObjectHideFlags: 0

@@ -56,7 +56,9 @@
      <Compile Include="Assets\Scripts\Actors\Actor_Resources.cs" />
      <Compile Include="Assets\Scripts\Actors\Caravans\Actor_CaravanMovement.cs" />
      <Compile Include="Assets\Scripts\Actors\Caravans\Actor_TradeController.cs" />
+     <Compile Include="Assets\Scripts\Actors\Caravans\Caravan_UnitManager.cs" />
      <Compile Include="Assets\Scripts\Actors\Players\Player_Money.cs" />
+     <Compile Include="Assets\Scripts\Actors\Ships\Ship_BaseInfo.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Global.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Local.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Reporter.cs" />
