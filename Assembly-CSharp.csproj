@@ -72,10 +72,12 @@
      <Compile Include="Assets\Scripts\Resources\Resource_GlobalList.cs" />
      <Compile Include="Assets\Scripts\Resources\Resource_Input.cs" />
      <Compile Include="Assets\Scripts\System\System_Camera.cs" />
+     <Compile Include="Assets\Scripts\System\System_SelectionManager.cs" />
      <Compile Include="Assets\Scripts\System\System_Time.cs" />
      <Compile Include="Assets\Scripts\Towns\Town_Population.cs" />
      <Compile Include="Assets\Scripts\Towns\Town_Production.cs" />
      <Compile Include="Assets\Scripts\Towns\Town_UnitManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UI_Tooltip.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Dev/Games/corpwars/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

@@ -35,4 +35,9 @@ public class Editor_Ship_BaseInfo : Editor{
         ship.Defence = Random.Range(0, 10);
         
     }
+
+    void GUI_ShowResource(Ship_BaseInfo editTarget)
+    {
+
+    }
 }
