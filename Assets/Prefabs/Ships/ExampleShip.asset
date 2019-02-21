@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: ExampleShip
   m_EditorClassIdentifier: 
   Name: 
-  Speed: 1
+  Speed: 3
   InventorySize: 5
   Attack: 3
   Defence: 1

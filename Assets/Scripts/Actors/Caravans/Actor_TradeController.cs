@@ -52,6 +52,7 @@ public class Actor_TradeController : MonoBehaviour {
 		foreach(Resource_Input input in _TradeInput[townIndex].trade){
 			town.Trade(input, GetComponent<Actor_Resources>());
 		}
+        GetComponent<Caravan_UnitManager>().SetCaravanSpeed();
 	}
 
     public float StopLength(int index)

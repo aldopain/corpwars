@@ -38,6 +38,7 @@ public class Editor_Resource : Editor{
         editTarget.Name = EditorGUILayout.TextField("Name", editTarget.Name);
         EditorGUILayout.LabelField("Description");
         editTarget.Description = EditorGUILayout.TextArea(editTarget.Description);
+        //EditorGUI.obj
         EditorGUILayout.LabelField("Recipe");
         editTarget.ConvertionOutput = EditorGUILayout.DoubleField("Convertion Output", editTarget.ConvertionOutput);
     }
