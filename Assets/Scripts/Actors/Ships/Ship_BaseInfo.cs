@@ -10,4 +10,5 @@ public class Ship_BaseInfo:ScriptableObject{
     public double Attack;
     public double Defence;
     public double Health = 1;
+    public Mesh mesh;
 }

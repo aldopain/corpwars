@@ -5,6 +5,9 @@ using UnityEditor;
 
 [CustomEditor(typeof(Ship_BaseInfo))]
 public class Editor_Ship_BaseInfo : Editor{
+    Editor MeshEditor;
+    Mesh prevShipMesh;
+
     public override void OnInspectorGUI()
     {
         Ship_BaseInfo editTarget = (Ship_BaseInfo)target;
@@ -24,6 +27,11 @@ public class Editor_Ship_BaseInfo : Editor{
         editTarget.Defence = EditorGUILayout.DoubleField("Defence", editTarget.Defence);
 
         if (GUILayout.Button("Randomize")) Randomize(editTarget);
+
+        editTarget.mesh = (Mesh)EditorGUILayout.ObjectField(editTarget.mesh, typeof(Mesh), false);
+
+        GUI_ShowModelPreview(editTarget);
+        prevShipMesh = editTarget.mesh;
     }
 
     void Randomize(Ship_BaseInfo ship)
@@ -39,5 +47,21 @@ public class Editor_Ship_BaseInfo : Editor{
     void GUI_ShowResource(Ship_BaseInfo editTarget)
     {
 
+    }
+
+    void GUI_ShowModelPreview(Ship_BaseInfo ship)
+    {
+        GUIStyle bgStyle = new GUIStyle();
+        bgStyle.normal.background = EditorGUIUtility.whiteTexture;
+
+        if (ship.mesh != null)
+        {
+            if (MeshEditor == null || prevShipMesh != ship.mesh)
+            {
+                MeshEditor = Editor.CreateEditor(ship.mesh);
+            }
+
+            MeshEditor.OnInteractivePreviewGUI(GUILayoutUtility.GetRect(256, 256), bgStyle);
+        }
     }
 }

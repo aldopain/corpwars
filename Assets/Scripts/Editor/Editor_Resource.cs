@@ -34,7 +34,11 @@ public class Editor_Resource : Editor{
 
     void GUI_ShowVisuals(Resource editTarget)
     {
-        EditorGUILayout.LabelField("Visuals");
+        EditorGUILayout.LabelField("Visuals", EditorStyles.boldLabel);
+        GUILayout.Space(64);
+        Rect spriteRect = new Rect(Screen.width - 70, 64, 64, 64);
+        editTarget.Image = (Sprite)EditorGUI.ObjectField(spriteRect, editTarget.Image, typeof(Sprite), false);
+
         editTarget.Name = EditorGUILayout.TextField("Name", editTarget.Name);
         EditorGUILayout.LabelField("Description");
         editTarget.Description = EditorGUILayout.TextArea(editTarget.Description);

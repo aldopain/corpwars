@@ -17,3 +17,4 @@ MonoBehaviour:
   Attack: 0
   Defence: 0
   Health: 1
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
