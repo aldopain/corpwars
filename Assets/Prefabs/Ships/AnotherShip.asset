@@ -17,4 +17,4 @@ MonoBehaviour:
   Attack: 6
   Defence: 4
   Health: 8
-  mesh: {fileID: 0}
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
