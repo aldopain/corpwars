@@ -14,8 +14,14 @@ public class NavigationSystem : MonoBehaviour {
 		var tmp = GameObject.FindGameObjectsWithTag("TradePost");
 		foreach (var current in tmp)
 			allPoints.Add(current.GetComponent<NavigationNode>());
-		foreach (var current in allPoints)
-			current.ways = Dijkstra(current);
+		for (int i = 0; i < allPoints.Count; i++) {
+			string a = i + " : ";
+			for (int j = 0; j < allPoints[i].Neighbours.Count; j++) { 
+				a += allPoints.IndexOf(allPoints[i].Neighbours[j]) + ", ";
+			}
+		}
+		foreach(var _current in allPoints)
+			_current.ways = Dijkstra(_current);
 	}
 
 	List<NavigationWay> Dijkstra (NavigationNode start) {
@@ -33,33 +39,34 @@ public class NavigationSystem : MonoBehaviour {
 		for (int i = 0; i < allPoints.Count; i++)                               //Цикл по всем вершинам 
 		{
 			current = MinDist(dist, passed);
-
-			for (int j = 0; j < allPoints[current].Neighbours.Count; j++)       //Для всех соседей текущей вершины
-			{
-				List<int> points = new List<int>();
-
-				for (int k = 0; k < allPoints[current].Neighbours.Count; k++)   //Составляем список соседей, которых надо пройти
+			if (current != -1) {
+				for (int j = 0; j < allPoints[current].Neighbours.Count; j++)       //Для всех соседей текущей вершины
 				{
-					int neighboor = allPoints.IndexOf(allPoints[current].Neighbours[k]);    //Индекс соседа в глобали
-					if (allPoints[current].Distance(allPoints[k]) > 0 && !passed[neighboor])       //Если расстояние до k-того соседа есть и этот сосед не пройден
+					List<int> points = new List<int>();
+
+					for (int k = 0; k < allPoints[current].Neighbours.Count; k++)   //Составляем список соседей, которых надо пройти
 					{
-						points.Add(neighboor);                                      //Добавляем его
+						int neighboor = allPoints.IndexOf(allPoints[current].Neighbours[k]);    //Индекс соседа в глобали
+						if (allPoints[current].Distance(allPoints[k]) > 0 && !passed[neighboor])       //Если расстояние до k-того соседа есть и этот сосед не пройден
+						{
+							points.Add(neighboor);                                      //Добавляем его
+						}
+					}
+
+					points = Sort(current, points, allPoints);
+
+					for (int k = 0; k < points.Count; k++)
+					{
+						double d = allPoints[current].Distance(allPoints[points[k]]);                         //Расстояние из текущей вершины до новой из списка 
+						if (dist[points[k]] < 0 || d + dist[current] < dist[points[k]])   //Если расстояние до вершины была бесконечна, или расстояние между вершинами + вес текущей вершины меньше веса куда смотрим
+						{
+							dist[points[k]] = d + dist[current];    //Значит новый путь короче (поверь, оно работает...)
+						}
 					}
 				}
 
-				points = Sort(current, points, allPoints);
-
-				for (int k = 0; k < points.Count; k++)
-				{
-					double d = allPoints[current].Distance(allPoints[points[k]]);                         //Расстояние из текущей вершины до новой из списка 
-					if (dist[points[k]] < 0 || d + dist[current] < dist[points[k]])   //Если расстояние до вершины была бесконечна, или расстояние между вершинами + вес текущей вершины меньше веса куда смотрим
-					{
-						dist[points[k]] = d + dist[current];    //Значит новый путь короче (поверь, оно работает...)
-					}
-				}
+				passed[current] = true;
 			}
-
-			passed[current] = true; //Помечаем текущую вершину как пройденную
 		}
 
 		//На данный момент мы в dist имеем из точки start все кратчайшие пути
@@ -105,12 +112,13 @@ public class NavigationSystem : MonoBehaviour {
 	static int MinDist(double[] dist, bool[] passed)    //Минимальная дистанция вершины из начала
 	{
 		int result = -1;
+		string aa = "";
+		foreach (var a in dist)
+			aa += a + " ";
 		for (int i = 0; i < dist.Length; i++)
-		{
+		{	
 			if (!(dist[i] < 0) && !passed[i] && (result < 0 ||  dist[i] < dist[result])) //Если вершину еще не проходили и "Вес" вершины не "бесконечность" и "Вес" вершины текущей меньше прошлого
-			{
 				result = i;
-			}
 		}
 
 		return result;

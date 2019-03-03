@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigationWay : MonoBehaviour {
+public class NavigationWay : ScriptableObject {
 	NavigationNode start;
 	NavigationNode destination;
 	List<NavigationNode> points;
@@ -21,7 +21,7 @@ public class NavigationWay : MonoBehaviour {
 
 	public NavigationWay (List<NavigationNode> p) {
 		start = p[0];
-		destination = p[p.Count];
+		destination = p[p.Count - 1];
 		SetPoints(p);
 	}
 
