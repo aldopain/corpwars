@@ -958,6 +958,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceID: 0100000002000000
+  inputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  outputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &1170437466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,6 +1337,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceID: 00000000
+  inputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  outputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &1241582743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,6 +1947,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceID: 0100000002000000
+  inputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  outputModifier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &1790652300
 MonoBehaviour:
   m_ObjectHideFlags: 0

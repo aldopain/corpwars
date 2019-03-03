@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Caravan_UnitManager : MonoBehaviour {
     public List<Ship_BaseInfo> ShipList;
-	
+	public float SpeedModifier = 1f;
 	void Start () {
 		SetCaravanSpeed();
 	}
@@ -23,10 +23,7 @@ public class Caravan_UnitManager : MonoBehaviour {
 			combinedInvSize += info.InventorySize;
 		}	
 
-
-		//if(GetComponent<Actor_Resources>().GetAllResources() == 0) return min;
-
-		return min * (1 - (float)(GetComponent<Actor_Resources>().GetAllResources()/combinedInvSize));
+		return min * (1 - (float)(GetComponent<Actor_Resources>().GetAllResources()/combinedInvSize)) * SpeedModifier;
 	}
 
 	public void SetCaravanSpeed(float s){

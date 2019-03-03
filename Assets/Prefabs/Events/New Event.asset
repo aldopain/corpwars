@@ -17,8 +17,4 @@ MonoBehaviour:
   Buttons:
   - Label: This is written on the button
     Tooltip: This is a mouseover tooltip
-    Action: 'PrintString:fuck
-
-      Sqr:2
-
-      Add:2,3'
+    Action: AddNeighbour:Town,Town (2)

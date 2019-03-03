@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;
 using System.Linq;
+using UnityEditor;
 
 public class Events_Manager : MonoBehaviour {
 	public List<Events_Base> MonthlyEvents;
@@ -22,12 +23,11 @@ public class Events_Manager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		time.OnDay.AddListener(TickDays);
-		ParseActions(MonthlyEvents[0].Buttons[0].Action);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetKeyDown(KeyCode.Space)) ParseActions(MonthlyEvents[0].Buttons[0].Action);
 	}
 
 	public void TickDays(){
