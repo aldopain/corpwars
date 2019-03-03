@@ -37,7 +37,7 @@ public class Economy_Local : MonoBehaviour {
 
 	// Update is called once per day
 	void UpdateDay(){
-
+        
 	}
 
 	///
@@ -121,6 +121,5 @@ public class Economy_Local : MonoBehaviour {
 			bought[i] = 0;
 			sold[i] = 0;
 		}
-
 	}
 }

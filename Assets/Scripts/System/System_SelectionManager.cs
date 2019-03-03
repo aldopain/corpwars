@@ -39,12 +39,12 @@ public class System_SelectionManager : MonoBehaviour {
         if (Physics.Raycast(ray, out hit) && isRaycastTarget(hit.collider.tag))
         {
             SetMouseOver(hit.collider.gameObject);
-            ShowTooltip(hit.collider.gameObject, cam.WorldToScreenPoint(hit.point));
+            //ShowTooltip(hit.collider.gameObject, cam.WorldToScreenPoint(hit.point));
         }
         else
         {
             SetMouseOver(null);
-            ShowTooltip(null,Vector2.zero);
+            //ShowTooltip(null,Vector2.zero);
         }
 
         if (Input.GetMouseButtonUp(0) && mouseOverObject)

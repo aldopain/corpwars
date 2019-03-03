@@ -31,6 +31,18 @@ public class System_Time : MonoBehaviour {
 		}
 	}
 
+	public int Month_DayCount{
+		get{
+			return MONTH_LENGTH;
+		}
+	}
+
+	public int Year_DayCount{
+		get{
+			return YEAR_LENGTH * MONTH_LENGTH;
+		}
+	}
+
 	void Start(){
 		StartCoroutine(Clock());
 	}

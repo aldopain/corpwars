@@ -62,6 +62,10 @@
      <Compile Include="Assets\Scripts\Economy\Economy_Global.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Local.cs" />
      <Compile Include="Assets\Scripts\Economy\Economy_Reporter.cs" />
+     <Compile Include="Assets\Scripts\Events\Events_Base.cs" />
+     <Compile Include="Assets\Scripts\Events\Events_ChoiceButton.cs" />
+     <Compile Include="Assets\Scripts\Events\Events_Logic.cs" />
+     <Compile Include="Assets\Scripts\Events\Events_Manager.cs" />
      <Compile Include="Assets\Scripts\Navigation\Navigation_Road.cs" />
      <Compile Include="Assets\Scripts\Navigation\NavigationLine.cs" />
      <Compile Include="Assets\Scripts\Navigation\NavigationNode.cs" />
@@ -77,6 +81,7 @@
      <Compile Include="Assets\Scripts\Towns\Town_Population.cs" />
      <Compile Include="Assets\Scripts\Towns\Town_Production.cs" />
      <Compile Include="Assets\Scripts\Towns\Town_UnitManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UI_EventMessage.cs" />
      <Compile Include="Assets\Scripts\UI\UI_Tooltip.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Dev/Games/corpwars/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

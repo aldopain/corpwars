@@ -13,9 +13,12 @@ public class UI_Tooltip : MonoBehaviour {
 
     bool isDestroying;
 
-    void Start()
-    {
+    void OnMouseOver(){
+        Show(Input.mousePosition);
+    }
 
+    void OnMouseExit(){
+        Hide();
     }
 
     public void Show(Vector2 position)

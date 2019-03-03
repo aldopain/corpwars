@@ -28,10 +28,14 @@ public class Town_Production : MonoBehaviour {
 		}
 
 		for(int i = 0; i < gl.ResourcesList[index].Recipe.input.Length; i++){											//detract base resources that are needed to create new one 
-			economy.resources.AddResource(gl.ResourcesList[index].Recipe.input[i]);
+			economy.resources.RemoveResource(gl.ResourcesList[index].Recipe.input[i]);
 		}
 
-		economy.resources.AddResource(index, 1);																		//add new resource to the pile
+        for(int i = 0; i < gl.ResourcesList[index].Recipe.output.Length; i++)                                           //add new resource to the pile
+        {
+            economy.resources.AddResource(gl.ResourcesList[index].Recipe.output[i]);
+        }
+		                    																		
 
 		economy.DeclareProduction(index, 1);																			//declare production
 	}
