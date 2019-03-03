@@ -38,6 +38,3 @@ sysinfo.txt
 *.apk
 *.unitypackage
 ProjectSettings/ProjectVersion.txt
-
-# Other
-Assets/VolumetricLines/
