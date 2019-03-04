@@ -31,6 +31,10 @@ public class NavigationNode : MonoBehaviour
         }
     }
 
+    public override string ToString(){
+        return gameObject.name;
+    }
+
     public float Distance(NavigationNode p)
     {
         return Vector3.Distance(transform.position, p.transform.position);

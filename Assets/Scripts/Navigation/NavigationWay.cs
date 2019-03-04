@@ -5,7 +5,7 @@ using UnityEngine;
 public class NavigationWay : ScriptableObject {
 	NavigationNode start;
 	NavigationNode destination;
-	List<NavigationNode> points;
+	public List<NavigationNode> points;
 	float distance = 0;
 
 	public NavigationWay (NavigationNode s, NavigationNode d){
@@ -21,6 +21,8 @@ public class NavigationWay : ScriptableObject {
 
 	public NavigationWay (List<NavigationNode> p) {
 		start = p[0];
+		Debug.Log(start.gameObject.name + " ways:");
+		IO.Out(p);
 		destination = p[p.Count - 1];
 		SetPoints(p);
 	}

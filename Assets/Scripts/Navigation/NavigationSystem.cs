@@ -7,21 +7,22 @@ public class NavigationSystem : MonoBehaviour {
 
 	List<NavigationNode> allPoints;
 	List<NavigationWay> ways;
+	public string tag;
 
 	// Use this for initialization
 	void Start () {
 		allPoints = new List<NavigationNode>();
-		var tmp = GameObject.FindGameObjectsWithTag("TradePost");
+		var tmp = GameObject.FindGameObjectsWithTag(tag);
 		foreach (var current in tmp)
 			allPoints.Add(current.GetComponent<NavigationNode>());
-		for (int i = 0; i < allPoints.Count; i++) {
-			string a = i + " : ";
-			for (int j = 0; j < allPoints[i].Neighbours.Count; j++) { 
-				a += allPoints.IndexOf(allPoints[i].Neighbours[j]) + ", ";
+		foreach(var _current in allPoints){
+			_current.ways = Dijkstra(_current);
+			Debug.Log(_current.name + " ways:");
+			foreach (var way in _current.ways)
+			{
+				IO.Out(way.points);
 			}
 		}
-		foreach(var _current in allPoints)
-			_current.ways = Dijkstra(_current);
 	}
 
 	List<NavigationWay> Dijkstra (NavigationNode start) {
