@@ -8,12 +8,17 @@ public class Caravan_Fight {
 		var defShips = defender.GetComponent<Caravan_UnitManager>();
 		var atShips = attacker.GetComponent<Caravan_UnitManager>();
 
+		// copies for statistic after fight
+		var dsCopy = new List<Ship_BaseInfo>(defShips.ShipList);
+		var asCopy = new List<Ship_BaseInfo>(atShips.ShipList);
+
+		// main logic of cleaning lists from dead AFTER TWO iterations is
+		// that ships attack at the one moment
 		while (defShips.IsAlive() || atShips.IsAlive()){
 			Round(atShips, defShips);
 			Round(defShips, atShips);
+			End(atShips, defShips);
 		}
-
-		End(atShips, defShips);
 	}
 
 	static void Round(Caravan_UnitManager attacker, Caravan_UnitManager defender){
@@ -28,7 +33,6 @@ public class Caravan_Fight {
 	}
 
 	static void End(Caravan_UnitManager a, Caravan_UnitManager b){
-		// some stats
 		ClearFromDead(a);
 		ClearFromDead(b);
 	}
@@ -39,4 +43,6 @@ public class Caravan_Fight {
 			if (ship.Health > 0) cleanList.Add(ship);
 		cum.ShipList = cleanList;
 	}
+
+
 }
