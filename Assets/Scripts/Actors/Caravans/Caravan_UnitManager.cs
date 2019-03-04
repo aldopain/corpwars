@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Caravan_UnitManager : MonoBehaviour {
-    public List<Ship_BaseInfo> ShipList;
+  public List<Ship_BaseInfo> ShipList;
 	public float SpeedModifier = 1f;
 	void Start () {
 		SetCaravanSpeed();
@@ -24,6 +24,12 @@ public class Caravan_UnitManager : MonoBehaviour {
 		}	
 
 		return min * (1 - (float)(GetComponent<Actor_Resources>().GetAllResources()/combinedInvSize)) * SpeedModifier;
+	}
+
+	public bool IsAlive(){
+		foreach (var ship in ShipList)
+			if (ship.Health > 0) return true;
+		return false;
 	}
 
 	public void SetCaravanSpeed(float s){
