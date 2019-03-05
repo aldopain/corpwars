@@ -5,6 +5,7 @@ using UnityEngine;
 public class Caravan_Aggro : MonoBehaviour {
 
 	Collider coll;
+	string Owner;
 
 	public int aggro;
 	public static int SNEAK = 0;
@@ -16,6 +17,7 @@ public class Caravan_Aggro : MonoBehaviour {
 	void Start () {
 		coll = gameObject.GetComponent<CapsuleCollider>();
 		aggro = NEUTRAL;
+		Owner = gameObject.GetComponent<Actor_Resources>().Owner;
 	}
 
 	public void SetAggro(int a){
@@ -34,8 +36,8 @@ public class Caravan_Aggro : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-			if (other.gameObject.tag == "Caravan"){
-				
+			if (other.gameObject.tag == "Caravan" && other.gameObject.GetComponent<Actor_Resources>().Owner != Owner){
+				ChooseBehaviour(other.gameObject);
 			}
     }
 
