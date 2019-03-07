@@ -21,8 +21,6 @@ public class NavigationWay : ScriptableObject {
 
 	public NavigationWay (List<NavigationNode> p) {
 		start = p[0];
-		Debug.Log(start.gameObject.name + " ways:");
-		IO.Out(p);
 		destination = p[p.Count - 1];
 		SetPoints(p);
 	}
@@ -51,5 +49,8 @@ public class NavigationWay : ScriptableObject {
 		points.AddRange(p);
 		Distance();
 	}
-	
+
+	public override string ToString(){
+		return IO.ListToString(points, "-");
+	}
 }
