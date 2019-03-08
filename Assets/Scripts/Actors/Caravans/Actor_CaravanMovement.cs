@@ -79,9 +79,11 @@ public class Actor_CaravanMovement : MonoBehaviour {
     {
         agent.isStopped = true;
         GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(seconds);
         agent.isStopped = false;
         GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Collider>().enabled = true;
     }
 
     bool isNextPointValid(int prevPoint)
