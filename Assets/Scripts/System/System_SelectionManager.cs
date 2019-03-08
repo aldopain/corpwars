@@ -13,10 +13,12 @@ public class System_SelectionManager : MonoBehaviour {
     Camera cam;
 
     UI_Tooltip activeTooltip;
+    UI_UnitCommand unitCommand;
 
 	// Use this for initialization
 	void Start () {
         cam = Camera.main;
+        unitCommand = GameObject.Find("Canvas_UnitControl").GetComponent<UI_UnitCommand>();
 	}
 
     void Update(){
@@ -37,12 +39,17 @@ public class System_SelectionManager : MonoBehaviour {
         if (go == null)
         {
             selectedObject = null;
+            unitCommand.Disable();
             return;
         }
         if(go != selectedObject)
         {
             OnNewSelect.Invoke();
-            if(selectedObject) selectedObject.GetComponent<System_SelectableObject>().Deselect();
+            if (selectedObject)
+            {
+                selectedObject.GetComponent<System_SelectableObject>().Deselect();      
+            }
+            unitCommand.Enable(go);
             selectedObject = go;
         }
     }

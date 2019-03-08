@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UI_Tooltip : MonoBehaviour {
     [Multiline]
     public string TooltipText;
-    public string ParentCanvas = "Canvas";
+    public string ParentCanvas = "Canvas_Tooltips";
     public int fontSize = 14;
     GameObject textGO;
     GameObject backgroundGO;
@@ -55,10 +55,11 @@ public class UI_Tooltip : MonoBehaviour {
             textGO = new GameObject();
             textGO.SetActive(false);
             textGO.name = name + " Tooltip Text";
-            textGO.transform.parent = GameObject.Find(ParentCanvas).transform;
             textGO.AddComponent(typeof(RectTransform));
             textGO.AddComponent(typeof(CanvasRenderer));
             textGO.AddComponent(typeof(Text));
+            textGO.transform.parent = GameObject.Find(ParentCanvas).transform;
+
 
             Text t = textGO.GetComponent<Text>();
             t.text = TooltipText;
@@ -74,10 +75,11 @@ public class UI_Tooltip : MonoBehaviour {
             backgroundGO = new GameObject();
             backgroundGO.SetActive(false);
             backgroundGO.name = name + " Tooltip Background";
-            backgroundGO.transform.parent = GameObject.Find(ParentCanvas).transform;
-            backgroundGO.AddComponent(typeof(RectTransform));
+                        backgroundGO.AddComponent(typeof(RectTransform));
             backgroundGO.AddComponent(typeof(CanvasRenderer));
             backgroundGO.AddComponent(typeof(Image));
+            backgroundGO.transform.parent = GameObject.Find(ParentCanvas).transform;
+
 
             Image i = backgroundGO.GetComponent<Image>();
             i.color = new Color(0,0,0);
