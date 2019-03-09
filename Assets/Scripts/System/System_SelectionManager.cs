@@ -19,6 +19,7 @@ public class System_SelectionManager : MonoBehaviour {
 	void Start () {
         cam = Camera.main;
         unitCommand = GameObject.Find("Canvas_UnitControl").GetComponent<UI_UnitCommand>();
+        unitCommand.manager = this;
 	}
 
     void Update(){
@@ -36,12 +37,15 @@ public class System_SelectionManager : MonoBehaviour {
     /// <param name="go">New selected object</param>
     public void SetSelected(GameObject go)
     {
+        //Deselect
         if (go == null)
         {
+            ProcessDeselectedObject(selectedObject);
             selectedObject = null;
-            unitCommand.Disable();
             return;
         }
+
+        //Select
         if(go != selectedObject)
         {
             OnNewSelect.Invoke();
@@ -49,9 +53,66 @@ public class System_SelectionManager : MonoBehaviour {
             {
                 selectedObject.GetComponent<System_SelectableObject>().Deselect();      
             }
-            unitCommand.Enable(go);
+            ProcessSelectedObject(go);
             selectedObject = go;
         }
+    }
+
+    public GameObject GetSelected()
+    {
+        return selectedObject;
+    }
+
+    public void ProcessSelectedObject(GameObject go)
+    {
+        switch (go.tag)
+        {
+            case "Caravan":
+                OnSelectUnit(go);
+                break;
+            case "Town":
+                OnSelectTown();
+                break;
+            default:
+                Debug.LogError("Click on " + go.name + " cannot be processed");
+                break;
+        }
+    }
+
+    public void ProcessDeselectedObject(GameObject go)
+    {
+        switch (go.tag)
+        {
+            case "Caravan":
+                OnDeselectUnit();
+                break;
+            case "Town":
+                OnDeselectTown();
+                break;
+            default:
+                Debug.LogError("Deselect of " + go.name + " cannot be processed");
+                break;
+        }
+    }
+
+    public void OnSelectUnit(GameObject go)
+    {
+        unitCommand.Enable(go);
+    }
+
+    public void OnDeselectUnit()
+    {
+        unitCommand.Disable();
+    }
+
+    public void OnSelectTown()
+    {
+        //Placeholder
+    }
+
+    public void OnDeselectTown()
+    {
+        //Placeholder
     }
 
     /// <summary>

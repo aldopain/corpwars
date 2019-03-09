@@ -9,9 +9,16 @@ public class UI_UnitCommand : MonoBehaviour {
     Button UnitAttack;
     Button UnitAutoTrade;
     Button UnitMovement;
+    public System_SelectionManager manager;
 
 	// Use this for initialization
 	void Start () {
+        InitUI();
+        AssignFunctions();
+    }
+	
+    void InitUI()
+    {
         GameObject baseGO = GameObject.Find("Canvas_UnitControl");
         UC_Canvas = baseGO.GetComponent<Canvas>();
         baseGO = baseGO.transform.Find("Panel").gameObject;
@@ -20,7 +27,14 @@ public class UI_UnitCommand : MonoBehaviour {
         UnitAutoTrade = baseGO.transform.Find("UC_UnitAutoTrade").GetComponent<Button>();
         UnitMovement = baseGO.transform.Find("UC_UnitMovement").GetComponent<Button>();
     }
-	
+
+    void AssignFunctions()
+    {
+        UnitAttack.onClick.AddListener(PLACEHOLDER_ATTACK);
+        UnitAutoTrade.onClick.AddListener(PLACEHOLDER_AUTOTRADE);
+        UnitMovement.onClick.AddListener(PLACEHOLDER_MOVEMENT);
+    }
+
     public void Enable(GameObject go)
     {
         UC_Canvas.enabled = true;
@@ -35,5 +49,20 @@ public class UI_UnitCommand : MonoBehaviour {
     public void UpdateInfo(GameObject go)
     {
         UnitName.text = go.name;
+    }
+
+    public void PLACEHOLDER_ATTACK()
+    {
+        print("Attack:" + manager.GetSelected().name);
+    }
+
+    public void PLACEHOLDER_AUTOTRADE()
+    {
+        print("Auto Trade:" + manager.GetSelected().name);
+    }
+
+    public void PLACEHOLDER_MOVEMENT()
+    {
+        print("Movement:" + manager.GetSelected().name);
     }
 }
