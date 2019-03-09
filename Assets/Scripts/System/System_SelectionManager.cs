@@ -58,12 +58,20 @@ public class System_SelectionManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Get a currently selected object
+    /// </summary>
+    /// <returns></returns>
     public GameObject GetSelected()
     {
         return selectedObject;
     }
 
-    public void ProcessSelectedObject(GameObject go)
+    /// <summary>
+    /// Choose what to do with selected object 
+    /// </summary>
+    /// <param name="go">Selected object</param>
+    void ProcessSelectedObject(GameObject go)
     {
         switch (go.tag)
         {
@@ -79,6 +87,10 @@ public class System_SelectionManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Choose what to do with deselected object
+    /// </summary>
+    /// <param name="go">Deselected object</param>
     public void ProcessDeselectedObject(GameObject go)
     {
         switch (go.tag)
@@ -95,21 +107,34 @@ public class System_SelectionManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Is called when a caravan is selected
+    /// </summary>
+    /// <param name="go">Selected caravan</param>
     public void OnSelectUnit(GameObject go)
     {
         unitCommand.Enable(go);
     }
 
+    /// <summary>
+    /// Is called when a caravan is deselected
+    /// </summary>
     public void OnDeselectUnit()
     {
         unitCommand.Disable();
     }
 
+    /// <summary>
+    /// Is called when a town is selected
+    /// </summary>
     public void OnSelectTown()
     {
         //Placeholder
     }
 
+    /// <summary>
+    /// Is called when a town is deselected
+    /// </summary>
     public void OnDeselectTown()
     {
         //Placeholder
