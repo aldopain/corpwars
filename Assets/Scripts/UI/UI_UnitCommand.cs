@@ -20,7 +20,7 @@ public class UI_UnitCommand : MonoBehaviour {
 	
     void Update()
     {
-        ButtonPanel.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(manager.GetSelected().transform.position);
+        //ButtonPanel.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(manager.GetSelected().transform.position);
     }
 
     void InitUI()
