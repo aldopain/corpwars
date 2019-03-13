@@ -7,7 +7,6 @@ public class NavigationNode : MonoBehaviour
 {
     public List<NavigationNode> Neighbours;
     public List<NavigationWay> ways;
-    public Collider[] nearby;
     private int neighbourLength;
 
     void Awake()
@@ -17,9 +16,7 @@ public class NavigationNode : MonoBehaviour
 
     void Update()
     {
-        nearby = Physics.OverlapSphere(transform.position, 10);
-
-        if (neighbourLength < Neighbours.Count)
+         if (neighbourLength < Neighbours.Count)
         {
             OnAddNeighbour();
             neighbourLength = Neighbours.Count;
@@ -54,6 +51,6 @@ public class NavigationNode : MonoBehaviour
 
     void OnRemoveNeighbour()
     {
-
+        print("Something fucked with this node");
     }
 }

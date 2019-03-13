@@ -78,11 +78,13 @@ public class Actor_CaravanMovement : MonoBehaviour {
     IEnumerator Wait(float seconds)
     {
         agent.isStopped = true;
-        GetComponent<MeshRenderer>().enabled = false;
+        //GetComponent<MeshRenderer>().enabled = false; 
+        transform.Find("Model").gameObject.SetActive(false);
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(seconds);
         agent.isStopped = false;
-        GetComponent<MeshRenderer>().enabled = true;
+        //GetComponent<MeshRenderer>().enabled = true;
+        transform.Find("Model").gameObject.SetActive(true);
         GetComponent<Collider>().enabled = true;
     }
 

@@ -11,10 +11,11 @@ public class System_Camera : MonoBehaviour {
 	[Header("Zoom Speed")]
 	public float ZoomSpeed_Position;
 	public float ZoomSpeed_Rotation;
-
+	public float FovDelta;
 	[Header("Zoom Limit")]
 	public Vector2 ZoomLimit_Position;		//x - min, y - max
 	public Vector2 ZoomLimit_Rotation;		//x - min, y - max
+	public Vector2 FovDeltaLimit;
 
 	private Camera TargetCamera;
 	private Vector2 Move;
@@ -74,10 +75,16 @@ public class System_Camera : MonoBehaviour {
 		if(Input.mouseScrollDelta.y > 0){
 			if(transform.position.y < ZoomLimit_Position.y){
 				transform.Translate(new Vector3(0, Input.mouseScrollDelta.y * ZoomSpeed_Position, 0));
+				if(TargetCamera.fieldOfView < FovDeltaLimit.y){
+					TargetCamera.fieldOfView += Input.mouseScrollDelta.y * FovDelta;
+				}
 			}
 		}else{
 			if(transform.position.y > ZoomLimit_Position.x){
 				transform.Translate(new Vector3(0, Input.mouseScrollDelta.y * ZoomSpeed_Position, 0));
+				if(TargetCamera.fieldOfView > FovDeltaLimit.x){
+					TargetCamera.fieldOfView += Input.mouseScrollDelta.y * FovDelta;
+				}
 			}
 		}
 	
@@ -92,7 +99,5 @@ public class System_Camera : MonoBehaviour {
 				transform.Rotate(new Vector3(Input.mouseScrollDelta.y * ZoomSpeed_Rotation, 0, 0));
 			}
 		}
-
-			
 	}
 }
