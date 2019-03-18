@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System.Linq;
 
 public class NavigationSystem : MonoBehaviour {
@@ -10,6 +11,16 @@ public class NavigationSystem : MonoBehaviour {
 	public string tag;
 
 	void Start () {
+		allPoints = new List<NavigationNode>();
+		var tmp = GameObject.FindGameObjectsWithTag(tag);
+		foreach (var current in tmp)
+			allPoints.Add(current.GetComponent<NavigationNode>());
+		foreach(var _current in allPoints){
+			_current.ways = Dijkstra(_current);
+		}
+	}
+
+	 void BakeWays(){
 		allPoints = new List<NavigationNode>();
 		var tmp = GameObject.FindGameObjectsWithTag(tag);
 		foreach (var current in tmp)

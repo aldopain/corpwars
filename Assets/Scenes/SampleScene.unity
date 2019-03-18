@@ -1451,7 +1451,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 25.68159, y: 0.5, z: 24.8524}
+  - {x: 25.68159, y: 0.5, z: 24.36}
   - {x: 12.788679, y: 0.5, z: 24.487705}
   m_Parameters:
     serializedVersion: 2
@@ -3249,7 +3249,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4443046107886284, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 24.8524
+      value: 24.36
       objectReference: {fileID: 0}
     - target: {fileID: 4443046107886284, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 2}
       propertyPath: m_LocalRotation.x

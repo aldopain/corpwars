@@ -12,7 +12,6 @@ public class Actor_CaravanMovement : MonoBehaviour {
     public UnityEvent OnArrival;
     public bool Repeat;
 
-
 	public NavigationStop currentRoutePoint;
     int StopCounter = 0;
 	[HideInInspector]
@@ -20,15 +19,23 @@ public class Actor_CaravanMovement : MonoBehaviour {
 
 	void Awake(){
 		agent = GetComponent<NavMeshAgent>();
-		GotoNextPoint();
+        StartCoroutine(SelectRandomRoute());
+
 	}
 
+    IEnumerator SelectRandomRoute(){
+        yield return new WaitForSeconds(.01f);
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
+        Route = new NavigationRoute(tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>(), tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
+        GotoNextPoint();
+    }
+
 	void Update(){
-		if(agent.enabled){
-			if(agent.remainingDistance < 0.5f && !agent.isStopped){
-				_OnArrival();
-			}	
-		}
+		    if(agent.enabled){
+			    if(agent.remainingDistance < 0.5f && !agent.isStopped){
+				    _OnArrival();
+			    }	
+		    }
 	}
 
 	///<summary>
@@ -49,8 +56,8 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Gets called when actor arrives at the next Route Point
     /// </summary>
 	void _OnArrival(){
+        StopCounter++;
         if (currentRoutePoint.Trade){
-            StopCounter++;
             GetComponent<Actor_TradeController>().Trade(currentRoutePoint.Point, StopCounter);
             StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(StopCounter)));
         }
@@ -70,4 +77,5 @@ public class Actor_CaravanMovement : MonoBehaviour {
         transform.Find("Model").gameObject.SetActive(true);
         GetComponent<Collider>().enabled = true;
     }
+
 }

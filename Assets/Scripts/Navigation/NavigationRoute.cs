@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class NavigationRoute {
 	List<NavigationStop> stops;
 	int i = 0;
 
-	NavigationRoute(NavigationNode start, NavigationNode end){
+	public NavigationRoute(NavigationNode start, NavigationNode end){
 		stops = new List<NavigationStop>();
 		AddPointsFromWay(start.GetWayTo(end), false, false);
 		stops[0].Trade = true;
 		stops[stops.Count - 1].Trade = true;
 	}
 
-	NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end){
+	public NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end){
 		stops = new List<NavigationStop>();
 		AddPointsFromWay(start.GetWayTo(midpoints[0]), false, false);
 		stops[stops.Count - 1].Trade = true;

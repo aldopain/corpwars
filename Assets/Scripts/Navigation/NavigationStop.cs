@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class NavigationStop {
 	public bool Trade = false;
 	public NavigationNode Point;
