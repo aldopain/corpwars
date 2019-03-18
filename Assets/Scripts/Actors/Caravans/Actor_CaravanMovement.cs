@@ -10,10 +10,11 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Invokes when this actor arrives at the next Route Point
     /// </summary>
     public UnityEvent OnArrival;
-    public bool ReverseOnCompletion;
+    public bool Repeat;
 
 
 	public NavigationStop currentRoutePoint;
+    int StopCounter = 0;
 	[HideInInspector]
 	public NavMeshAgent agent;
 
@@ -37,6 +38,8 @@ public class Actor_CaravanMovement : MonoBehaviour {
         currentRoutePoint = Route.Next();
         if (currentRoutePoint != null){
             agent.SetDestination(currentRoutePoint.Point.transform.position);
+        } else if (Repeat) {
+            GotoNextPoint();
         } else {
             // here some checks, events, etc.
         }
@@ -46,9 +49,11 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Gets called when actor arrives at the next Route Point
     /// </summary>
 	void _OnArrival(){
-        int index = Route.IndexOf(currentRoutePoint);
-		GetComponent<Actor_TradeController>().Trade(currentRoutePoint.Point, index);
-        StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(index)));
+        if (currentRoutePoint.Trade){
+            StopCounter++;
+            GetComponent<Actor_TradeController>().Trade(currentRoutePoint.Point, StopCounter);
+            StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(StopCounter)));
+        }
         GotoNextPoint();
 		OnArrival.Invoke();
 	}
