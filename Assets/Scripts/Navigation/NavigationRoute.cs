@@ -42,7 +42,7 @@ public class NavigationRoute {
 
 	public NavigationStop Next(){
 		i++;
-		if (i == stops.Count)
+		if (i % stops.Count == 0)
 			return null;
 		return stops[i % stops.Count];
 	}
