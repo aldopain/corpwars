@@ -28,6 +28,14 @@ public class NavigationNode : MonoBehaviour
         }
     }
 
+    public NavigationWay GetWayTo(NavigationNode p){
+        foreach (var way in ways) {
+            if (way.destination.Equals(p))
+                return way;    
+        }
+        return null;
+    }
+
     public override string ToString(){
         return gameObject.name;
     }

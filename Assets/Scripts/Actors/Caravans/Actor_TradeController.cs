@@ -47,9 +47,9 @@ public class Actor_TradeController : MonoBehaviour {
     ///Trade with a town in _TradeInput array  
     ///</summary>
     ///<param name="townIndex">index in _TradeInputArray</param>
-    public void Trade(int townIndex){
-		Economy_Local town = GetComponent<Actor_CaravanMovement>().Route[townIndex].GetComponent<Economy_Local>();
-		foreach(Resource_Input input in _TradeInput[townIndex].trade){
+    public void Trade(NavigationNode point, int index){
+		Economy_Local town = point.GetComponent<Economy_Local>();
+		foreach(Resource_Input input in _TradeInput[index].trade){
 			town.Trade(input, GetComponent<Actor_Resources>());
 		}
         GetComponent<Caravan_UnitManager>().SetCaravanSpeed();

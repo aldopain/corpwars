@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class Actor_CaravanMovement : MonoBehaviour {
-	public Transform[] Route;
+	public NavigationRoute Route;
     /// <summary>
     /// Invokes when this actor arrives at the next Route Point
     /// </summary>
@@ -13,8 +13,7 @@ public class Actor_CaravanMovement : MonoBehaviour {
     public bool ReverseOnCompletion;
 
 
-	int currentRoutePoint;
-    int routeDirection = 1;
+	public NavigationStop currentRoutePoint;
 	[HideInInspector]
 	public NavMeshAgent agent;
 
@@ -35,33 +34,11 @@ public class Actor_CaravanMovement : MonoBehaviour {
 	///Move attached NavMeshAgent to the next town
 	///</summary>
 	void GotoNextPoint(){
-        int oldDest = currentRoutePoint;
-
-        if (ReverseOnCompletion)
-        {
-            if (currentRoutePoint == Route.Length - 1)
-            {
-                routeDirection = -1;
-            }
-            else if (currentRoutePoint == 0)
-            {
-                routeDirection = 1;
-            }
-            currentRoutePoint += routeDirection;
-        }
-        else
-        {
-            currentRoutePoint = (currentRoutePoint + 1) % Route.Length;
-        }
-
-        if (isNextPointValid(oldDest))
-        {
-            agent.SetDestination(Route[currentRoutePoint].position);
-        }
-        else
-        {
-            agent.isStopped = true;
-            Debug.LogErrorFormat("{0} cannot move to the next point, as it isn't connected to the current one", name);
+        currentRoutePoint = Route.Next();
+        if (currentRoutePoint != null){
+            agent.SetDestination(currentRoutePoint.Point.transform.position);
+        } else {
+            // here some checks, events, etc.
         }
     }
 
@@ -69,8 +46,9 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Gets called when actor arrives at the next Route Point
     /// </summary>
 	void _OnArrival(){
-		GetComponent<Actor_TradeController>().Trade(currentRoutePoint);
-        StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(currentRoutePoint)));
+        int index = Route.IndexOf(currentRoutePoint);
+		GetComponent<Actor_TradeController>().Trade(currentRoutePoint.Point, index);
+        StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(index)));
         GotoNextPoint();
 		OnArrival.Invoke();
 	}
@@ -86,10 +64,5 @@ public class Actor_CaravanMovement : MonoBehaviour {
         //GetComponent<MeshRenderer>().enabled = true;
         transform.Find("Model").gameObject.SetActive(true);
         GetComponent<Collider>().enabled = true;
-    }
-
-    bool isNextPointValid(int prevPoint)
-    {
-        return Route[prevPoint].GetComponent<NavigationNode>().Neighbours.Contains(Route[currentRoutePoint].GetComponent<NavigationNode>());
     }
 }

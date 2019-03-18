@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NavigationWay : ScriptableObject {
-	NavigationNode start;
-	NavigationNode destination;
+	public NavigationNode start;
+	public NavigationNode destination;
 	public List<NavigationNode> points;
 	float distance = 0;
 
