@@ -44,7 +44,7 @@ public class NavigationRoute {
 		i++;
 		if (i == stops.Count)
 			return null;
-		return stops[i / stops.Count];
+		return stops[i % stops.Count];
 	}
 
 	public int IndexOf(NavigationStop p){
