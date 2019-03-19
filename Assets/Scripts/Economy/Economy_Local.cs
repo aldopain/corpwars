@@ -52,20 +52,22 @@ public class Economy_Local : MonoBehaviour {
 	///<param name = "other">buyer/seller that is involved with a trade</param>
 	public bool Trade(int index, double amount, Actor_Resources other){
 		int price = CalculatePrice(index,amount);
+		var otherMoney = other.Owner.GetComponent<Player_Money>();
+		var ownerMoney = resources.Owner.GetComponent<Player_Money>();
 		if(amount < 0){			//selling to a trader
 			amount *= -1;
-			if(resources.CheckResource(index, amount) && GameObject.Find(other.Owner).GetComponent<Player_Money>().Check(price)){
+			if(resources.CheckResource(index, amount) && otherMoney.Check(price)){
 				resources.AddResource(index, -amount);
 				other.AddResource(index, amount);
-				GameObject.Find(other.Owner).GetComponent<Player_Money>().Transfer(price, GameObject.Find(resources.Owner).GetComponent<Player_Money>());
+				otherMoney.Transfer(price, ownerMoney);
 				DeclareTrade(index, -amount);
 				return true;
 			}
 		}else{					//buying from a trader
-			if(other.CheckResource(index, amount) && GameObject.Find(resources.Owner).GetComponent<Player_Money>().Check(price)){
+			if(other.CheckResource(index, amount) && ownerMoney.Check(price)){
 				resources.AddResource(index, amount);
 				other.AddResource(index, -amount);
-				GameObject.Find(resources.Owner).GetComponent<Player_Money>().Transfer(CalculatePrice(index,amount), GameObject.Find(other.Owner).GetComponent<Player_Money>());
+				ownerMoney.Transfer(CalculatePrice(index,amount), otherMoney);
 				DeclareTrade(index, amount);
 				return true;
 			}

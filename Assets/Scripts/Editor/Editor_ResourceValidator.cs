@@ -84,8 +84,8 @@ public class Editor_ResourceValidator : EditorWindow {
         if (le.sold.Length != resourcesAmount) le.sold = new double[resourcesAmount];
         if (le.priceModifiers.Length != resourcesAmount) le.priceModifiers = new double[resourcesAmount];
 
-        if(go.GetComponent<Actor_Resources>().Debug_GetResourceLength() != resourcesAmount || go.GetComponent<Actor_Resources>().Owner == string.Empty)
-            Debug.LogFormat("Actor_Resources fields cannot be fixed by this tool. You have to set ownership and array length by hand. Set array length to {0}", resourcesAmount, go);
+        if(go.GetComponent<Actor_Resources>().Debug_GetResourceLength() != resourcesAmount || go.GetComponent<Actor_Resources>().Owner.name == string.Empty)
+            Debug.LogFormat("Actor_Resources fields cannot be fixed by this tool. You have to set Owner.nameship and array length by hand. Set array length to {0}", resourcesAmount, go);
 
         FixTownDemands(go);
     }
@@ -164,13 +164,13 @@ public class Editor_ResourceValidator : EditorWindow {
         EditorGUILayout.LabelField(go.name, EditorStyles.boldLabel);
 
         //Owner
-        if (go.GetComponent<Actor_Resources>().Owner == string.Empty)
+        if (go.GetComponent<Actor_Resources>().Owner.name == string.Empty)
         {
-            EditorGUILayout.LabelField("Owner: " + go.GetComponent<Actor_Resources>().Owner, Invalid);
+            EditorGUILayout.LabelField("Owner.name: " + go.GetComponent<Actor_Resources>().Owner.name, Invalid);
         }
         else
         {
-            EditorGUILayout.LabelField("Owner: " + go.GetComponent<Actor_Resources>().Owner);
+            EditorGUILayout.LabelField("Owner.name: " + go.GetComponent<Actor_Resources>().Owner.name);
         }
 
         //Resources
@@ -306,13 +306,13 @@ public class Editor_ResourceValidator : EditorWindow {
     {
         EditorGUILayout.LabelField(go.name, EditorStyles.boldLabel);
         //Owner
-        if (go.GetComponent<Actor_Resources>().Owner == string.Empty)
+        if (go.GetComponent<Actor_Resources>().Owner.name == string.Empty)
         {
-            EditorGUILayout.LabelField("Resources: " + go.GetComponent<Actor_Resources>().Owner, Invalid);
+            EditorGUILayout.LabelField("Resources: " + go.GetComponent<Actor_Resources>().Owner.name, Invalid);
         }
         else
         {
-            EditorGUILayout.LabelField("Resources: " + go.GetComponent<Actor_Resources>().Owner);
+            EditorGUILayout.LabelField("Resources: " + go.GetComponent<Actor_Resources>().Owner.name);
         }
 
         //Resources

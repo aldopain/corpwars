@@ -4,6 +4,12 @@ using UnityEngine;
 using System;
 
 public class Events_Logic : MonoBehaviour {
+	Player_List pl;
+
+	void Start () {
+		pl = GetComponent<Player_List>();
+	}
+
 	public void PrintString(string[] s){
 		print(s[0]);
 	}
@@ -117,7 +123,7 @@ public class Events_Logic : MonoBehaviour {
 		string entity = args[0];
 		string newOwner = args[1];
 
-		GameObject.Find(entity).GetComponent<Actor_Resources>().Owner = newOwner;
+		GameObject.Find(entity).GetComponent<Actor_Resources>().Owner = pl.GetByName(newOwner);
 	}
 
 	public void ProductionInput(string[] args){
@@ -150,7 +156,7 @@ public class Events_Logic : MonoBehaviour {
 
 		GameObject[] caravans = GameObject.FindGameObjectsWithTag("Caravan");
 		foreach(GameObject go in caravans){
-			if(go.GetComponent<Actor_Resources>().Owner == player){
+			if(go.GetComponent<Actor_Resources>().Owner.name.Equals(player)){
 				go.GetComponent<Caravan_UnitManager>().SpeedModifier += (float)modifier;
 				go.GetComponent<Caravan_UnitManager>().SetCaravanSpeed();
 			}

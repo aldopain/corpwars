@@ -5,7 +5,7 @@ using UnityEngine;
 public class Actor_Resources : MonoBehaviour {
 	[SerializeField]
 	double[] Amount;
-	public string Owner;
+	public Player_Manager Owner;
 	///<summary>
 	///Add or remove resource
 	///</summary>

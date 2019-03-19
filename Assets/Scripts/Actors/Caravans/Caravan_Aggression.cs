@@ -5,7 +5,7 @@ using UnityEngine;
 public class Caravan_Aggro : MonoBehaviour {
 
 	Collider coll;
-	string Owner;
+	Player_Manager Owner;
 
 	public int aggro;
 	public static int SNEAK = 0;
@@ -23,6 +23,7 @@ public class Caravan_Aggro : MonoBehaviour {
 	public void SetAggro(int a){
 		if (a == SNEAK || a == NEUTRAL || a == AGGRESSIVE || a == KILLER)
 			aggro = a;
+		else throw new System.Exception();
 	}
 
 	// true here should be replaced with check (enemy/not)
