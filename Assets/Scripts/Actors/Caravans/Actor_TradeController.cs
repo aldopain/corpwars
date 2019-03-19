@@ -48,7 +48,7 @@ public class Actor_TradeController : MonoBehaviour {
     ///</summary>
     ///<param name="townIndex">index in _TradeInputArray</param>
     public void Trade(NavigationNode point, int index){
-		Economy_Local town = point.GetComponent<Economy_Local>();
+		var town = point.GetComponent<Economy_Local>();
 		foreach(Resource_Input input in _TradeInput[index].trade){
 			town.Trade(input, GetComponent<Actor_Resources>());
 		}

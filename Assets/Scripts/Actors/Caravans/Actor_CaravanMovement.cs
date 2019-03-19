@@ -12,7 +12,7 @@ public class Actor_CaravanMovement : MonoBehaviour {
     public UnityEvent OnArrival;
     public bool Repeat;
 
-	public NavigationStop currentRoutePoint;
+	public NavigationNode currentRoutePoint;
     int StopCounter = 0;
 	[HideInInspector]
 	public NavMeshAgent agent;
@@ -26,7 +26,8 @@ public class Actor_CaravanMovement : MonoBehaviour {
     IEnumerator SelectRandomRoute(){
         yield return new WaitForSeconds(.01f);
         GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
-        Route = new NavigationRoute(tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>(), tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
+        Route = new NavigationRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
+        Route.LoopRoute();
         GotoNextPoint();
     }
 
@@ -44,7 +45,7 @@ public class Actor_CaravanMovement : MonoBehaviour {
 	void GotoNextPoint(){
         currentRoutePoint = Route.Next();
         if (currentRoutePoint != null){
-            agent.SetDestination(currentRoutePoint.Point.transform.position);
+            agent.SetDestination(currentRoutePoint.transform.position);
         } else if (Repeat) {
             GotoNextPoint();
         } else {
@@ -56,11 +57,10 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Gets called when actor arrives at the next Route Point
     /// </summary>
 	void _OnArrival(){
-        StopCounter++;
-        if (currentRoutePoint.Trade){
-            GetComponent<Actor_TradeController>().Trade(currentRoutePoint.Point, StopCounter);
-            StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(StopCounter)));
-        }
+        // possible refactoring: get i from Route, because it is equal to IndexOf(currentRoutePoint)
+        var index = Route.IndexOf(currentRoutePoint);
+        GetComponent<Actor_TradeController>().Trade(currentRoutePoint, index);
+        StartCoroutine(Wait(GetComponent<Actor_TradeController>().StopLength(index)));
         GotoNextPoint();
 		OnArrival.Invoke();
 	}
