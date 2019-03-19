@@ -41,7 +41,6 @@ public class Editor_Ship_BaseInfo : Editor{
         ship.Health = Random.Range(1, 10);
         ship.Attack = Random.Range(0, 10);
         ship.Defence = Random.Range(0, 10);
-        
     }
 
     void GUI_ShowResource(Ship_BaseInfo editTarget)

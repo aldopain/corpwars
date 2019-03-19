@@ -10,10 +10,10 @@ public class Player_Relations : MonoBehaviour {
 	public static int TRADE_NO_WAR = 4;
 	Player_Manager pm;
 	List<Relations> relations;
-	public struct Relations {
-		Player_Manager anotherPlayer;
-		int relations;
-		int status;
+	public class Relations {
+		public Player_Manager anotherPlayer;
+		public int relations;
+		public int status;
 
 		public Relations(Player_Manager pm){
 			anotherPlayer = pm;
@@ -29,5 +29,27 @@ public class Player_Relations : MonoBehaviour {
 			if(player.name != pm.name)
 				relations.Add(new Relations(player));
 		}
+	}
+
+	private Relations GetByName (string name) {
+		foreach (var rel in relations)
+			if (rel.anotherPlayer.name.Equals(name)){
+				return rel;
+			}
+		return null;
+	}
+
+	public int GetStatus (Player_Manager other){
+		var rel = GetByName(other.name);
+		if (rel == null)
+			return -1;
+		return rel.status;
+	}
+
+	public int GetRelations (Player_Manager other){
+		var rel = GetByName(other.name);
+		if (rel == null)
+			return -1;
+		return rel.relations;
 	}
 }

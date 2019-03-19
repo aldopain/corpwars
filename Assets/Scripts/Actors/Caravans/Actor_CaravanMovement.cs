@@ -65,6 +65,10 @@ public class Actor_CaravanMovement : MonoBehaviour {
 		OnArrival.Invoke();
 	}
 
+    public void ChangeIsStopped(bool b){
+        agent.isStopped = b;
+    }
+
     IEnumerator Wait(float seconds)
     {
         agent.isStopped = true;
