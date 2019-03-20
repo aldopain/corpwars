@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Manager : MonoBehaviour {
+public partial class Player_Manager : MonoBehaviour {
 	public string name;
-	Player_Relations relations;
-	Player_Money money;
+	public Player_Relations relations;
+	public Player_Money money;
+	public Actor_Resources resources;
+	public NavigationNode city;
+	public List<NavigationNode> tradePosts;
 
 	void Start () {
+		resources = city.GetComponent<Actor_Resources>();
 		money = GetComponent<Player_Money>();
 		relations = GetComponent<Player_Relations>();
 	}

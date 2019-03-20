@@ -7,28 +7,29 @@ public class NavigationNode : MonoBehaviour
 {
     public List<NavigationNode> Neighbours;
     public List<NavigationWay> ways;
+    public Actor_Resources resources;
     private int neighbourLength;
 
-    void Awake()
-    {
+    void Awake() {
         neighbourLength = Neighbours.Count;
     }
 
-    void Update()
-    {
-         if (neighbourLength < Neighbours.Count)
-        {
+    void Start() {
+
+    }
+
+    void Update() {
+        if (neighbourLength < Neighbours.Count) {
             OnAddNeighbour();
             neighbourLength = Neighbours.Count;
         }
 
-        if (neighbourLength > Neighbours.Count)
-        {
+        if (neighbourLength > Neighbours.Count) {
             neighbourLength = Neighbours.Count;
         }
     }
 
-    public NavigationWay GetWayTo(NavigationNode p){
+    public NavigationWay GetWayTo(NavigationNode p) {
         foreach (var way in ways) {
             if (way.destination.Equals(p))
                 return way;    
@@ -36,17 +37,15 @@ public class NavigationNode : MonoBehaviour
         return null;
     }
 
-    public override string ToString(){
+    public override string ToString() {
         return gameObject.name;
     }
 
-    public float Distance(NavigationNode p)
-    {
+    public float Distance(NavigationNode p) {
         return Vector3.Distance(transform.position, p.transform.position);
     }
 
-    void OnAddNeighbour()
-    {
+    void OnAddNeighbour() {
         Neighbours[neighbourLength].neighbourLength++;
 
         var tmp = new GameObject();
@@ -57,8 +56,7 @@ public class NavigationNode : MonoBehaviour
         Neighbours[neighbourLength].Neighbours.Add(this);
     }
 
-    void OnRemoveNeighbour()
-    {
+    void OnRemoveNeighbour() {
         print("Something fucked with this node");
     }
 }

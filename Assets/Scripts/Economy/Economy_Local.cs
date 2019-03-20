@@ -50,24 +50,22 @@ public class Economy_Local : MonoBehaviour {
 	///<param name = "index">ID of traded resource</param>
 	///<param name = "amount">amount of traded resource</param>
 	///<param name = "other">buyer/seller that is involved with a trade</param>
-	public bool Trade(int index, double amount, Actor_Resources other){
-		int price = CalculatePrice(index,amount);
+	public bool Trade(int index, double amount, Actor_Resources other) {
+		int price = CalculatePrice(index, amount);
 		var otherMoney = other.Owner.GetComponent<Player_Money>();
 		var ownerMoney = resources.Owner.GetComponent<Player_Money>();
-		if(amount < 0){			//selling to a trader
+		if (amount < 0) {			//selling to a trader
 			amount *= -1;
-			if(resources.CheckResource(index, amount) && otherMoney.Check(price)){
-				resources.AddResource(index, -amount);
-				other.AddResource(index, amount);
+			if (resources.CheckResource(index, amount) && otherMoney.Check(price)) {
+				resources.Transfer(index, amount, other);
 				otherMoney.Transfer(price, ownerMoney);
 				DeclareTrade(index, -amount);
 				return true;
 			}
-		}else{					//buying from a trader
-			if(other.CheckResource(index, amount) && ownerMoney.Check(price)){
-				resources.AddResource(index, amount);
-				other.AddResource(index, -amount);
-				ownerMoney.Transfer(CalculatePrice(index,amount), otherMoney);
+		} else {					//buying from a trader
+			if (other.CheckResource(index, amount) && ownerMoney.Check(price)) {
+				other.Transfer(index, amount, resources);
+				ownerMoney.Transfer(price, otherMoney);
 				DeclareTrade(index, amount);
 				return true;
 			}
@@ -82,7 +80,7 @@ public class Economy_Local : MonoBehaviour {
     /// <param name="index">Resource</param>
     /// <param name="amount">Amount in transaction</param>
     /// <returns>Price</returns>
-	int CalculatePrice(int index, double amount){
+	int CalculatePrice (int index, double amount) {
 		double K = priceModifiers[index];
 		int B = globalEconomy.pricing[index];
 		double P = population.GetDemands(index);

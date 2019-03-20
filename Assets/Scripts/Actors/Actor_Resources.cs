@@ -52,9 +52,21 @@ public class Actor_Resources : MonoBehaviour {
 		return res;
 	}
 
+	public bool SafeTransfer(int index, double amount, Actor_Resources other){
+		if(CheckResource(index, amount)){
+			Transfer(index, amount, other);
+			return true;
+		}
+		return false;
+	}
 
-    public int Debug_GetResourceLength()
-    {
-        return Amount.Length;
-    }
+	public void Transfer(int index, double amount, Actor_Resources other){
+		AddResource(index, -amount);
+		other.AddResource(index, amount);
+	}
+
+	public int Debug_GetResourceLength()
+	{
+			return Amount.Length;
+	}
 }
