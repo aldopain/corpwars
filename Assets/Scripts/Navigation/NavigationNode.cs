@@ -15,7 +15,7 @@ public class NavigationNode : MonoBehaviour
     }
 
     void Start() {
-
+        resources = GetComponent<Actor_Resources>();
     }
 
     void Update() {

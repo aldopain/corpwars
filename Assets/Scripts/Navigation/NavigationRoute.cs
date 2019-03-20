@@ -7,12 +7,22 @@ public class NavigationRoute {
 	List<NavigationNode> stops;
 	int i = 0;
 
-	public NavigationRoute(NavigationNode start, NavigationNode end){
+	public static NavigationRoute CreateRoute(NavigationNode start, NavigationNode end) {
+		if (start.Equals(end)) return null;
+		return new NavigationRoute(start, end);
+	}
+
+	public static NavigationRoute CreateRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end) {
+		if (start.Equals(end)) return null;
+		return new NavigationRoute(start, end);
+	}
+
+	private NavigationRoute(NavigationNode start, NavigationNode end){
 		stops = new List<NavigationNode>();
 		AddPointsFromWay(start.GetWayTo(end), false, false);
 	}
 
-	public NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end){
+	private NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end){
 		stops = new List<NavigationNode>();
 		AddPointsFromWay(start.GetWayTo(midpoints[0]), false, false);
 		for (int i = 0; i < midpoints.Count - 1; i++){

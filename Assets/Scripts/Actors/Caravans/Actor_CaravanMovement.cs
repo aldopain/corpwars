@@ -19,17 +19,23 @@ public class Actor_CaravanMovement : MonoBehaviour {
 
 	void Start(){
 		agent = GetComponent<NavMeshAgent>();
-        GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
-        Route = new NavigationRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
-        Route.LoopRoute();
-        GotoNextPoint();
+        MoveOnRoute();
 	}
+
+    void MoveOnRoute(){
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
+        Route = NavigationRoute.CreateRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
+        if (Route != null) {
+            Route.LoopRoute();
+            GotoNextPoint();
+        }
+    }
 
 	void Update(){
 		    if(agent.enabled){
 			    if(agent.remainingDistance < 0.5f && !agent.isStopped){
 				    _OnArrival();
-			    }	
+			    }
 		    }
 	}
 
