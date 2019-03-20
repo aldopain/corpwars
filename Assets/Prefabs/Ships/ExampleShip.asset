@@ -15,6 +15,6 @@ MonoBehaviour:
   Speed: 3
   InventorySize: 5
   Attack: 3
-  Defence: 1
-  Health: 10
+  Defence: 12
+  Health: 5
   mesh: {fileID: 0}

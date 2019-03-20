@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Caravan_UnitManager : MonoBehaviour {
-  public List<Ship_BaseInfo> ShipList;
+  	public List<Ship_BaseInfo> ShipList;
+	private List<Ship_BaseInfo> _shipList;
 	public float SpeedModifier = 1f;
 	void Start () {
 		SetCaravanSpeed();
+        CopyShipList();
 	}
 	
+    void CopyShipList()
+    {
+        for(int i = 0; i < ShipList.Count; i++)
+        {
+            ShipList[i] = Instantiate(ShipList[i]);
+        }
+    }
 	// Update is called once per frame
 	void Update () {
 		

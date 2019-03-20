@@ -15,6 +15,6 @@ MonoBehaviour:
   Speed: 1
   InventorySize: 0
   Attack: 0
-  Defence: 0
+  Defence: 13
   Health: 1
-  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  mesh: {fileID: 4300018, guid: b83301ccfc16fa6479ce988046977a2e, type: 3}

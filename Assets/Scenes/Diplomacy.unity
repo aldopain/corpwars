@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44098115, g: 0.48218775, b: 0.52917325, a: 1}
+  m_IndirectSpecularColor: {r: 0.44098112, g: 0.48218733, b: 0.52917314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4029,7 +4029,7 @@ Prefab:
     - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
         type: 2}
       propertyPath: ShipList.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4180341215915138, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4185,19 +4185,25 @@ Prefab:
         type: 2}
       propertyPath: ShipList.Array.data[1]
       value: 
-      objectReference: {fileID: 114485977326059090, guid: 40dfc5dee096bac46a1f5177b252a7c2,
+      objectReference: {fileID: 11400000, guid: f2255c770a13a1647a99621e3d2bbdc0,
         type: 2}
     - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
         type: 2}
       propertyPath: ShipList.Array.data[2]
       value: 
-      objectReference: {fileID: 114485977326059090, guid: 40dfc5dee096bac46a1f5177b252a7c2,
+      objectReference: {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49,
         type: 2}
     - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
         type: 2}
       propertyPath: ShipList.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49,
+        type: 2}
+    - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
+        type: 2}
+      propertyPath: ShipList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c47a1750390b244bb824713662281c,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 2}
@@ -4486,7 +4492,7 @@ Prefab:
     - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
         type: 2}
       propertyPath: ShipList.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4180341215915138, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4644,7 +4650,19 @@ Prefab:
         type: 2}
       propertyPath: ShipList.Array.data[1]
       value: 
-      objectReference: {fileID: 114485977326059090, guid: 40dfc5dee096bac46a1f5177b252a7c2,
+      objectReference: {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49,
+        type: 2}
+    - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
+        type: 2}
+      propertyPath: ShipList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c47a1750390b244bb824713662281c,
+        type: 2}
+    - target: {fileID: 114108123455114460, guid: 68c7b1427316fd5439953b6ddbbeb34d,
+        type: 2}
+      propertyPath: ShipList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f2255c770a13a1647a99621e3d2bbdc0,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 2}
