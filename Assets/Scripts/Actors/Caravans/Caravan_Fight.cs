@@ -28,7 +28,7 @@ public class Caravan_Fight {
 
 		// main logic of cleaning lists from dead AFTER TWO iterations is
 		// that ships attack at the one moment
-		while (atIsAlive || defIsAlive){
+		while (atIsAlive && defIsAlive){
 			Round(atShips, defShips);
 			Round(defShips, atShips);
 			End(atShips, defShips);
@@ -38,16 +38,21 @@ public class Caravan_Fight {
 
 		yield return new WaitForSeconds(5);
 
-		if (!defIsAlive) GameObject.Destroy(defender);
-		if (!atIsAlive) GameObject.Destroy(defender);
+		if (!defIsAlive)
+			GameObject.Destroy(defender);
+		else {
+			defenderAggro.IsInFight = false;
+			defenderMovement.ChangeIsStopped(false);
+		}
+
+		if (!atIsAlive) 
+			GameObject.Destroy(attacker);
+		else {
+			attackerAggro.IsInFight = false;
+			attackerMovement.ChangeIsStopped(false);
+		}
 
 		// TODO: some stuff like statistics, rewards, exp, etc.
-
-		attackerAggro.IsInFight = false;
-		defenderAggro.IsInFight = false;
-		
-		attackerMovement.ChangeIsStopped(false);
-		defenderMovement.ChangeIsStopped(false);
 	}
 
 	static void Round(Caravan_UnitManager attacker, Caravan_UnitManager defender){
