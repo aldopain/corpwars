@@ -24,7 +24,8 @@ public class Player_Relations : MonoBehaviour {
 
 	private void Start() {
 		pm = GetComponent<Player_Manager>();
-		var pl = GameObject.Find("GameManager").GetComponent<Player_List>();
+		relations = new List<Relations>();
+		var pl = GameObject.Find("GameController").GetComponent<Player_List>();
 		foreach(var player in pl.allPlayers){
 			if(player.name != pm.name)
 				relations.Add(new Relations(player));
