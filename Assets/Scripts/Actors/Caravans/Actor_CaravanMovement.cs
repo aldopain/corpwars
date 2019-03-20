@@ -17,19 +17,13 @@ public class Actor_CaravanMovement : MonoBehaviour {
 	[HideInInspector]
 	public NavMeshAgent agent;
 
-	void Awake(){
+	void Start(){
 		agent = GetComponent<NavMeshAgent>();
-        StartCoroutine(SelectRandomRoute());
-
-	}
-
-    IEnumerator SelectRandomRoute(){
-        yield return new WaitForSeconds(.01f);
         GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
         Route = new NavigationRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
         Route.LoopRoute();
         GotoNextPoint();
-    }
+	}
 
 	void Update(){
 		    if(agent.enabled){

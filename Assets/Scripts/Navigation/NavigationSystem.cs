@@ -10,7 +10,7 @@ public class NavigationSystem : MonoBehaviour {
 	List<NavigationWay> ways;
 	public string tag;
 
-	void Start () {
+	void Awake () {
 		allPoints = new List<NavigationNode>();
 		var tmp = GameObject.FindGameObjectsWithTag(tag);
 		foreach (var current in tmp)

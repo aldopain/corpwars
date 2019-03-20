@@ -48,4 +48,8 @@ public class NavigationRoute {
 	public int IndexOf(NavigationNode p){
 		return stops.IndexOf(p);
 	}
+
+	public int GetIndex(){
+		return i;
+	}
 }
