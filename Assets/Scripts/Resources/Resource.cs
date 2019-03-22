@@ -8,5 +8,4 @@ public class Resource:ScriptableObject{
 	[Multiline]
 	public string Description;
 	public Sprite Image;
-	public Resource_ConvertionRecipe Recipe;
 }

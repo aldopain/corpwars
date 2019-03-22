@@ -3,5 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Resource_GlobalList : MonoBehaviour {
-	public Resource[] ResourcesList;
+	Resource[] ResourcesList;
+
+	public Resource GetById(int id){
+		return ResourcesList[id];
+	}
 }
