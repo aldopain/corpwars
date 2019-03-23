@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class xUI_Manager : MonoBehaviour {
-    xUI_WindowManager windows;
-    xUI_TopPanel topPanel;
+    public xUI_WindowManager windows;
+    public xUI_TopPanel topPanel;
 
 	// Use this for initialization
 	void Start () {
