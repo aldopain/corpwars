@@ -66,4 +66,8 @@ public class System_Time : MonoBehaviour {
 		}
 	}
 
+    public override string ToString()
+    {
+        return Day + "/" + Month + "/" + Year;
+    }
 }
