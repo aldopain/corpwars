@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Obsolete("Use xUI_Tooltip instead")]
 public class UI_Tooltip : MonoBehaviour {
     [Multiline]
     public string TooltipText;
@@ -19,7 +20,6 @@ public class UI_Tooltip : MonoBehaviour {
         {
             textGO.GetComponent<RectTransform>().position = position;
             textGO.SetActive(true);
-
             backgroundGO.GetComponent<RectTransform>().position = position;
             backgroundGO.GetComponent<RectTransform>().sizeDelta = FindBackgroundDimensions() * fontSize;
             backgroundGO.SetActive(true);
