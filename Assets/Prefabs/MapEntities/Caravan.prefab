@@ -246,6 +246,9 @@ GameObject:
   - component: {fileID: 114733886760950486}
   - component: {fileID: 114829733577793772}
   - component: {fileID: 114472488167688948}
+  - component: {fileID: 114406420818859858}
+  - component: {fileID: 114496807911061498}
+  - component: {fileID: 114513379739613162}
   m_Layer: 0
   m_Name: Caravan
   m_TagString: Caravan
@@ -566,15 +569,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460360516263998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.26, y: 1.12, z: 15.93}
+  m_LocalRotation: {x: -0, y: 0.08072858, z: -0, w: 0.9967361}
+  m_LocalPosition: {x: 11.76, y: 1.12, z: 11.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4843056307163054}
   - {fileID: 4945491067171254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.261001, z: 0}
 --- !u!4 &4331042729826268
 Transform:
   m_ObjectHideFlags: 1
@@ -2055,6 +2058,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShipList:
   - {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49, type: 2}
+  - {fileID: 11400000, guid: c9582b7af5008e445a543f3cda99ad49, type: 2}
+  - {fileID: 11400000, guid: 90c47a1750390b244bb824713662281c, type: 2}
+  - {fileID: 11400000, guid: f2255c770a13a1647a99621e3d2bbdc0, type: 2}
   SpeedModifier: 1
 --- !u!114 &114251079851443278
 MonoBehaviour:
@@ -2088,6 +2094,19 @@ MonoBehaviour:
   - trade: []
   - trade: []
   - trade: []
+--- !u!114 &114406420818859858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460360516263998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550eee97a07f84418f9bf351f213879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggro: 3
+  IsInFight: 0
 --- !u!114 &114472488167688948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2099,6 +2118,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df02b2edf0abf8d4abf519bd77952b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114496807911061498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460360516263998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328c98b842b5fca4a82221fdb4eb5663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnMouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114513379739613162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460360516263998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d03bfe0f24364f4a9d08bab5d1b0841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TooltipMessage: Caravan
 --- !u!114 &114576491583074084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,7 +2172,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  Owner: Player
+  Owner: {fileID: 0}
 --- !u!114 &114733886760950486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2146,32 +2198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6971a52057f8ed04c851e53e3b6bd5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Route:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   OnArrival:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  ReverseOnCompletion: 1
+  Repeat: 1
+  currentRoutePoint: {fileID: 0}
   agent: {fileID: 0}
 --- !u!114 &114829733577793772
 MonoBehaviour:

@@ -9,25 +9,41 @@ public class xUI_Tooltip : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        print(Panel.sizeDelta);
-	}
+        Disable();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        print(Panel.sizeDelta);
         MoveToMousePosition();
 	}
 
     public void Show(string tooltip)
     {
+        print("Showing tooltip " + tooltip);
         ResizeToText(tooltip);
         TooltipGO.text = tooltip;
-        gameObject.SetActive(true);
+        Enable();
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        print("Disabling tooltip " + TooltipGO.text);
+        Disable();
+    }
+
+    public void SetText(string text)
+    {
+        TooltipGO.text = text;
+    }
+
+    void Enable()
+    {
+        GetComponentInParent<Canvas>().enabled = true;
+    }
+
+    void Disable()
+    {
+        GetComponentInParent<Canvas>().enabled = false;
     }
 
     void MoveToMousePosition()

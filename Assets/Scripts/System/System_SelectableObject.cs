@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Use xUI_PointerEvents instead")]
 public class System_SelectableObject : MonoBehaviour {
 	private System_SelectionManager manager;
 	private System_SelectionHighlight highlight;
