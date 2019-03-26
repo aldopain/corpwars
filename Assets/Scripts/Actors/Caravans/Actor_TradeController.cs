@@ -25,7 +25,7 @@ public class Actor_TradeController : MonoBehaviour {
 
     void Start()
     {
-        SetupTooltip();
+
     }
 
     void SetupTooltip()
