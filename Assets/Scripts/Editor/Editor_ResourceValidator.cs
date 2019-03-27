@@ -267,11 +267,13 @@ public class Editor_ResourceValidator : EditorWindow {
     {
         Town_Production production = go.GetComponent<Town_Production>();
         List<string> errors = new List<string>();
-        for(int i = 0; i < production.resourceID.Length; i++)
+        foreach(var factory in production.factories)
         {
-            if(production.resourceID[i] > resourcesAmount || production.resourceID[i] < 0) 
-            {
-                errors.Add(i + ": " + production.resourceID[i]);
+            foreach(var input in factory.recipe.input) {
+                if(input.amount > resourcesAmount || input.amount < 0) 
+                {
+                    errors.Add(input.inputID + ": " + input.amount);
+                }
             }
         }
 
