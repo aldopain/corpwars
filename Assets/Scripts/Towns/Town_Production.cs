@@ -7,6 +7,8 @@ public class Town_Production : MonoBehaviour {
 
 	Economy_Local economy;
 	Resource_GlobalList gl;
+	public float[] resourceInputEfficiency;
+	public float[] resourceOutputEfficiency;
 
 	void Awake() {
 		economy = GetComponent<Economy_Local>();
@@ -18,18 +20,8 @@ public class Town_Production : MonoBehaviour {
 	}
 
 	public void ProduceResources() {
-		foreach (int i in resourceID){
-			Produce(i);
+		foreach (var factory in factories) {
+			factory.TryProduce(economy, resourceInputEfficiency, resourceOutputEfficiency);
 		}
-	}
-
-	void Produce(int index) {
-		Resource_ConvertionRecipe recipe = gl.ResourcesList[index].Recipe;
-
-		foreach(Resource_Input input in recipe.input) {
-			if(!economy.resources.CheckResource(input.inputID, input.amount * inputModifier[input.inputID])) return;
-		}
-
-		economy.DeclareProduction(index, 1);																			//declare production
 	}
 }

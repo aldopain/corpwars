@@ -7,13 +7,21 @@ public class Resource_Factory : MonoBehaviour {
 	public float inputEfficiency;
 	public float outputEfficiency;
 
-	public void Produce(Local_Economy economy) {
-		for(int i = 0; i < recipe.input.Length; i++) {
-			economy.resources.RemoveResource(recipe.input[i] * inputEfficiency);
+	public void TryProduce(Economy_Local economy, float[] resourceInputEfficiency, float[] resourceOutputEfficiency) {
+		foreach(Resource_Input input in recipe.input){
+			if(!economy.resources.CheckResource(input.inputID, input.amount * resourceInputEfficiency[input.inputID] * inputEfficiency)) return;
+		}
+		Produce(economy, resourceInputEfficiency, resourceOutputEfficiency);
+	}
+
+	public void Produce(Economy_Local economy, float[] resourceInputEfficiency, float[] resourceOutputEfficiency) {
+		foreach(var input in recipe.input) {
+			economy.resources.RemoveResource(input * resourceInputEfficiency[input.inputID] * inputEfficiency);
 		}
 
-		for(int i = 0; i < recipe.output.Length; i++) {
-			economy.resources.AddResource(recipe.output[i] * outputEfficiency);
+		foreach(var output in recipe.output) {
+			economy.resources.AddResource(output * resourceOutputEfficiency[output.inputID] * outputEfficiency);
+			economy.DeclareProduction(output.inputID, output.amount * resourceOutputEfficiency[output.inputID] * outputEfficiency);
 		}
 	}
 }

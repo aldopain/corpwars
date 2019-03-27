@@ -131,7 +131,7 @@ public class Events_Logic : MonoBehaviour {
 		int resourceIndex = Convert.ToInt32(args[1]);
 		double amount = Convert.ToDouble(args[2]);
 
-		GameObject.Find(town).GetComponent<Town_Production>().inputModifier[resourceIndex] += (float)amount;
+		GameObject.Find(town).GetComponent<Town_Production>().resourceInputEfficiency[resourceIndex] += (float)amount;
 	}
 
 	public void ProductionOutput(string[] args){
@@ -139,7 +139,7 @@ public class Events_Logic : MonoBehaviour {
 		int resourceIndex = Convert.ToInt32(args[1]);
 		double amount = Convert.ToDouble(args[2]);
 
-		GameObject.Find(town).GetComponent<Town_Production>().outputModifier[resourceIndex] += (float)amount;
+		GameObject.Find(town).GetComponent<Town_Production>().resourceOutputEfficiency[resourceIndex] += (float)amount;
 	}
 
 	public void PriceModifier(string[] args){
