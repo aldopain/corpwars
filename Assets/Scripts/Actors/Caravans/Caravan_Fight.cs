@@ -18,8 +18,8 @@ public class Caravan_Fight {
 		var attackerMovement = attacker.GetComponent<Actor_CaravanMovement>();
 		var defenderMovement = defender.GetComponent<Actor_CaravanMovement>();
 
-		attackerMovement.ChangeIsStopped(true);
-		defenderMovement.ChangeIsStopped(true);
+		TryChangeIsStopped(attackerMovement, true);
+		TryChangeIsStopped(defenderMovement, true);
 
 		var defShips = defender.GetComponent<Caravan_UnitManager>();
 		var atShips = attacker.GetComponent<Caravan_UnitManager>();
@@ -42,21 +42,24 @@ public class Caravan_Fight {
 
 		Debug.Log("End of fight");
 
-		if (!defIsAlive)
-			GameObject.Destroy(defender);
-		else {
-			defenderAggro.IsInFight = false;
-			defenderMovement.ChangeIsStopped(false);
-		}
-
-		if (!atIsAlive) 
-			GameObject.Destroy(attacker);
-		else {
-			attackerAggro.IsInFight = false;
-			attackerMovement.ChangeIsStopped(false);
-		}
+		QuitFromFight(attacker, attackerAggro, attackerMovement, atIsAlive);
+		QuitFromFight(defender, defenderAggro, defenderMovement, defIsAlive);
 
 		// TODO: some stuff like statistics, rewards, exp, etc.
+	}
+
+	static void QuitFromFight (GameObject go, Caravan_Aggro aggro, Actor_CaravanMovement movement, bool IsAlive){
+		if (!IsAlive)
+			GameObject.Destroy(go);
+		else {
+			aggro.IsInFight = false;
+			TryChangeIsStopped(movement, false);
+		}
+	}
+
+	static void TryChangeIsStopped(Actor_CaravanMovement movement, bool value){
+		if (movement != null)
+			movement.ChangeIsStopped(false);
 	}
 
 	static void Round(Caravan_UnitManager attacker, Caravan_UnitManager defender){
