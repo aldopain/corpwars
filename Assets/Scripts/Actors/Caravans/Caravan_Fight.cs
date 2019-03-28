@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Caravan_Fight {
 
+	static float roundLength = 1f;
+
 	public static IEnumerator Start (GameObject attacker, GameObject defender){
 		bool atIsAlive = true, defIsAlive = true;
 
@@ -34,9 +36,11 @@ public class Caravan_Fight {
 			End(atShips, defShips);
 			atIsAlive = atShips.IsAlive();
 			defIsAlive = defShips.IsAlive();
+			Debug.Log("Next round!");
+			yield return new WaitForSeconds(1);
 		}
 
-		yield return new WaitForSeconds(5);
+		Debug.Log("End of fight");
 
 		if (!defIsAlive)
 			GameObject.Destroy(defender);
@@ -63,7 +67,8 @@ public class Caravan_Fight {
 	}
 
 	static void AttackRandomEnemy(Ship_BaseInfo unit, Caravan_UnitManager enemy){
-		enemy.ShipList[Random.Range(0, enemy.ShipList.Count)].Health -= unit.Attack;
+		var enemyUnit = enemy.ShipList[Random.Range(0, enemy.ShipList.Count)];
+		enemyUnit.Health -= unit.Attack * roundLength * (100 - enemyUnit.Defence) / 100;
 	}
 
 	static void End(Caravan_UnitManager a, Caravan_UnitManager b){
