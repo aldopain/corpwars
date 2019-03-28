@@ -44,16 +44,24 @@ public class Caravan_Fight {
 
 		QuitFromFight(attacker, attackerAggro, attackerMovement, atIsAlive);
 		QuitFromFight(defender, defenderAggro, defenderMovement, defIsAlive);
+		if (atIsAlive && !defIsAlive)
+			TryConquerorPoint(attacker, defender, defenderMovement);
 
 		// TODO: some stuff like statistics, rewards, exp, etc.
 	}
 
 	static void QuitFromFight (GameObject go, Caravan_Aggro aggro, Actor_CaravanMovement movement, bool IsAlive){
-		if (!IsAlive)
+		if (!IsAlive && movement != null) {
 			GameObject.Destroy(go);
-		else {
+		} else {
 			aggro.IsInFight = false;
 			TryChangeIsStopped(movement, false);
+		}
+	}
+
+	static void TryConquerorPoint(GameObject attacker, GameObject defender, Actor_CaravanMovement defenderMovement){
+		if (defenderMovement == null) {
+			defender.GetComponent<Actor_Resources>().Owner = attacker.GetComponent<Actor_Resources>().Owner;
 		}
 	}
 
