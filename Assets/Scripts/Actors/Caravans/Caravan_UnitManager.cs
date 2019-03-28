@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Caravan_UnitManager : MonoBehaviour {
   	public List<Ship_BaseInfo> ShipList;
-	private List<Ship_BaseInfo> _shipList;
 	public float SpeedModifier = 1f;
+	public double PowerRating = 0d;
+	NavMeshAgent agent;
+
 	void Start () {
+		agent = GetComponent<NavMeshAgent>();
 		SetCaravanSpeed();
         CopyShipList();
 	}
@@ -42,10 +46,21 @@ public class Caravan_UnitManager : MonoBehaviour {
 	}
 
 	public void SetCaravanSpeed(float s){
-		GetComponent<Actor_CaravanMovement>().agent.speed = s;
+		agent.speed = s;
 	}
 
 	public void SetCaravanSpeed(){
-		GetComponent<Actor_CaravanMovement>().agent.speed = GetCaravanSpeed();
+		if (agent != null)
+			agent.speed = GetCaravanSpeed();
+	}
+
+	public double UpdatePowerRating(){
+		var summ = 0d;
+		foreach (var ship in ShipList)
+			summ += ship.Health + ship.Attack + ship.Defence;
+		// 600, because it's maximum summ for one ship
+		summ /= 600;
+		PowerRating = summ;
+		return PowerRating;
 	}
 }
