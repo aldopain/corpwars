@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Caravan_Fight {
+	public static SystemEvent_Fight fightStarted;
+	public static SystemEvent_Fight fightEnded;
 
 	static float roundLength = 1f;
 
 	public static IEnumerator Start (GameObject attacker, GameObject defender){
+		fightStarted.Invoke(attacker, defender);
+
 		bool atIsAlive = true, defIsAlive = true;
 
 		var attackerAggro = attacker.GetComponent<Caravan_Aggro>();
