@@ -8,6 +8,7 @@ public class Player_Actions {
 		DeclaredWar, DeclaredPeace,
 		DeclaredTradePact, RuinedTradePact,
 		DeclaredNonWarPact, RuinedNonWarPact,
+		TransferedMoney, TransferedResources, TransferedTradePost,
 	}
 	
 }
