@@ -8,11 +8,13 @@ public class Caravan_UnitManager : MonoBehaviour {
 	public float SpeedModifier = 1f;
 	public double PowerRating = 0d;
 	NavMeshAgent agent;
+	public SystemEvent_CreateCaravan ev;
 
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
 		SetCaravanSpeed();
         CopyShipList();
+		ev.Invoke(gameObject);
 	}
 	
     void CopyShipList()
