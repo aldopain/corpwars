@@ -12,6 +12,7 @@ public class NavigationRoute {
 		return new NavigationRoute(start, end);
 	}
 
+	// TODO
 	public static NavigationRoute CreateRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end) {
 		if (start.Equals(end)) return null;
 		return new NavigationRoute(start, end);
