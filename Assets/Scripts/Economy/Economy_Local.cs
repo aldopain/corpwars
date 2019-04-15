@@ -83,7 +83,7 @@ public class Economy_Local : MonoBehaviour {
 	int CalculatePrice (int index, double amount) {
 		double K = priceModifiers[index];
 		int B = globalEconomy.pricing[index];
-		double P = population.GetDemands(index);
+		double P = population.GetHappinessDemands(index);
 		double N = resources.GetResource(index);
 		double X = amount;
 		int S = (int)(K * B * System.Math.Exp(-((X + 2 * N)/(2 * P))));

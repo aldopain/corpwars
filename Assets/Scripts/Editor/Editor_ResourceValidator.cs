@@ -87,15 +87,15 @@ public class Editor_ResourceValidator : EditorWindow {
         if(go.GetComponent<Actor_Resources>().Debug_GetResourceLength() != resourcesAmount || go.GetComponent<Actor_Resources>().Owner.name == string.Empty)
             Debug.LogFormat("Actor_Resources fields cannot be fixed by this tool. You have to set Owner.nameship and array length by hand. Set array length to {0}", resourcesAmount, go);
 
-        FixTownDemands(go);
+        FixTownHappinessDemands(go);
     }
 
-    void FixTownDemands(GameObject go)
+    void FixTownHappinessDemands(GameObject go)
     {
         Town_Population pop = go.GetComponent<Town_Population>();
-        if(pop.Poor.Demands.Length != resourcesAmount) pop.Poor.Demands = new double[resourcesAmount];
-        if (pop.Middle.Demands.Length != resourcesAmount) pop.Middle.Demands = new double[resourcesAmount];
-        if (pop.Rich.Demands.Length != resourcesAmount) pop.Rich.Demands = new double[resourcesAmount];
+        if(pop.Poor.HappinessDemands.Length != resourcesAmount) pop.Poor.HappinessDemands = new double[resourcesAmount];
+        if (pop.Middle.HappinessDemands.Length != resourcesAmount) pop.Middle.HappinessDemands = new double[resourcesAmount];
+        if (pop.Rich.HappinessDemands.Length != resourcesAmount) pop.Rich.HappinessDemands = new double[resourcesAmount];
     }
 
     void FixProductionArrays()
@@ -234,32 +234,32 @@ public class Editor_ResourceValidator : EditorWindow {
     void GUI_TownPopulation(GameObject go)
     {
         Town_Population pop = go.GetComponent<Town_Population>();
-        EditorGUILayout.LabelField("Population Demands: ");
-        if(pop.Poor.Demands.Length == resourcesAmount)
+        EditorGUILayout.LabelField("Population HappinessDemands: ");
+        if(pop.Poor.HappinessDemands.Length == resourcesAmount)
         {
-            EditorGUILayout.LabelField("\tPoor: " + pop.Poor.Demands.Length);
+            EditorGUILayout.LabelField("\tPoor: " + pop.Poor.HappinessDemands.Length);
         }
         else
         {
-            EditorGUILayout.LabelField("\tPoor: " + pop.Poor.Demands.Length, Invalid);
+            EditorGUILayout.LabelField("\tPoor: " + pop.Poor.HappinessDemands.Length, Invalid);
         }
 
-        if (pop.Middle.Demands.Length == resourcesAmount)
+        if (pop.Middle.HappinessDemands.Length == resourcesAmount)
         {
-            EditorGUILayout.LabelField("\tMiddle: " + pop.Middle.Demands.Length);
+            EditorGUILayout.LabelField("\tMiddle: " + pop.Middle.HappinessDemands.Length);
         }
         else
         {
-            EditorGUILayout.LabelField("\tMiddle: " + pop.Middle.Demands.Length, Invalid);
+            EditorGUILayout.LabelField("\tMiddle: " + pop.Middle.HappinessDemands.Length, Invalid);
         }
 
-        if (pop.Rich.Demands.Length == resourcesAmount)
+        if (pop.Rich.HappinessDemands.Length == resourcesAmount)
         {
-            EditorGUILayout.LabelField("\tRich: " + pop.Rich.Demands.Length);
+            EditorGUILayout.LabelField("\tRich: " + pop.Rich.HappinessDemands.Length);
         }
         else
         {
-            EditorGUILayout.LabelField("\tRich: " + pop.Rich.Demands.Length, Invalid);
+            EditorGUILayout.LabelField("\tRich: " + pop.Rich.HappinessDemands.Length, Invalid);
         }
     }
 

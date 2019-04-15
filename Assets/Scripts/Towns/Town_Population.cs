@@ -13,13 +13,15 @@ public class Town_Population : MonoBehaviour {
 		public int Productivity;
 		[Range(0, 200)]
 		public int Happiness;
-		public double[] Demands;
+		public double Birthrate;
+		public double[] HappinessDemands;
+		public double[] BirthrateDemands;
 
 		// resources - Actor_Resources.Amount
 		public void Update(double[] resources){
 			UpdateHappiness(resources);
 			UpdateProductivity();
-			UpdateDemands();
+			UpdateHappinessDemands();
 		}
 
 		void UpdateProductivity(){
@@ -28,20 +30,28 @@ public class Town_Population : MonoBehaviour {
 
 		//Function that would calculate happiness based on available resources
 		void UpdateHappiness(double[] resources){
-			Happiness = (int) (DemandLevel(resources) * 100);
+			Happiness = (int) (DemandLevel(resources, HappinessDemands) * 100);
 		}
 
-		double DemandLevel (double[] resources){
+		void UpdateAmount(){
+			Amount += (int) (Amount * Birthrate);
+		}
+
+		void UpdateBirthrate(double[] resources){
+			Birthrate = 0.4 * DemandLevel(resources, HappinessDemands) - 0.2;
+		}
+
+		double DemandLevel (double[] resources, double[] demands){
 			double d = 0;
-			if (Demands.Length != resources.Length) Debug.LogWarning("Demands.Length != resources.Length");
-			for(int i = 0; i < resources.Length && i < Demands.Length; i++){
-				d += (resources[i] > Demands[i] ? 1 : resources[i] / Demands[i]);
+			if (demands.Length != resources.Length) Debug.LogWarning("Demands.Length != resources.Length");
+			for(int i = 0; i < resources.Length && i < demands.Length; i++){
+				d += (resources[i] > demands[i] ? 1 : resources[i] / demands[i]);
 			}
-			return d / Demands.Length;
+			return d / demands.Length;
 		}
 
-		//Function, that would calculate demands
-		void UpdateDemands(){
+		//Function, that would calculate HappinessDemands
+		void UpdateHappinessDemands(){
 			
 		}
 	}
@@ -55,23 +65,28 @@ public class Town_Population : MonoBehaviour {
 		Resource_GlobalList gl = GameObject.Find("GameController").GetComponent<Resource_GlobalList>();
 		var glResLength = gl.ResourcesList.Length;
 
-		Poor.Demands = new double[glResLength];
-		for(int i = 0; i < Poor.Demands.Length;i++){
-			Poor.Demands[i] = Random.Range(0, 100);
-		}
+		Poor.HappinessDemands = new double[glResLength];
+		Poor.BirthrateDemands = new double[glResLength];
 
-		Middle.Demands = new double[glResLength];
-		for(int i = 0; i < Middle.Demands.Length;i++){
-			Middle.Demands[i] = Random.Range(0, 100);
-		}
+		Middle.HappinessDemands = new double[glResLength];
+		Middle.BirthrateDemands = new double[glResLength];
 
-		Middle.Demands = new double[glResLength];
-		for(int i = 0; i < Middle.Demands.Length;i++){
-			Middle.Demands[i] = Random.Range(0, 100);
+		Rich.HappinessDemands = new double[glResLength];
+		Rich.BirthrateDemands = new double[glResLength];
+	
+		for (int i = 0; i < glResLength; i++) {
+			Poor.HappinessDemands[i] = Random.Range(0, 100);
+			Poor.BirthrateDemands[i] = Random.Range(0, 100);
+			
+			Middle.HappinessDemands[i] = Random.Range(0, 100);
+			Middle.BirthrateDemands[i] = Random.Range(0, 100);
+			
+			Rich.HappinessDemands[i] = Random.Range(0, 100);
+			Rich.BirthrateDemands[i] = Random.Range(0, 100);
 		}
 	}
 
-	public double GetDemands(int index){
-		return Poor.Demands[index] + Middle.Demands[index] + Rich.Demands[index];
+	public double GetHappinessDemands(int index){
+		return Poor.HappinessDemands[index] + Middle.HappinessDemands[index] + Rich.HappinessDemands[index];
 	}
 }

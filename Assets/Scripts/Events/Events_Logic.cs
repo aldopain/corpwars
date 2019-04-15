@@ -33,8 +33,8 @@ public class Events_Logic : MonoBehaviour {
 		GetComponent<Economy_Global>().pricing[resourceIndex] += difference;
 	}
 
-	//Changes the demands of a certain class in a certain town by a certain amount
-	public void PopDemands(string[] args){
+	//Changes the HappinessDemands of a certain class in a certain town by a certain amount
+	public void PopHappinessDemands(string[] args){
 		string town = args[0];
 		string popClass = args[1];
 		int resourceIndex = Convert.ToInt32(args[2]);
@@ -42,16 +42,16 @@ public class Events_Logic : MonoBehaviour {
 
 		switch(popClass){
 			case "Poor":
-				GameObject.Find(town).GetComponent<Town_Population>().Poor.Demands[resourceIndex] += amount;
+				GameObject.Find(town).GetComponent<Town_Population>().Poor.HappinessDemands[resourceIndex] += amount;
 				break;
 			case "Middle":
-				GameObject.Find(town).GetComponent<Town_Population>().Middle.Demands[resourceIndex] += amount;
+				GameObject.Find(town).GetComponent<Town_Population>().Middle.HappinessDemands[resourceIndex] += amount;
 				break;
 			case "Rich":
-				GameObject.Find(town).GetComponent<Town_Population>().Rich.Demands[resourceIndex] += amount;
+				GameObject.Find(town).GetComponent<Town_Population>().Rich.HappinessDemands[resourceIndex] += amount;
 				break;
 			default:
-				Debug.LogError("ChangePopDemands can't find PopClass " + popClass);
+				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
 				break;
 		}		
 	}
@@ -72,7 +72,7 @@ public class Events_Logic : MonoBehaviour {
 				GameObject.Find(town).GetComponent<Town_Population>().Rich.Amount += amount;
 				break;
 			default:
-				Debug.LogError("ChangePopDemands can't find PopClass " + popClass);
+				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
 				break;
 		}		
 	}
@@ -93,7 +93,7 @@ public class Events_Logic : MonoBehaviour {
 				GameObject.Find(town).GetComponent<Town_Population>().Rich.Productivity += amount;
 				break;
 			default:
-				Debug.LogError("ChangePopDemands can't find PopClass " + popClass);
+				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
 				break;
 		}		
 	}
@@ -114,7 +114,7 @@ public class Events_Logic : MonoBehaviour {
 				GameObject.Find(town).GetComponent<Town_Population>().Rich.Happiness += amount;
 				break;
 			default:
-				Debug.LogError("ChangePopDemands can't find PopClass " + popClass);
+				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
 				break;
 		}		
 	}
