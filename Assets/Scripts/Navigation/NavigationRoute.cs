@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class NavigationRoute {
 	List<NavigationNode> stops;
-	int i = 0;
+	int destinationIndex = 0;
+	int loopDestinationIndex = 0;
 
 	public static NavigationRoute CreateRoute(NavigationNode start, NavigationNode end) {
 		if (start.Equals(end)) return null;
@@ -18,12 +19,12 @@ public class NavigationRoute {
 		return new NavigationRoute(start, end);
 	}
 
-	private NavigationRoute(NavigationNode start, NavigationNode end){
+	private NavigationRoute(NavigationNode start, NavigationNode end) {
 		stops = new List<NavigationNode>();
 		AddPointsFromWay(start.GetWayTo(end), false, false);
 	}
 
-	private NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end){
+	private NavigationRoute(NavigationNode start, List<NavigationNode> midpoints, NavigationNode end) {
 		stops = new List<NavigationNode>();
 		AddPointsFromWay(start.GetWayTo(midpoints[0]), false, false);
 		for (int i = 0; i < midpoints.Count - 1; i++){
@@ -32,7 +33,7 @@ public class NavigationRoute {
 		AddPointsFromWay(midpoints[midpoints.Count - 1].GetWayTo(end), true, false);
 	}
 
-	private void AddPointsFromWay(NavigationWay way, bool excludeFirst, bool excludeLast){
+	private void AddPointsFromWay(NavigationWay way, bool excludeFirst, bool excludeLast) {
 		int startIndex = excludeFirst ? 1 : 0;
 		int endIndex = excludeLast ? way.points.Count - 1 : way.points.Count;
 		for(int i = startIndex; i < endIndex; i++){
@@ -40,7 +41,8 @@ public class NavigationRoute {
 		}
 	}
 
-	public void LoopRoute(){
+	public void LoopRoute() {
+		loopDestinationIndex = stops.Count - 1;
 		var buf = new List<NavigationNode>(stops);
 		buf.RemoveAt(buf.Count - 1);
 		buf.Reverse();
@@ -48,19 +50,26 @@ public class NavigationRoute {
 	}
 
 	public NavigationNode Next(){
-		i++;
-		if (i == stops.Count) {
-			i = 0;
+		destinationIndex++;
+		if (destinationIndex == stops.Count) {
+			destinationIndex = 0;
 			return null;
 		}
-		return stops[i];
+		return stops[destinationIndex];
 	}
 
-	public int IndexOf(NavigationNode p){
+	public int IndexOf(NavigationNode p) {
 		return stops.IndexOf(p);
 	}
 
 	public int GetIndex(){
-		return i;
+		return destinationIndex;
 	}
+
+	public override string ToString() {
+		if (loopDestinationIndex > 0)
+			return "loop " + stops[0].ToString() + " - " + stops[loopDestinationIndex].ToString();
+		else
+			return stops[0].ToString() + " - " + stops[stops.Count - 1].ToString();
+	} 
 }
