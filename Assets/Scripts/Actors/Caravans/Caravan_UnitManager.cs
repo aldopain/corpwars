@@ -27,6 +27,15 @@ public class Caravan_UnitManager : MonoBehaviour {
 		
 	}
 
+	/*
+		other.PowerRating - PowerRating is in [-10...10]
+		add 10 to go in [0...20]
+		fightDifficulty should be in [0...10], so / 2
+	 */
+	public double CountFightDifficulty(Caravan_UnitManager other){
+		return (other.PowerRating - PowerRating + 10) / 2;
+	}
+
 	public float GetCaravanSpeed(){
 		float min = Mathf.Infinity;
 		double combinedInvSize = 0;
