@@ -26,17 +26,11 @@ public class Resource_Factory : MonoBehaviour {
 			economy.resources.RemoveResource(input * resourceInputEfficiency[input.inputID] * inputEfficiency);
 		}
 
-		/*
-		  need to refactor - twice counting, can count once
-		 	possible resolutions:
-			 - add override to DeclareProduction (param: Resource_Input)
-			 - add override to AddResource (params: amount, inputId)
-		*/
 		foreach(var output in recipe.output) {
-			var outputCount = output.amount * resourceOutputEfficiency[output.inputID] * outputEfficiency * exhaustion;
-			economy.resources.AddResource(output * resourceOutputEfficiency[output.inputID] * outputEfficiency * exhaustion);
-			economy.DeclareProduction(output.inputID, outputCount);
-			produced += outputCount;
+			var modifiedOutput = output * resourceOutputEfficiency[output.inputID] * outputEfficiency * exhaustion;
+			economy.resources.AddResource(modifiedOutput);
+			economy.DeclareProduction(modifiedOutput.inputID, modifiedOutput.amount);
+			produced += modifiedOutput.amount;
 			CalculateExhaustion();
 		}
 	}
