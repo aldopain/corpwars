@@ -13,4 +13,11 @@ public class Resource_Input{
 		ri.amount = a.amount * f;
 		return ri;
 	}
+
+	public static Resource_Input operator*(Resource_Input a, double d){
+		Resource_Input ri = new Resource_Input();
+		ri.inputID = a.inputID;
+		ri.amount = a.amount * d;
+		return ri;
+	}
 }
