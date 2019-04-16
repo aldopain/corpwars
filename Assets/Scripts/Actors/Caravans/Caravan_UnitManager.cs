@@ -52,7 +52,7 @@ public class Caravan_UnitManager : MonoBehaviour {
 
 	public bool IsAlive(){
 		foreach (var ship in ShipList)
-			if (ship.Health > 0) return true;
+			if (ship.CurrentHealth > 0) return true;
 		return false;
 	}
 
@@ -68,7 +68,7 @@ public class Caravan_UnitManager : MonoBehaviour {
 	public double UpdatePowerRating(){
 		var summ = 0d;
 		foreach (var ship in ShipList)
-			summ += ship.Health + ship.Attack + ship.Defence;
+			summ += ship.CurrentHealth + ship.Attack + ship.Defence;
 		// 600, because it's maximum summ for one ship
 		summ /= 600;
 		PowerRating = summ;

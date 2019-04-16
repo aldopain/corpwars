@@ -18,11 +18,14 @@ public class Editor_Ship_BaseInfo : Editor{
         EditorGUILayout.LabelField("Trading Settings", EditorStyles.boldLabel);
         editTarget.Speed = EditorGUILayout.FloatField("Speed", editTarget.Speed);
         editTarget.InventorySize = EditorGUILayout.DoubleField("Inventory Size", editTarget.InventorySize);
+        editTarget.Cost = EditorGUILayout.IntField("Cost", editTarget.Cost);
+        editTarget.Maintenance = EditorGUILayout.IntField("Maintenance", editTarget.Maintenance);
 
         EditorGUILayout.Space();
 
         EditorGUILayout.LabelField("Combat Settings", EditorStyles.boldLabel);
-        editTarget.Health = EditorGUILayout.DoubleField("Max Health", editTarget.Health);
+        editTarget.MaximumHealth = EditorGUILayout.DoubleField("Max Health", editTarget.MaximumHealth);
+        editTarget.CurrentHealth = EditorGUILayout.DoubleField("Current Health", editTarget.CurrentHealth);
         editTarget.Attack = EditorGUILayout.DoubleField("Attack", editTarget.Attack);
         editTarget.Defence = EditorGUILayout.DoubleField("Defence", editTarget.Defence);
 
@@ -38,7 +41,10 @@ public class Editor_Ship_BaseInfo : Editor{
     {
         ship.Speed = Random.Range(1, 10);
         ship.InventorySize = Random.Range(0, 10);
-        ship.Health = Random.Range(1, 10);
+        ship.MaximumHealth = Random.Range(1, 10);
+        ship.CurrentHealth = Random.Range(1, 10);
+        ship.Maintenance = Random.Range(1, 10);
+        ship.Cost = Random.Range(1, 10);
         ship.Attack = Random.Range(0, 10);
         ship.Defence = Random.Range(0, 10);
     }

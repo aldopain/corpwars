@@ -76,14 +76,14 @@ public class Caravan_Fight {
 
 	static void Round(Caravan_UnitManager attacker, Caravan_UnitManager defender){
 		foreach (var ship in attacker.ShipList){
-			if (ship.Health > 0)
+			if (ship.CurrentHealth > 0)
 				AttackRandomEnemy(ship, defender);
 		}
 	}
 
 	static void AttackRandomEnemy(Ship_BaseInfo unit, Caravan_UnitManager enemy){
 		var enemyUnit = enemy.ShipList[Random.Range(0, enemy.ShipList.Count)];
-		enemyUnit.Health -= unit.Attack * roundLength * (100 - enemyUnit.Defence) / 100;
+		enemyUnit.CurrentHealth -= unit.Attack * roundLength * (100 - enemyUnit.Defence) / 100;
 	}
 
 	static void End(Caravan_UnitManager a, Caravan_UnitManager b){
@@ -94,7 +94,7 @@ public class Caravan_Fight {
 	static void ClearFromDead(Caravan_UnitManager cum){
 		var cleanList = new List<Ship_BaseInfo>();
 		foreach (var ship in cum.ShipList)
-			if (ship.Health > 0)
+			if (ship.CurrentHealth > 0)
 				cleanList.Add(ship);
 		cum.ShipList = cleanList;
 	}
