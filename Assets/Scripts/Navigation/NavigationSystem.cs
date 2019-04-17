@@ -8,11 +8,11 @@ public class NavigationSystem : MonoBehaviour {
 
 	List<NavigationNode> allPoints;
 	List<NavigationWay> ways;
-	public string tag;
+	public string tagToSearch;
 
 	void Awake () {
 		allPoints = new List<NavigationNode>();
-		var tmp = GameObject.FindGameObjectsWithTag(tag);
+		var tmp = GameObject.FindGameObjectsWithTag(tagToSearch);
 		foreach (var current in tmp)
 			allPoints.Add(current.GetComponent<NavigationNode>());
 		foreach(var _current in allPoints){
@@ -22,7 +22,7 @@ public class NavigationSystem : MonoBehaviour {
 
 	 void BakeWays(){
 		allPoints = new List<NavigationNode>();
-		var tmp = GameObject.FindGameObjectsWithTag(tag);
+		var tmp = GameObject.FindGameObjectsWithTag(tagToSearch);
 		foreach (var current in tmp)
 			allPoints.Add(current.GetComponent<NavigationNode>());
 		foreach(var _current in allPoints){
