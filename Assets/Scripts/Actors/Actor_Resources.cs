@@ -69,4 +69,10 @@ public class Actor_Resources : MonoBehaviour {
 	{
 			return Amount.Length;
 	}
+
+	public void Randomize(){
+		for (int i = 0; i < Amount.Length; i++) {
+				Amount[i] = Random.Range(0f, 100f);
+		}
+	}
 }
