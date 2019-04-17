@@ -13,7 +13,7 @@ public class Caravan_Aggro : MonoBehaviour {
 	public bool IsInFight = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		Owner = gameObject.GetComponent<Actor_Resources>().Owner;
 	}
 
@@ -39,7 +39,7 @@ public class Caravan_Aggro : MonoBehaviour {
 			var nearCaravans = Filter(Physics.OverlapSphere(transform.position, 1f));
 			if (nearCaravans.Count > 0) {
 				print("FIGHT");
-				StartCoroutine(Caravan_Fight.Start(gameObject, nearCaravans[0].gameObject));
+				StartCoroutine(Caravan_Fight.Start(gameObject, nearCaravans[0].gameObject, Owner.events));
 			}
 		}
 	}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Relations : MonoBehaviour {
+public partial class Player_Relations : MonoBehaviour {
 	public static int WAR = -1;
 	public static int NEUTRAL = 0;
 	public static int TRADE_PACT = 2;
