@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Caravan_Fight {
-	public static SystemEvent_Fight fightStarted;
-	public static SystemEvent_Fight fightEnded;
-
 	static float roundLength = 1f;
 
-	public static IEnumerator Start (GameObject attacker, GameObject defender){
-		fightStarted.Invoke(attacker, defender);
+	public static IEnumerator Start (GameObject attacker, GameObject defender, System_EventPool events){
+		events.fightStarted.Invoke(attacker, defender);
 
 		bool atIsAlive = true, defIsAlive = true;
 
@@ -45,6 +42,7 @@ public class Caravan_Fight {
 		}
 
 		Debug.Log("End of fight");
+		events.fightEnded.Invoke(attacker, defender);
 
 		QuitFromFight(attacker, attackerAggro, attackerMovement, atIsAlive);
 		QuitFromFight(defender, defenderAggro, defenderMovement, defIsAlive);

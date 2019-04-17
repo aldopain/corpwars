@@ -20,15 +20,10 @@ public class Ship_BaseInfo:ScriptableObject{
         return (int) ((MaximumHealth - CurrentHealth) * 0.1 * Maintenance);
 	}
 
-	public void Repair(Player_Manager pm){
-        var playerMoney = pm.GetComponent<Player_Money>();
-        Repair(playerMoney);
-	}
-
-    public void Repair(Player_Money playerMoney){
+    public void Repair(Player_Manager pm){
 		CurrentHealth = MaximumHealth;
         var repairCost = GetRepairCost();
-        if (playerMoney.Amount > repairCost)
-            playerMoney.Add(-repairCost);
+        if (pm.money.Amount > repairCost)
+            pm.money.Add(-repairCost);
 	}
 }
