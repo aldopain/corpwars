@@ -13,6 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Iron
   Description: 
-  Recipe:
-    input: []
-  ConvertionOutput: 1
+  Image: {fileID: 21300000, guid: 544bfe6c210d3c448aff6aecff99378f, type: 3}

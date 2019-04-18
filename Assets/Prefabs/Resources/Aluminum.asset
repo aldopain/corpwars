@@ -13,6 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Aluminum
   Description: 
-  Recipe:
-    input: []
-  ConvertionOutput: 1
+  Image: {fileID: 21300000, guid: cc7b4c8b03cf41f42a7ff8f870b452dc, type: 3}

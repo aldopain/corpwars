@@ -13,6 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wood
   Description: 
-  Recipe:
-    input: []
-  ConvertionOutput: 1
+  Image: {fileID: 21300000, guid: a90edea2d4ba6ce439bc1384890eb930, type: 3}

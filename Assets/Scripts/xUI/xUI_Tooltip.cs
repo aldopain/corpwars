@@ -19,7 +19,6 @@ public class xUI_Tooltip : MonoBehaviour {
 
     public void Show(string tooltip)
     {
-        print("Showing tooltip " + tooltip);
         ResizeToText(tooltip);
         TooltipGO.text = tooltip;
         Enable();
@@ -27,7 +26,6 @@ public class xUI_Tooltip : MonoBehaviour {
 
     public void Hide()
     {
-        print("Disabling tooltip " + TooltipGO.text);
         Disable();
     }
 

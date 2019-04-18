@@ -36,7 +36,6 @@ public class xUI_TooltipSender : MonoBehaviour {
 
     void ShowTooltip()
     {
-        print("Fuck");
         tooltip.Show(TooltipMessage);
     }
 }

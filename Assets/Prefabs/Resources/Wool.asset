@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deacf7022fe426340bfe848c8ff4bb2d, type: 3}
-  m_Name: Fuel
+  m_Name: Wool
   m_EditorClassIdentifier: 
-  Name: Fuel
+  Name: Wool
   Description: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 13ec038b20d1c87438ea4789f403f028, type: 3}
