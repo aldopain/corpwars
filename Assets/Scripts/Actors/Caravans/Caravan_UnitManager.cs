@@ -14,7 +14,7 @@ public class Caravan_UnitManager : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		SetCaravanSpeed();
         CopyShipList();
-		ev.Invoke(gameObject);
+		// ev.Invoke(gameObject);
 	}
 	
     void CopyShipList()

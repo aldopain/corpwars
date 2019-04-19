@@ -9,6 +9,7 @@ public partial class Player_Manager : MonoBehaviour {
 	public Actor_Resources resources;
 	public NavigationNode city;
 	public List<NavigationNode> tradePosts;
+	public List<GameObject> caravans;
 
 	void Start () {
 		resources = city.GetComponent<Actor_Resources>();

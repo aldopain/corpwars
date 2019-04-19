@@ -15,6 +15,7 @@ public class Caravan_Aggro : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Owner = gameObject.GetComponent<Actor_Resources>().Owner;
+		Owner.caravans.Add(gameObject);
 	}
 
 	public void SetAggro(int a){
@@ -27,7 +28,7 @@ public class Caravan_Aggro : MonoBehaviour {
 		foreach(var coll in colliders) {
 			if (coll.gameObject.tag == "Caravan" && !coll.gameObject.name.Equals(gameObject.name)){
 				var otherOwner = coll.GetComponent<Actor_Resources>().Owner;
-				if (aggro == KILLER || (aggro == AGGRESSIVE && Owner.IsEnemy(otherOwner)) && !coll.GetComponent<Caravan_Aggro>().IsInFight)
+				if (!otherOwner.Equals(Owner) && (aggro == KILLER || (aggro == AGGRESSIVE && Owner.IsEnemy(otherOwner)) && !coll.GetComponent<Caravan_Aggro>().IsInFight))
 					retVal.Add(coll);
 			}
 		}

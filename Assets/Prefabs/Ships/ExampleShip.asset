@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Name: ExampleShip
   m_EditorClassIdentifier: 
   Name: 
-  Speed: 3
-  InventorySize: 5
-  Attack: 3
-  Defence: 12
-  Health: 5
+  Speed: 8
+  InventorySize: 2
+  Attack: 5
+  Defence: 3
+  CurrentHealth: 6
+  MaximumHealth: 1
+  Maintenance: 4
+  Cost: 2
   mesh: {fileID: 0}

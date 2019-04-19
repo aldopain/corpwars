@@ -9,7 +9,7 @@ public class Caravan_Fight {
 	static float roundLength = 1f;
 
 	public static IEnumerator Start (GameObject attacker, GameObject defender){
-		fightStarted.Invoke(attacker, defender);
+		// fightStarted.Invoke(attacker, defender);
 
 		bool atIsAlive = true, defIsAlive = true;
 

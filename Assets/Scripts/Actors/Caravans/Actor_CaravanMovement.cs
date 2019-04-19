@@ -13,18 +13,20 @@ public class Actor_CaravanMovement : MonoBehaviour {
     public bool Repeat;
 
 	public NavigationNode currentRoutePoint;
-    int StopCounter = 0;
+	public NavigationNode prevRoutePoint;
 	[HideInInspector]
 	public NavMeshAgent agent;
 
 	void Start(){
+        prevRoutePoint = currentRoutePoint;
 		agent = GetComponent<NavMeshAgent>();
         MoveOnRoute();
 	}
 
     void MoveOnRoute(){
-        GameObject[] tmp = GameObject.FindGameObjectsWithTag("Town");
-        Route = NavigationRoute.CreateRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Length)].GetComponent<NavigationNode>());
+        var tmp = new List<GameObject>(GameObject.FindGameObjectsWithTag("Town"));
+        tmp.Remove(currentRoutePoint.gameObject);
+        Route = NavigationRoute.CreateRoute(currentRoutePoint, tmp[Random.Range(0, tmp.Count)].GetComponent<NavigationNode>());
         if (Route != null) {
             Route.LoopRoute();
             GotoNextPoint();
@@ -57,6 +59,7 @@ public class Actor_CaravanMovement : MonoBehaviour {
     /// Gets called when actor arrives at the next Route Point
     /// </summary>
 	void _OnArrival(){
+        prevRoutePoint = currentRoutePoint;
         // possible refactoring: get i from Route, because it is equal to IndexOf(currentRoutePoint)
         var index = Route.IndexOf(currentRoutePoint);
         GetComponent<Actor_TradeController>().Trade(currentRoutePoint, index);
