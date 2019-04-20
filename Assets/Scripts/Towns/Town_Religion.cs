@@ -15,6 +15,6 @@ public class Town_Religion : MonoBehaviour {
 	}
 
 	void UpdateMax(int holyPointsCount, int allHolyPointsCount, bool isWarWithDev){
-		max = (holyPointsCount / allHolyPointsCount) * 20 * (isWarWithDev ? 2 : 1);
+		max = (int) (((double) holyPointsCount / allHolyPointsCount) * 20 * (isWarWithDev ? 2 : 1));
 	}
 }
