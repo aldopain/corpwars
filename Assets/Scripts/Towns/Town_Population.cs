@@ -13,6 +13,7 @@ public class Town_Population : MonoBehaviour {
 		public int Productivity;
 		[Range(0, 200)]
 		public int Happiness;
+		public int MinHappiness;
 		public double Birthrate;
 		public double[] HappinessDemands;
 		public double[] BirthrateDemands;
@@ -30,7 +31,8 @@ public class Town_Population : MonoBehaviour {
 
 		//Function that would calculate happiness based on available resources
 		void UpdateHappiness(double[] resources){
-			Happiness = (int) (DemandLevel(resources, HappinessDemands) * 100);
+			Happiness = (int) (DemandLevel(resources, HappinessDemands) * 100 + MinHappiness);
+			if (Happiness > 100) Happiness = 100;
 		}
 
 		void UpdateAmount(){
@@ -41,7 +43,7 @@ public class Town_Population : MonoBehaviour {
 			Birthrate = 0.4 * DemandLevel(resources, HappinessDemands) - 0.2;
 		}
 
-		double DemandLevel (double[] resources, double[] demands){
+		public double DemandLevel (double[] resources, double[] demands){
 			double d = 0;
 			if (demands.Length != resources.Length) Debug.LogWarning("Demands.Length != resources.Length");
 			for(int i = 0; i < resources.Length && i < demands.Length; i++){

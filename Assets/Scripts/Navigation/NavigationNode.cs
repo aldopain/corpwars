@@ -10,6 +10,7 @@ public class NavigationNode : MonoBehaviour
     public Actor_Resources resources;
     private int neighbourLength;
 	public bool isCity;
+    public bool isHoly;
 
     void Awake() {
         neighbourLength = Neighbours.Count;
