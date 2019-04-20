@@ -36,7 +36,8 @@
 		half _Metallic;
 		fixed4 _Color;
 
-		float3 _Position = (1.0, 1.0, 1.0);
+		int _Count;
+		float3 _Position[100];
 		float _Radius = 5;
 		float _Transparency;
 		float offset = 0;
@@ -55,10 +56,12 @@
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
 
-			if(IN.worldPos.x > (_Position.x - _Radius) && IN.worldPos.x < (_Position.x + _Radius) && IN.worldPos.z >(_Position.z - _Radius) && IN.worldPos.z < (_Position.z + _Radius)){
-				clip(IN.worldPos - _Radius);
-			} else{
+			for (int i = 0; i < _Count; i++)	{
+				if(sqrt(pow(IN.worldPos.x - _Position[i].x, 2.0) + pow(IN.worldPos.z - _Position[i].z, 2.0)) < _Radius){
+					clip(IN.worldPos - _Radius);
+				} else{
 
+				}
 			}
 		}
 
