@@ -35,20 +35,23 @@ public class Events_Logic : MonoBehaviour {
 
 	//Changes the HappinessDemands of a certain class in a certain town by a certain amount
 	public void PopHappinessDemands(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		string popClass = args[1];
 		int resourceIndex = Convert.ToInt32(args[2]);
 		int amount = Convert.ToInt32(args[3]);
 
 		switch(popClass){
 			case "Poor":
-				GameObject.Find(town).GetComponent<Town_Population>().Poor.HappinessDemands[resourceIndex] += amount;
+				town.GetComponent<Town_Population>().Poor.HappinessDemands[resourceIndex] += amount;
 				break;
 			case "Middle":
-				GameObject.Find(town).GetComponent<Town_Population>().Middle.HappinessDemands[resourceIndex] += amount;
+				town.GetComponent<Town_Population>().Middle.HappinessDemands[resourceIndex] += amount;
 				break;
 			case "Rich":
-				GameObject.Find(town).GetComponent<Town_Population>().Rich.HappinessDemands[resourceIndex] += amount;
+				town.GetComponent<Town_Population>().Rich.HappinessDemands[resourceIndex] += amount;
+				break;
+			case "Religion":
+				town.GetComponent<Town_Religion>().Demands[resourceIndex] += amount;
 				break;
 			default:
 				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
@@ -57,19 +60,19 @@ public class Events_Logic : MonoBehaviour {
 	}
 
 	public void PopAmount(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		string popClass = args[1];
 		int amount = Convert.ToInt32(args[2]);
 
 		switch(popClass){
 			case "Poor":
-				GameObject.Find(town).GetComponent<Town_Population>().Poor.Amount += amount;
+				town.GetComponent<Town_Population>().Poor.Amount += amount;
 				break;
 			case "Middle":
-				GameObject.Find(town).GetComponent<Town_Population>().Middle.Amount += amount;
+				town.GetComponent<Town_Population>().Middle.Amount += amount;
 				break;
 			case "Rich":
-				GameObject.Find(town).GetComponent<Town_Population>().Rich.Amount += amount;
+				town.GetComponent<Town_Population>().Rich.Amount += amount;
 				break;
 			default:
 				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
@@ -78,19 +81,19 @@ public class Events_Logic : MonoBehaviour {
 	}
 
 	public void PopProductivity(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		string popClass = args[1];
 		int amount = Convert.ToInt32(args[2]);
 
 		switch(popClass){
 			case "Poor":
-				GameObject.Find(town).GetComponent<Town_Population>().Poor.Productivity += amount;
+				town.GetComponent<Town_Population>().Poor.Productivity += amount;
 				break;
 			case "Middle":
-				GameObject.Find(town).GetComponent<Town_Population>().Middle.Productivity += amount;
+				town.GetComponent<Town_Population>().Middle.Productivity += amount;
 				break;
 			case "Rich":
-				GameObject.Find(town).GetComponent<Town_Population>().Rich.Productivity += amount;
+				town.GetComponent<Town_Population>().Rich.Productivity += amount;
 				break;
 			default:
 				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
@@ -99,24 +102,27 @@ public class Events_Logic : MonoBehaviour {
 	}
 
 	public void PopHappiness(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		string popClass = args[1];
 		int amount = Convert.ToInt32(args[2]);
 
 		switch(popClass){
 			case "Poor":
-				GameObject.Find(town).GetComponent<Town_Population>().Poor.Happiness += amount;
+				town.GetComponent<Town_Population>().Poor.Happiness += amount;
 				break;
 			case "Middle":
-				GameObject.Find(town).GetComponent<Town_Population>().Middle.Happiness += amount;
+				town.GetComponent<Town_Population>().Middle.Happiness += amount;
 				break;
 			case "Rich":
-				GameObject.Find(town).GetComponent<Town_Population>().Rich.Happiness += amount;
+				town.GetComponent<Town_Population>().Rich.Happiness += amount;
+				break;
+			case "Religion":
+				town.GetComponent<Town_Religion>().max += amount;
 				break;
 			default:
 				Debug.LogError("ChangePopHappinessDemands can't find PopClass " + popClass);
 				break;
-		}		
+		}
 	}
 
 	public void SetOwner(string[] args){
@@ -127,27 +133,27 @@ public class Events_Logic : MonoBehaviour {
 	}
 
 	public void ProductionInput(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		int resourceIndex = Convert.ToInt32(args[1]);
 		double amount = Convert.ToDouble(args[2]);
 
-		GameObject.Find(town).GetComponent<Town_Production>().resourceInputEfficiency[resourceIndex] += (float)amount;
+		town.GetComponent<Town_Production>().resourceInputEfficiency[resourceIndex] += (float)amount;
 	}
 
 	public void ProductionOutput(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		int resourceIndex = Convert.ToInt32(args[1]);
 		double amount = Convert.ToDouble(args[2]);
 
-		GameObject.Find(town).GetComponent<Town_Production>().resourceOutputEfficiency[resourceIndex] += (float)amount;
+		town.GetComponent<Town_Production>().resourceOutputEfficiency[resourceIndex] += (float)amount;
 	}
 
 	public void PriceModifier(string[] args){
-		string town = args[0];
+		var town = GameObject.Find(args[0]);
 		int resourceIndex = Convert.ToInt32(args[1]);
 		double amount = Convert.ToDouble(args[2]);
 
-		GameObject.Find(town).GetComponent<Economy_Local>().priceModifiers[resourceIndex] += amount;
+		town.GetComponent<Economy_Local>().priceModifiers[resourceIndex] += amount;
 	}
 
 	public void CaravanSpeed(string[] args){
@@ -175,5 +181,10 @@ public class Events_Logic : MonoBehaviour {
 		string town2 = args[1];
 
 		GameObject.Find(town1).GetComponent<NavigationNode>().Neighbours.Add(GameObject.Find(town2).GetComponent<NavigationNode>());
+	}
+
+	public void ChangeHolyState(string[] args){
+		var point = GameObject.Find(args[0]).GetComponent<NavigationNode>();
+		point.isHoly = !point.isHoly;
 	}
 }
