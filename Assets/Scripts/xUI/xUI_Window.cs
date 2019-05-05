@@ -68,6 +68,9 @@ public class xUI_Window : MonoBehaviour {
 
     public void SetDraggable(bool d) {
         isStatic = !d;
-        TopPanel.GetComponent<Image>().color = Color.grey;
+        if(isStatic)
+            TopPanel.GetComponent<Image>().color = Color.grey;
+        else
+            TopPanel.GetComponent<Image>().color = Color.white;
     }
 }
