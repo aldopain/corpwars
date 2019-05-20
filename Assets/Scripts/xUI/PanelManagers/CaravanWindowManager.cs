@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class CaravanWindowManager : MonoBehaviour {
     public GameObject CaravanPanel;
+    public Button NewCaravanButton;
 
     [Header("Caravan Performance Panel")]
     public Text StatsText;
@@ -15,11 +17,12 @@ public class CaravanWindowManager : MonoBehaviour {
     private List<xUI_ButtonPanel> panels;
     private GameObject CaravanPanelPrefab;
     private string CARAVAN_PANEL_PREFAB_NAME = "xUI_ButtonPanel";
+    private string NEW_CARAVAN_WINDOW = "CreateCaravanWindow";
     private GameObject selectedCaravan;
 
 	void Start () {
-
         SetupCaravanPanel();
+        AddListener_CreateCaravan(NewCaravanButton);
 	}
 
     void SetupPanelPrefab()
@@ -47,16 +50,22 @@ public class CaravanWindowManager : MonoBehaviour {
         CaravanPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(CaravanPanel.GetComponent<RectTransform>().sizeDelta.x, playerCaravans.Count * CaravanPanelPrefab.GetComponent<RectTransform>().sizeDelta.y);
 
         panels = new List<xUI_ButtonPanel>();
-        foreach(var car in playerCaravans)
+
+        //GameObject newCaravan = Instantiate(CaravanPanelPrefab, CaravanPanel.transform);
+        //newCaravan.GetComponent<xUI_ButtonPanel>().Set("New Caravan");
+        //AddListener_CreateCaravan(newCaravan.GetComponent<Button>());
+        //panels.Add(newCaravan.GetComponent<xUI_ButtonPanel>());
+
+        foreach (var car in playerCaravans)
         {
             GameObject go = Instantiate(CaravanPanelPrefab, CaravanPanel.transform);
             go.GetComponent<xUI_ButtonPanel>().Set(car.name, car.GetComponent<Actor_CaravanMovement>().Route.ToString());
             panels.Add(go.GetComponent<xUI_ButtonPanel>());
         }
 
-        for (int i = 0; i < panels.Count; i++) {
+        for (int i = 1; i < panels.Count; i++) {
             //panels[i].Button.onClick.AddListener(() => SetSelectedCaravan(i));   This leaves you with the same value on each button, don't try fixing the existing implementation with this
-            AddListenerToButton(panels[i].Button, i);
+            AddListenerToButton(panels[i].Button, i - 1);
         }
 
         //"else" should probably return from this function before foreach
@@ -68,6 +77,10 @@ public class CaravanWindowManager : MonoBehaviour {
     //This is wrong, but it is the only way I got it to work as intended
     void AddListenerToButton(Button b, int i) {
         b.onClick.AddListener(() => SetSelectedCaravan(i));
+    }
+
+    void AddListener_CreateCaravan(Button b) {
+        b.onClick.AddListener(() => GameObject.Find("GameController").GetComponent<xUI_WindowManager>().CreateWindow(NEW_CARAVAN_WINDOW));
     }
 
 	// Update is called once per frame

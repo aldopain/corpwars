@@ -15,7 +15,7 @@ public class Caravan_UnitManager : MonoBehaviour {
         CopyShipList();
 	}
 	
-    void CopyShipList()
+    public void CopyShipList()
     {
         for(int i = 0; i < ShipList.Count; i++)
         {
@@ -28,6 +28,8 @@ public class Caravan_UnitManager : MonoBehaviour {
 	}
 
 	public float GetCaravanSpeed(){
+        if (ShipList.Count == 0)
+            return 0;
 		float min = Mathf.Infinity;
 		double combinedInvSize = 0;
 		

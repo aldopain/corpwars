@@ -57,8 +57,6 @@
 
 			if(IN.worldPos.x > (_Position.x - _Radius) && IN.worldPos.x < (_Position.x + _Radius) && IN.worldPos.z >(_Position.z - _Radius) && IN.worldPos.z < (_Position.z + _Radius)){
 				clip(IN.worldPos - _Radius);
-			} else{
-
 			}
 		}
 

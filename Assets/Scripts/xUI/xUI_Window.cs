@@ -37,16 +37,14 @@ public class xUI_Window : MonoBehaviour {
         Vector2 pos = Input.mousePosition;
         pos.y += transform.position.y - TopPanel.position.y;
 
-        /*  Uncomment for a buggy implementation of screen escaping prevention
-         * 
-         *         Vector2 overlap = GetOverlap();
-         *         if (overlap.x < 0)
-         *              pos.x += overlap.x;
-         *          if (overlap.y < 0)
-         *              pos.y += overlap.y;
-         */
-
-
+        //Uncomment for a buggy implementation of screen escaping prevention
+        //
+        //       Vector2 overlap = GetOverlap();
+        //       if (overlap.x < 0)
+        //            pos.x += overlap.x;
+        //        if (overlap.y < 0)
+        //            pos.y += overlap.y;
+        GetOverlap();
         transform.position = pos - mouseDragOffset;
     }
 
@@ -56,10 +54,26 @@ public class xUI_Window : MonoBehaviour {
     }
 
     Vector2 GetOverlap() {
+        float top = TopPanel.GetComponent<RectTransform>().rect.xMax + TopPanel.position.y;
+        float bottom = ContentPanel.GetComponent<RectTransform>().rect.yMin + TopPanel.position.y;
+        float right = TopPanel.GetComponent<RectTransform>().rect.yMax + TopPanel.position.x;
+        float left = ContentPanel.GetComponent<RectTransform>().rect.xMin + TopPanel.position.x;
+        //print(name + ": top: bottom: right: left:" + GetOverlap());
+
+        Debug.LogFormat("{0}: top: {1}; bottom: {2}; right: {3}; left: {4};", name, top, bottom, right, left);
+
         Vector2 ol;
-        ol.x = Screen.width - (TopPanel.GetComponent<RectTransform>().rect.xMax + TopPanel.position.x);
-        ol.y = Screen.height - (TopPanel.GetComponent<RectTransform>().rect.yMax + TopPanel.position.y);
-        return ol;
+        Vector2 posTop;
+        Vector2 posBottom;
+        posTop.x = TopPanel.GetComponent<RectTransform>().rect.xMax + TopPanel.position.x;
+        posTop.y = TopPanel.GetComponent<RectTransform>().rect.yMax + TopPanel.position.y;
+        
+        posTop.x = TopPanel.GetComponent<RectTransform>().rect.xMax + TopPanel.position.x;
+        posTop.y = TopPanel.GetComponent<RectTransform>().rect.yMax + TopPanel.position.y;
+
+        //ol.x = Screen.width - (TopPanel.GetComponent<RectTransform>().rect.xMax + TopPanel.position.x);
+        //ol.y = Screen.height - (TopPanel.GetComponent<RectTransform>().rect.yMax + TopPanel.position.y);
+        return posTop;
     }
 
     public void SetLabel(string label) {
