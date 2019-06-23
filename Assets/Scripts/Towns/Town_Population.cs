@@ -7,11 +7,14 @@ using UnityEngine;
 public class Town_Population : MonoBehaviour {
 	[System.Serializable]
 	public struct PopClass{
+        public const int maxProductivity = 100;
+        public const int maxHappiness = 200;
+
 		public int Amount;
 		public int BaseProductivity;
-		[Range(0,100)]
+		[Range(0,maxProductivity)]
 		public int Productivity;
-		[Range(0, 200)]
+		[Range(0, maxHappiness)]
 		public int Happiness;
 		public double Birthrate;
 		public double[] HappinessDemands;

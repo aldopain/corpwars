@@ -67,6 +67,6 @@ public class Actor_Resources : MonoBehaviour {
 
 	public int Debug_GetResourceLength()
 	{
-			return Amount.Length;
+		return Amount.Length;
 	}
 }
