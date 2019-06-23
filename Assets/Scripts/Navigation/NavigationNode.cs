@@ -46,6 +46,14 @@ public class NavigationNode : MonoBehaviour
         return Vector3.Distance(transform.position, p.transform.position);
     }
 
+    public float SafeDistance(NavigationNode p) {
+        if (p.resources.Owner.IsEnemy(resources.Owner)) {
+            return 0f;
+        } else {
+            return Distance(p);
+        }
+    }
+
     void OnAddNeighbour() {
         Neighbours[neighbourLength].neighbourLength++;
 
