@@ -20,14 +20,14 @@ public class IO {
 		return s;
 	}
 
-	public static T SafeAdd<T>(T toAdd, T currentValue, T min, T max){
-		var buffer = currentValue + toAdd;
-		if (buffer >= max) {
-			return max;
-		} else if (buffer <= min) {
-			return min;
-		} else {
-			return buffer;
-		}
-	}
+	// public static T SafeAdd<T>(T toAdd, T currentValue, T min, T max){
+	// 	var buffer = currentValue + toAdd;
+	// 	if (buffer >= max) {
+	// 		return max;
+	// 	} else if (buffer <= min) {
+	// 		return min;
+	// 	} else {
+	// 		return buffer;
+	// 	}
+	// }
 }
