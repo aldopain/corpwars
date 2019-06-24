@@ -24,7 +24,7 @@ public class NavigationSystem : MonoBehaviour {
 	}
 
 	private float[,] GetMatrix() {
-		var matrix = new int[allPoints.Count, allPoints.Count];
+		var matrix = new float[allPoints.Count, allPoints.Count];
 		for (var i = 0; i < allPoints.Count; i++) {
 			for (var j = 0; j < allPoints.Count; j++) {
 				if (j == i) {
@@ -34,9 +34,10 @@ public class NavigationSystem : MonoBehaviour {
 				}
 			}
 		}
+		return matrix;
 	}
 
-	private int[] Dijkstra(float[,] matrix, int a, int b) {
+	private int[] Dijkstra(float[,] ways, int start, int end) {
 		float[] dist = new float[ways.GetLength(0)];
 		int[] prev = new int[ways.GetLength(0)];
 		bool[] visited = new bool[ways.GetLength(0)];
@@ -44,7 +45,7 @@ public class NavigationSystem : MonoBehaviour {
 
 		for (int i = 0; i < dist.Length; i++)
 		{
-			dist[i] = Single.PositiveInfinity;
+			dist[i] = Mathf.Infinity;
 			prev[i] = -1;
 			visited[i] = false;
 		}
@@ -52,7 +53,7 @@ public class NavigationSystem : MonoBehaviour {
 
 		while (true)
 		{
-			float max = Single.PositiveInfinity;
+			float max = Mathf.Infinity;
 			int current = -1;
 
 			for (int i = 0; i < visited.Length; i++)    //Ищем непосещенную вершину с кратчайшим путем
@@ -96,8 +97,8 @@ public class NavigationSystem : MonoBehaviour {
 	}
 
 	private NavigationWay Convert(int[] way) {
-		var _way = List<NavigationNode>();
-		for(var i = 0; i < way.length; i++) {
+		var _way = new List<NavigationNode>();
+		for(var i = 0; i < way.Length; i++) {
 			_way.Add(allPoints[way[i]]);
 		}
 		return new NavigationWay(_way);
