@@ -387,7 +387,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &25087896 stripped
 MonoBehaviour:
@@ -395,12 +397,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 25087895}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 25087897}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &25087897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 25087895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &25087898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25087897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &25524648
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +704,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1237542804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &42665848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42665847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &42665858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,8 +953,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &53467150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 53467149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &53467151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53467150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &58979963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1992,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1781737652}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1781737653}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -2165,8 +2232,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &138816022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 138816021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &138816023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138816022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &142691496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3405,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1159000175}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1159000176}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -3378,7 +3470,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &200078177 stripped
 MonoBehaviour:
@@ -3386,12 +3480,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 200078176}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 200078178}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &200078178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 200078176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &200078179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200078178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &200392323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4033,7 +4150,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &235281428 stripped
 MonoBehaviour:
@@ -4041,12 +4160,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 235281427}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 235281429}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &235281429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 235281427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &235281430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235281429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &235730536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,7 +4464,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &238753074 stripped
 MonoBehaviour:
@@ -4330,12 +4474,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 238753073}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 238753075}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &238753075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 238753073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &238753076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238753075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &239754630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6627,7 +6794,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 932957657}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 932957658}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -6944,7 +7111,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 138816021}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 138816022}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -8152,7 +8319,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1665233333}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8950,6 +9117,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1426798766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &565865468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565865467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &565865477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13285,7 +13469,9 @@ PrefabInstance:
       propertyPath: Rich.BirthrateDemands.Array.data[8]
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!1 &821972340 stripped
 GameObject:
@@ -13293,6 +13479,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 821972339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &821972341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821972340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &830956636
 GameObject:
   m_ObjectHideFlags: 0
@@ -14085,7 +14288,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 53467149}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 53467150}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -14996,8 +15199,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &932957658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 932957657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &932957659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932957658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &934285913
 GameObject:
   m_ObjectHideFlags: 0
@@ -18810,8 +19038,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &1159000176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1159000175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159000177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159000176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1164824594
 GameObject:
   m_ObjectHideFlags: 0
@@ -19101,15 +19354,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &1172809299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1172809298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1172809300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172809299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1179953862 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114309004520887418, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
     type: 3}
   m_PrefabInstance: {fileID: 1172809298}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1172809299}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -19648,7 +19926,9 @@ PrefabInstance:
       propertyPath: Owner
       value: 
       objectReference: {fileID: 585792953}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114472488167688948, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
+    - {fileID: 114829733577793772, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
 --- !u!4 &1241582738 stripped
 Transform:
@@ -20073,6 +20353,8 @@ GameObject:
   - component: {fileID: 1287131775}
   - component: {fileID: 1287131777}
   - component: {fileID: 1287131776}
+  - component: {fileID: 1287131778}
+  - component: {fileID: 1287131779}
   m_Layer: 0
   m_Name: piqUI
   m_TagString: Untagged
@@ -20109,6 +20391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ships: {fileID: 0}
   towns: {fileID: 0}
+  selection: {fileID: 0}
+  windows: {fileID: 0}
   resources: {fileID: 195986950}
 --- !u!114 &1287131776
 MonoBehaviour:
@@ -20135,6 +20419,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7049c0b72bf47aa488dbea87bd4d5de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1287131778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287131773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be6c27b049bbf64fa940f43ba49f864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnNewSelection:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1287131779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287131773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cfcbe64f80ce547901a2e56a299d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TownWindow: {fileID: 1685635710}
 --- !u!4 &1288165875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4443046107886284, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
@@ -20466,7 +20780,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &1293538944 stripped
 MonoBehaviour:
@@ -20474,12 +20790,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1293538943}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1293538945}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1293538945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1293538943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1293538946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293538945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1293580233
 GameObject:
   m_ObjectHideFlags: 0
@@ -21212,7 +21551,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 360374732}
   m_HandleRect: {fileID: 360374731}
   m_Direction: 2
-  m_Value: 1.0000006
+  m_Value: 1.0000002
   m_Size: 0.6386667
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -21263,7 +21602,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2072130585}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2072130586}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
@@ -22256,7 +22595,9 @@ PrefabInstance:
       propertyPath: Owner
       value: 
       objectReference: {fileID: 280066178}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114472488167688948, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
+    - {fileID: 114829733577793772, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68c7b1427316fd5439953b6ddbbeb34d, type: 3}
 --- !u!1 &1438624367
 GameObject:
@@ -23141,7 +23482,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &1480721024 stripped
 MonoBehaviour:
@@ -23149,12 +23492,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1480721023}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1480721025}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1480721025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480721023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1480721026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480721025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1484301189
 GameObject:
   m_ObjectHideFlags: 0
@@ -23613,7 +23979,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &1530988433 stripped
 MonoBehaviour:
@@ -23621,12 +23989,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1530988432}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1530988434}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1530988434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530988432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1530988435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530988434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1534353913
 GameObject:
   m_ObjectHideFlags: 0
@@ -27502,8 +27893,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &1781737653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1781737652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1781737654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781737653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1784085242
 GameObject:
   m_ObjectHideFlags: 0
@@ -30243,7 +30659,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
 --- !u!114 &1999015745 stripped
 MonoBehaviour:
@@ -30251,12 +30669,35 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1999015744}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1999015746}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d71f77ba5d46a489369196e4a96e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1999015746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999015744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999015747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999015746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2004904071
 GameObject:
   m_ObjectHideFlags: 0
@@ -30971,8 +31412,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114914901642837590, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+    - {fileID: 114995029993796946, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8d4f30da35ad2847bf997cff5b0dfb1, type: 3}
+--- !u!1 &2072130586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414533010615200, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072130585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072130587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072130586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdcc10c427924445af99b4620816d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2077488780
 GameObject:
   m_ObjectHideFlags: 0

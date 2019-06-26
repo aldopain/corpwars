@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class piqUI_InformationManager : MonoBehaviour
 {
+    //Info managers
     public piqUI_ShipInfoManager ships;
     public piqUI_TownInfoManager towns;
+    public piqUI_SelectionManager selection;
+    public piqUI_WindowManager windows;
+
     public Resource_GlobalList resources;
 
     void Awake() {
@@ -15,6 +19,8 @@ public class piqUI_InformationManager : MonoBehaviour
     private void GetChildManagers() {
         ships = GetComponent<piqUI_ShipInfoManager>();
         towns = GetComponent<piqUI_TownInfoManager>();
+        selection = GetComponent<piqUI_SelectionManager>();
+        windows = GetComponent<piqUI_WindowManager>();
     }
 
 

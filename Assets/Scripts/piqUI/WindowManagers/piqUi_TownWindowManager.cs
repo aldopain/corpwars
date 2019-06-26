@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class piqUi_TownWindowManager : MonoBehaviour
+public class piqUi_TownWindowManager : MonoBehaviour, IWindow
 {
     //Units and buildings
     [Header("Units and buildings")]
@@ -42,6 +42,15 @@ public class piqUi_TownWindowManager : MonoBehaviour
     public List<piqUI_ResourceLine> ResourceLines;
 
     public piqUI_InformationManager manager;
+
+    public void Show() {
+        gameObject.SetActive(true);
+        InitUI();
+    }
+
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
 
     void Start() {
         manager = transform.root.GetComponent<piqUI_InformationManager>();
