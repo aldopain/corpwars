@@ -35,7 +35,8 @@ public class piqUi_TownWindowManager : piqUI_Window
 
 
     //Production Panel
-    //Fuck it for now
+    [Header("Production")]
+    public List<piqUI_FactoryPanel> FactoryPanels;
 
     //Resources Panel
     [Header("Resources")]
@@ -105,6 +106,29 @@ public class piqUi_TownWindowManager : piqUI_Window
         for (int i = 0; i < manager.resources.ResourcesList.Length; i++) {
             ResourceLines[i].Name = manager.resources.ResourcesList[i].name;
             ResourceLines[i].Amount = inv.Amount[i].ToString();
+        }
+    }
+
+    public void ShowFactories() {
+        List<piqUI_TownInfoManager.FactoryInfo> info = manager.towns.GetFactoriesInfo();
+
+        //Debug, create dynamic factories list
+        int count;
+        if (info.Count < manager.resources.ResourcesList.Length) {
+            count = info.Count;
+        } else {
+            count = manager.resources.ResourcesList.Length;
+        }
+
+        for (int i = 0; i < count; i++) {
+            FactoryPanels[i].FactoryType = info[i]._type;
+            foreach (var _input in info[i].input) {
+                FactoryPanels[i].AddInput(manager.resources.ResourcesList[_input.inputID].Name + "x" + _input.amount);
+            }
+
+            foreach (var _out in info[i].input) {
+                FactoryPanels[i].AddOutput(manager.resources.ResourcesList[_out.inputID].Name + "x" + _out.amount);
+            }
         }
     }
 }

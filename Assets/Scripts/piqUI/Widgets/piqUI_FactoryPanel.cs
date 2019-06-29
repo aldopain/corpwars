@@ -21,13 +21,9 @@ public class piqUI_FactoryPanel : MonoBehaviour
         }
     }
 
-    public string FactoryType {
-        get {
-            return _type.text;
-        }
-
+    public Type FactoryType {
         set {
-            _type.text = value;
+            _type.text = System.Enum.GetName(typeof(Type), value);
         }
     }
 

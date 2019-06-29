@@ -34,6 +34,12 @@ public class piqUI_TownInfoManager : MonoBehaviour
         }
     }
 
+    public class FactoryInfo {
+        public Type _type;
+        public Resource_Input[] input;
+        public Resource_Input[] output;
+    }
+
     void Start() {
         SetSelectedTown(selectedTown);  //Debug, used to initialize necessary fields when setting town from editor
     }
@@ -86,5 +92,19 @@ public class piqUI_TownInfoManager : MonoBehaviour
 
     public int GetMaxProductivity() {
         return Town_Population.PopClass.maxProductivity;
+    }
+
+    public List<FactoryInfo> GetFactoriesInfo() {
+        List<FactoryInfo> info = new List<FactoryInfo>();
+        List<Resource_Factory> factories = selectedTown.GetComponent<Town_Production>().factories;
+        foreach (var f in factories) {
+            FactoryInfo i = new FactoryInfo();
+            i._type = f.type;
+            i.input = f.recipe.input;
+            i.output = f.recipe.output;
+            info.Add(i);
+        }
+
+        return info;
     }
 }
