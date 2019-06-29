@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 4605976740184524304}
   - component: {fileID: 4605976740184524306}
   - component: {fileID: 4605976740184524307}
+  - component: {fileID: 9018738354001832444}
   m_Layer: 5
   m_Name: FactoryPanel
   m_TagString: Untagged
@@ -237,6 +238,23 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &9018738354001832444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605976740184524305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdc2fc921c8a954284aa3fe60996d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: {fileID: 4605976740040285764}
+  _type: {fileID: 4605976740035977148}
+  _input: {fileID: 4605976741601234854}
+  _output: {fileID: 4605976741767797784}
+  _statusImage: {fileID: 4605976740546358023}
 --- !u!1 &4605976740546358021
 GameObject:
   m_ObjectHideFlags: 0
