@@ -31,6 +31,7 @@ public class piqUI_SelectionManager : MonoBehaviour
         selectedObject = go;
         switch (selectedObject.tag) {
             case "Caravan":
+                OnSelectCaravan();
                 break;
             case "Town":     
                 OnSelectTown();

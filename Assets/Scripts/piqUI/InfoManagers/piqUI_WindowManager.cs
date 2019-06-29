@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class piqUI_WindowManager : MonoBehaviour
 {
-    public IWindow currentWindow;
+    public piqUI_Window currentWindow;
 
-    public piqUi_TownWindowManager TownWindow;
+    public piqUI_Window TownWindow;
 
-    public void ShowWindow(IWindow window) {
+
+    public void ShowWindow(piqUI_Window window) {
         currentWindow = window;
         window.Show();
     }
