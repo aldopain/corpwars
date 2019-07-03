@@ -23,7 +23,7 @@ public class piqUI_SelectionManager : MonoBehaviour
     void Update() {
         if (Input.GetMouseButtonDown(1)) {
             highlitedObject = null;
-            manager.windows.currentWindow.Hide();
+            if(manager.windows.currentWindow != null) manager.windows.currentWindow.Hide();
         }
     }
 

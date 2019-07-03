@@ -9,6 +9,7 @@ public class piqUI_InformationManager : MonoBehaviour
     public piqUI_TownInfoManager towns;
     public piqUI_SelectionManager selection;
     public piqUI_WindowManager windows;
+    public piqUI_CaravansInfoManager caravans;
 
     public Resource_GlobalList resources;
 
@@ -21,6 +22,7 @@ public class piqUI_InformationManager : MonoBehaviour
         towns = GetComponent<piqUI_TownInfoManager>();
         selection = GetComponent<piqUI_SelectionManager>();
         windows = GetComponent<piqUI_WindowManager>();
+        caravans = GetComponent<piqUI_CaravansInfoManager>();
     }
 
 

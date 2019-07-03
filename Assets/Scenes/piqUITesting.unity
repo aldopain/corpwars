@@ -1065,6 +1065,7 @@ GameObject:
   - component: {fileID: 59798548}
   - component: {fileID: 59798550}
   - component: {fileID: 59798549}
+  - component: {fileID: 59798551}
   m_Layer: 5
   m_Name: CaravansPanel
   m_TagString: Untagged
@@ -1130,6 +1131,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59798547}
   m_CullTransparentMesh: 0
+--- !u!114 &59798551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59798547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062f9bab494f42b42b1e6ba2879a8ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CaravanList: {fileID: 1935921055}
+  manager: {fileID: 1287131775}
 --- !u!1 &64163351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,7 +5127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &266031498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20414,6 +20429,7 @@ GameObject:
   - component: {fileID: 1287131776}
   - component: {fileID: 1287131778}
   - component: {fileID: 1287131779}
+  - component: {fileID: 1287131780}
   m_Layer: 0
   m_Name: piqUI
   m_TagString: Untagged
@@ -20452,6 +20468,7 @@ MonoBehaviour:
   towns: {fileID: 0}
   selection: {fileID: 0}
   windows: {fileID: 0}
+  caravans: {fileID: 0}
   resources: {fileID: 195986950}
 --- !u!114 &1287131776
 MonoBehaviour:
@@ -20509,6 +20526,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWindow: {fileID: 0}
   TownWindow: {fileID: 1685635710}
+--- !u!114 &1287131780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287131773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f14e47ba9af631489997227a14282f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1288165875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4443046107886284, guid: e8d4f30da35ad2847bf997cff5b0dfb1,
@@ -27643,7 +27672,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 994142528}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28090,6 +28119,7 @@ GameObject:
   - component: {fileID: 1797116926}
   - component: {fileID: 1797116928}
   - component: {fileID: 1797116927}
+  - component: {fileID: 1797116929}
   m_Layer: 5
   m_Name: UnitPanel
   m_TagString: Untagged
@@ -28162,6 +28192,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797116925}
   m_CullTransparentMesh: 0
+--- !u!114 &1797116929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797116925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a60f85ec253ba4f8c3ab977a22fd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonGrid: []
+  TradePanels: []
 --- !u!1 &1802846576
 GameObject:
   m_ObjectHideFlags: 0
@@ -28465,7 +28509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1845018848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29950,6 +29994,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935181747}
   m_CullTransparentMesh: 0
+--- !u!1 &1935921053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935921054}
+  - component: {fileID: 1935921056}
+  - component: {fileID: 1935921055}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1935921054
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935921053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1948250967}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000061035156, y: -150}
+  m_SizeDelta: {x: -0.3999939, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1935921055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935921053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1935921056
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935921053}
+  m_CullTransparentMesh: 0
 --- !u!1 &1941376969
 GameObject:
   m_ObjectHideFlags: 0
@@ -30052,7 +30175,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1935921054}
   m_Father: {fileID: 1013889797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
